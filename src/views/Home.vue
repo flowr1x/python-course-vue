@@ -43,7 +43,7 @@ export default {
             { 
                 title: "Глава 2",
                 subtitle: "Краткая историческая справка",
-                path: "/",
+                path: "/theory_2",
                 shortlinks: [
                     {title: "Краткая историческая справка", path: "/"},
                     {title: "Основные особенности языка", path: "/"},

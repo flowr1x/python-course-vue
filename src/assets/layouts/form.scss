@@ -48,16 +48,4 @@
     &__button {
         margin-top: 25px;
     }
-    &__body_register {
-        display: none;
-    }
-    #form-login__switch {
-        display: none;
-    }   
-    #form-login__switch:checked~&__body_register {
-        display: block;
-    }
-    #form-login__switch:checked~&__body_login {
-        display: none;
-    }
 }

@@ -69,12 +69,12 @@ export default {
             { 
                 title: "Глава 1",
                 subtitle: "Краткая история языков программирования",
-                path: "/",
+                path: "/theory_1",
             },
             { 
                 title: "Глава 2",
                 subtitle: "Краткая историческая справка",
-                path: "/",
+                path: "/theory_2",
             },
             { 
                 title: "Глава 3",
