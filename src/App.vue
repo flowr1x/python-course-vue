@@ -9,6 +9,7 @@
 <script>
 import EmptyLayout from "@/layouts/EmptyLayout.vue"; 
 import MainLayout from "@/layouts/MainLayout.vue"; 
+import MiddleLayout from "@/layouts/MiddleLayout.vue"; 
 export default {
   computed: {
     layout() {
@@ -16,7 +17,7 @@ export default {
     }
   },
   components: {
-    EmptyLayout, MainLayout
+    EmptyLayout, MainLayout, MiddleLayout
   }
 }
 </script>

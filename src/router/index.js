@@ -32,6 +32,12 @@ const routes = [
     meta: { layout: "main" },
     component: () => import("../views/theory/Theory_2.vue")
   },
+  {
+    path: "/profile",
+    name: "profile",
+    meta: { layout: "middle" },
+    component: () => import("../views/Profile.vue")
+  },
 ]
 
 const router = createRouter({
