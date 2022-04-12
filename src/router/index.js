@@ -33,6 +33,12 @@ const routes = [
     component: () => import("../views/theory/Theory_2.vue")
   },
   {
+    path: "/theory_3",
+    name: "theory_3",
+    meta: { layout: "main" },
+    component: () => import("../views/theory/Theory_3.vue")
+  },
+  {
     path: "/profile",
     name: "profile",
     meta: { layout: "middle" },

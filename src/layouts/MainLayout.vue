@@ -79,7 +79,7 @@ export default {
             { 
                 title: "Глава 3",
                 subtitle: "Типы данных. Переменные",
-                path: "/",
+                path: "/theory_3",
             },
             { 
                 title: "Глава 4",

@@ -54,7 +54,7 @@ export default {
             { 
                 title: "Глава 3",
                 subtitle: "Типы данных. Переменные",
-                path: "/",
+                path: "/theory_3",
                 shortlinks: [
                     {title: "Данные и их типы", path: "/"},
                     {title: "Операции в программировании", path: "/"},
