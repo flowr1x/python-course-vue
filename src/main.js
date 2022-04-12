@@ -4,7 +4,7 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import "./assets/layouts/index.scss"
-
+import "bourbon"
 const app = createApp(App);
 
 app.use(store).use(router).mount('#app')
