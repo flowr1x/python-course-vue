@@ -99,11 +99,11 @@ print(b)
               <p>Так блок действий обозначается прямоугольником, а логическое выражение – ромбом. Для
                 кода выше блок4схема может выглядеть так:</p>
               <div class="text-manual__image-block">
-                <img src="assets/images/photo15.png" alt="photo15.png">
+                <img src="@/assets/img/theory_image/photo15.png" alt="photo15.png">
               </div>                
               <p>Условный оператор может включать не одну ветку, а две, реализуя тем самым полноценное ветвление.</p>
               <div class="text-manual__image-block">
-                <img src="assets/images/photo16.png" alt="photo16.png">
+                <img src="@/assets/img/theory_image/photo16.png" alt="photo16.png">
               </div>
               <p>В случае возврата логическим выражением False поток выполнения программы не
                 возвращается сразу в основную ветку. На случай False существует другой вложенный код,

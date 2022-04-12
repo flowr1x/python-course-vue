@@ -16,7 +16,7 @@
           обычно все называют аргументами.</p>
         <p>Рассмотрим схему и поясняющий ее пример:</p>
         <div class="text-manual__image-block">
-          <img src="assets/images/photo19.png" alt="photo19.png">
+          <img src="@/assets/img/theory_image/photo19.png" alt="photo19.png">
         </div>
         <p>Когда функция вызывается, то ей передаются аргументы. В примере указаны глобальные
           переменные num1 и num2. Однако на самом деле передаются не эти переменные, а их

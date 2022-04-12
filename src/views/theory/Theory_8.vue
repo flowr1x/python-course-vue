@@ -41,7 +41,7 @@
                 "происходит выход из цикла".</p>
               <p>Рассмотрите блоксхему цикла while.</p>
               <div class="text-manual__image-block">
-                <img src="assets/images/photo18.png" alt="photo18.png">
+                <img src="@/assets/img/theory_image/photo18.png" alt="photo18.png">
               </div>
               <p>На ней ярко-голубыми прямоугольниками обозначена основная ветка программы, ромбом –
                 заголовок цикла с логическим выражением, бирюзовым прямоугольником – тело цикла.</p>
