@@ -65,7 +65,7 @@ export default {
             { 
                 title: "Глава 4",
                 subtitle: "Ввод и вывод данных",
-                path: "/",
+                path: "/theory_4",
                 shortlinks: [
                     {title: "Данные и их типы", path: "/"},
                     {title: "Ввод данных. Функция input()", path: "/"},
@@ -74,7 +74,7 @@ export default {
             { 
                 title: "Глава 5",
                 subtitle: "Логические выражения и операторы",
-                path: "/",
+                path: "/theory_5",
                 shortlinks: [
                     {title: "Сложные логические выражения", path: "/"},
                     {title: "Операции в программировании", path: "/"},
@@ -85,7 +85,7 @@ export default {
             { 
                 title: "Глава 6",
                 subtitle: "Ветвление. Условный операторы",
-                path: "/",
+                path: "/theory_6",
                 shortlinks: [
                     {title: "Определение", path: "/"},
                     {title: "Условный оператор", path: "/"},
@@ -95,7 +95,7 @@ export default {
             { 
                 title: "Глава 7",
                 subtitle: "Ошибки и исключения. Обработка исключений",
-                path: "/",
+                path: "/theory_7",
                 shortlinks: [
                     {title: "Ошибки и исключения", path: "/"},
                     {title: "Обработка исключений. Оператор try-except", path: "/"},
@@ -105,7 +105,7 @@ export default {
             { 
                 title: "Глава 8",
                 subtitle: "Циклы в программировании. Цикл while",
-                path: "/",
+                path: "/theory_8",
                 shortlinks: [
                     {title: "Цикл while", path: "/"},
                     {title: "Обработка исключений. Оператор try-except", path: "/"},
@@ -115,7 +115,7 @@ export default {
             { 
                 title: "Глава 9",
                 subtitle: "Функции в программировании",
-                path: "/",
+                path: "/theory_9",
                 shortlinks: [
                     {title: "Определение Функции. Оператор def", path: "/"},
                     {title: "Вызов функции", path: "/"},
@@ -123,49 +123,49 @@ export default {
                 ]
             },
             { 
-                title: "Глава 11",
-                subtitle: "Возврат значений из функции. Оператор return",
-                path: "/",
+                title: "Глава 10",
+                subtitle: "Локальные и глобальные переменные",
+                path: "/theory_10",
                 shortlinks: [
                     {title: "Возврат нескольких значений", path: "/"},
                 ]
             },
             { 
-                title: "Глава 12",
-                subtitle: "Параметры и аргументы функции",
-                path: "/",
+                title: "Глава 11",
+                subtitle: "Возврат значений из функции. Оператор return",
+                path: "/theory_11",
                 shortlinks: [
                     {title: "Произвольное количество аргументов", path: "/"},
                 ]
             },
             { 
-                title: "Глава 13",
-                subtitle: "Встроенные функции",
-                path: "/",
+                title: "Глава 12",
+                subtitle: "Параметры и аргументы функции",
+                path: "/theory_12",
                 shortlinks: [
                     {title: "Функции для работы с символами", path: "/"},
                 ]
             },
             { 
-                title: "Глава 14",
-                subtitle: "Модуль",
-                path: "/",
+                title: "Глава 13",
+                subtitle: "Встроенные функции",
+                path: "/theory_13",
                 shortlinks: [
                     {title: "Ключевое слово Import", path: "/"},
                 ]
             },
             { 
-                title: "Глава 15",
+                title: "Глава 14",
                 subtitle: "Модуль",
-                path: "/",
+                path: "/theory_14",
                 shortlinks: [
                     {title: "Генератор псевдослучайных чисел - random", path: "/"},
                 ]
             },
             { 
-                title: "Глава 16",
+                title: "Глава 15",
                 subtitle: "Генератор псевдослучайных чисел - random",
-                path: "/",
+                path: "/theory_15",
                 shortlinks: [
                     {title: "Определение", path: "/"},
                     {title: "Функции целых чисел randint() и randrange()", path: "/"},
@@ -173,9 +173,9 @@ export default {
                 ]
             },
             { 
-                title: "Глава 17",
+                title: "Глава 16",
                 subtitle: "Списки",
-                path: "/",
+                path: "/theory_16",
                 shortlinks: [
                     {title: "Определение", path: "/"},
                     {title: "Пример: созданеи и заполнение списка", path: "/"},
@@ -183,9 +183,9 @@ export default {
                 ]
             },
             { 
-                title: "Глава 18",
+                title: "Глава 17",
                 subtitle: "Цикл for",
-                path: "/",
+                path: "/theory_17",
                 shortlinks: [
                     {title: "Функция range()", path: "/"},
                     {title: "Цикл for и range()", path: "/"},
@@ -193,9 +193,9 @@ export default {
                 ]
             },
             { 
-                title: "Глава 19",
+                title: "Глава 18",
                 subtitle: "Строки",
-                path: "/",
+                path: "/theory_18",
                 shortlinks: [
                     {title: "Определение", path: "/"},
                     {title: "Методы строк", path: "/"},
@@ -203,9 +203,9 @@ export default {
                 ]
             },
             { 
-                title: "Глава 20",
+                title: "Глава 19",
                 subtitle: "Кортеж",
-                path: "/",
+                path: "/theory_19",
                 shortlinks: [
                     {title: "Строки", path: "/"},
                     {title: "Основные команды", path: "/"},
