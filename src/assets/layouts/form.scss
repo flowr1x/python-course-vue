@@ -13,27 +13,18 @@
         flex-direction: column;
     }
     &__body {
-        padding: 30px;
+        box-shadow: 0 0 10px 4px $primary-sdw-color;
+        padding: 40px 30px;
         background: $bg-color;
     }
     &__title {
         display: flex;
         margin-bottom: 15px;
-        
-        span {
-            display: inline-block;
-        }
         > *:not(:last-child) {
             margin-right: 10px;
         }
-
-        label {
-            color: $text-color;
-            cursor: pointer;
-            
-            :hover {
-                color: $additional-color;
-            }
+        a {
+          color: inherit;
         }
     }
     &__input {
@@ -48,4 +39,8 @@
     &__button {
         margin-top: 25px;
     }
+}
+
+.invalid {
+  border-bottom: 1px solid $additional-color;
 }

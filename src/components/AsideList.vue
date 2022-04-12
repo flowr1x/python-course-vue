@@ -17,8 +17,5 @@
 export default {
     name: "aside-list",
     props: ["title", "subtitle", "path"],
-    data() {
-       
-    }
 }
 </script>
