@@ -1,61 +1,163 @@
 
-.form-login {
-  min-height: 100vh;
+.form__content {
   display: flex;
   justify-content: center;
   align-items: center;
-  &__header {
-    text-transform: uppercase;
-    font-size: 20px;
+  height: 100vh;
+  
+}
+.form__inner {
+    width: 800px;
+    height: 500px;
+    padding: 40px 0;
+    position: relative;
+}
+.form__block {
+  height: 100%;
+  background: $bg-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 45px rgba(0, 0, 0, 0.25);
+  
+}
+.block-item {
+  flex: 0 1 50%;
+  text-align: center;
+  &__title {
     margin-bottom: 20px;
-    color: $highlight-color;
-    font-weight: 600;
-    letter-spacing: 0.4px;
+    font-size: 16px;
     line-height: 1.2;
   }
-  &__form {
-      display: flex;
-      flex-direction: column;
-  }
-  &__body {
-      box-shadow: 0 0 20px 4px $primary-sdw-color;
-      padding: 40px 30px;
-      background: $bg-color;
-      max-width: 320px;
-      border-radius: 50px 0 50px 0;
-  }
-  &__title {
-      display: flex;
-      margin-bottom: 15px;
-      > *:not(:last-child) {
-          margin-right: 10px;
-      }
-      a {
-        color: inherit;
-      }
-  }
-  &__item:not(:last-child) {
-    margin-bottom: 20px;
-  }
-  &__input {
-      padding: 10px 15px;
-      background: none;
-      color: $text-color;
-      border-bottom: 1px solid $text-color;
-      display: block;
-      width: 100%;
-  }
-  &__input:not(:last-child) {
-      margin-bottom: 20px;
-  }
-  &__button {
-      margin-top: 25px;
-  }
-  &__register:hover {
-    color: $additional-color;
+  &__btn {
   }
 }
 
-.invalid {
-border-bottom: 1px solid $additional-color;
+// Block Form 
+
+.form__box {
+  height: 100%;
+  width: 50%;
+  box-shadow: 0px 0px 45px rgba(0, 0, 0, 0.25);
+  background: $primary-color;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: left .3s ease-in-out 0s;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+}
+.form__box_active {
+  left: 50%;
+  & .form_signin {
+    left: -100%;
+    transition-delay: 0s;
+  }
+  & .form_signup {
+    left: 0;
+    transition-delay: .25s;
+  }
+}
+
+.form {
+  width: 100%;
+  padding: 50px;
+  font-size: 16px;
+  position: absolute;
+  transition: .5s;
+  &_signin {
+    left: 0;
+    transition-delay: .25s;
+  }
+  &_signup {
+    left: 100%;
+    transition-delay: 0s;
+  }
+  &__title {
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 30px;
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  &__input {
+    background: none;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid $text-color;
+    font-size: inherit;
+    color: $text-color;
+    transition: .3s;
+    &::placeholder {
+      color: $text-color;
+    }
+    &:focus {
+      background: $text-color;
+      color: $primary-color;
+    }
+  }
+  &__btn {
+    cursor: pointer;
+  }
+  &__forgot {
+    color: $text-color;
+    &:hover {
+      color: $additional-color;
+    }
+  }
+  &__input_invalid {
+    border: 1px solid $additional-color;
+  }
+}
+
+// Responsive
+/* PC */
+@media (max-width: 1087px) {
+
+}
+/* Tablet */
+@media (max-width: 991.98px) {
+  .form__inner {
+    max-width: 400px;
+    height: 650px;
+    padding: 0;
+    margin: 0 15px;
+  }
+  .form__box {
+    width: 100%;
+    height: 500px;
+    box-shadow: none;
+    top: 0;
+    transition: 0.3s;
+  }
+  .form__box_active {
+    left: 0;
+    top: 150px;
+  }
+  .form__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .block-item {
+    flex: 0 1 auto;
+    width:100%;
+    text-align: center;
+    padding: 50px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+
+}
+
+/* MOBILE SMALL */
+@media (max-width: 479.98px) {
+   
 }

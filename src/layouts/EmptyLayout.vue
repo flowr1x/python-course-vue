@@ -1,7 +1,7 @@
 <template>
    <div class="wrapper">
-      <div class="form-login">
-        <router-view />
-      </div>
+        <div class="form__content">
+          <router-view />
+        </div>
     </div>
 </template>
