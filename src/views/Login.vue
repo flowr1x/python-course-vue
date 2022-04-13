@@ -12,26 +12,26 @@
     </div>
     <div class="form__box">
       <!-- Form Login -->
-      <form action="#" class="form form_signin" @submit.prevent="onSubmitLogin">
+      <form action="#" class="form form_signin" @submit.prevent="onSubmitLogUp">
           <h3 class="form__title">Вход</h3>
           <div class="form__item">
             <input type="text" 
               class="form__input" 
               placeholder="Email"
-              v-model="email"
+              v-model="login.email"
               :class="{'form__input_invalid': 
-                (v$.email.$dirty && v$.email.required.$invalid) || 
-                (v$.email.$dirty && v$.email.email.$invalid)
+                (v$.login.email.$dirty && v$.login.email.required.$invalid) || 
+                (v$.login.email.$dirty && v$.login.email.email.$invalid)
               }">
           </div>
           <div class="form__item">
             <input type="password" 
               class="form__input" 
               placeholder="Password"
-              v-model="password"
+              v-model="login.password"
               :class="{'form__input_invalid': 
-                (v$.password.$dirty && v$.password.required.$invalid) || 
-                (v$.password.$dirty && v$.password.minLength.$invalid)
+                (v$.login.password.$dirty && v$.login.password.required.$invalid) || 
+                (v$.login.password.$dirty && v$.login.password.minLength.$invalid)
               }">
           </div>
           <div class="form__item">
@@ -42,7 +42,7 @@
           </div>
       </form>
       <!-- Form Register -->
-       <form action="#" class="form form_signup" @submit.prevent="onSubmitRegister">
+       <form action="#" class="form form_signup" @submit.prevent="onSubmitLogIn">
           <h3 class="form__title">Регистрация</h3>
           <div class="form__item">
             <input type="text" 
@@ -117,8 +117,10 @@ export default {
     }
   },
   data: () => ({
-    email: "",
-    password: "",
+    login: {
+      email: "",
+      password: "",
+    },
     register: {
       email: "",
       group: "",
@@ -130,8 +132,10 @@ export default {
   }),
   validations () {
     return {
-      email: { required, email }, 
-      password: { required, minLength: minLength(6) },
+      login: {
+        email: { required, email }, 
+        password: { required, minLength: minLength(6) },
+      },
       register: {
         email: { required, email },
         group: { required },
@@ -143,24 +147,19 @@ export default {
     }
   },
   methods: {
-    onSubmitLogin() {
-      if (this.v$.$invalid) {
-        this.v$.$touch();
+    onSubmitLogUp() {
+      if (this.v$.login.$invalid) {
+        this.v$.login.$touch();
         return;
       }
-      const formData = {
-        email: this.email,
-        password: this.password
-      };
+      console.log(this.login);
       this.$router.push("/");
     },
-    onSubmitRegister() {
-      
-      if (this.v$.$invalid) {
-        this.v$.$touch();
+    onSubmitLogIn() {
+      if (this.v$.register.$invalid) {
+        this.v$.register.$touch();
         return;
       }
-      console.log(this.v$.register.confirmPassword.sameAs);
       console.log(this.register);
       this.$router.push("/");
     },
