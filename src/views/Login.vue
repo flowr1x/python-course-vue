@@ -12,7 +12,7 @@
     </div>
     <div class="form__box">
       <!-- Form Login -->
-      <form action="#" class="form form_signin" @submit.prevent="onSubmit">
+      <form action="#" class="form form_signin" @submit.prevent="onSubmitLogin">
           <h3 class="form__title">Вход</h3>
           <div class="form__item">
             <input type="text" 
@@ -42,25 +42,60 @@
           </div>
       </form>
       <!-- Form Register -->
-       <form action="#" class="form form_signup">
+       <form action="#" class="form form_signup" @submit.prevent="onSubmitRegister">
           <h3 class="form__title">Регистрация</h3>
           <div class="form__item">
-            <input type="email" class="form__input" placeholder="Email">
+            <input type="text" 
+              class="form__input" 
+              placeholder="Имя"
+              v-model="register.firstName"
+              :class="{'form__input_invalid': 
+                (v$.register.firstName.$dirty && v$.register.firstName.required.$invalid)}">
           </div>
           <div class="form__item">
-            <input type="text" class="form__input" placeholder="Имя">
+            <input type="text" 
+              class="form__input" 
+              placeholder="Фамилия"
+              v-model="register.lastName"
+              :class="{'form__input_invalid': 
+                (v$.register.lastName.$dirty && v$.register.lastName.required.$invalid)}">
           </div>
           <div class="form__item">
-            <input type="text" class="form__input" placeholder="Фамилия">
+            <input type="text" 
+              class="form__input" 
+              placeholder="Номер группы"
+              v-model="register.group"
+              :class="{'form__input_invalid': 
+                (v$.register.group.$dirty && v$.register.group.required.$invalid)}">
           </div>
           <div class="form__item">
-            <input type="text" class="form__input" placeholder="Номер группы">
+            <input type="email" 
+              class="form__input" 
+              placeholder="Email"
+              v-model="register.email"
+              :class="{'form__input_invalid': 
+                (v$.register.email.$dirty && v$.register.email.required.$invalid) || 
+                (v$.register.email.$dirty && v$.register.email.email.$invalid)
+              }">
           </div>
           <div class="form__item">
-            <input type="password" class="form__input" placeholder="Пароль">
+            <input type="password" 
+              class="form__input" 
+              placeholder="Пароль"
+              v-model="register.password"
+              :class="{'form__input_invalid': 
+                (v$.register.password.$dirty && v$.register.password.required.$invalid) || 
+                (v$.register.password.$dirty && v$.register.password.minLength.$invalid)
+              }">
           </div>
           <div class="form__item">
-            <input type="password" class="form__input" placeholder="Повторите пароль">
+            <input type="password" 
+              class="form__input" 
+              placeholder="Пароль"
+              v-model="register.confirmPassword"
+              :class="{'form__input_invalid': 
+                (v$.register.confirmPassword.$dirty && v$.register.confirmPassword.required.$invalid) || 
+                (v$.register.confirmPassword.$dirty && v$.register.confirmPassword.sameAs.$invalid)}">
           </div>
           <div class="form__item">
             <button type="submit" class="form__btn btn">Зарегистрироваться</button>
@@ -72,7 +107,7 @@
 
 <script>
 import useVuelidate from '@vuelidate/core'
-import { required, email, minLength } from '@vuelidate/validators'
+import { required, email, minLength, sameAs } from '@vuelidate/validators'
 
 export default {
   name: "login",
@@ -83,17 +118,32 @@ export default {
   },
   data: () => ({
     email: "",
-    password: ""
+    password: "",
+    register: {
+      email: "",
+      group: "",
+      firstName: "",
+      lastName: "",
+      password: "",
+      confirmPassword: "",
+    }
   }),
   validations () {
     return {
       email: { required, email }, 
       password: { required, minLength: minLength(6) },
+      register: {
+        email: { required, email },
+        group: { required },
+        firstName: { required },
+        lastName: { required },
+        password: { required, minLength: minLength(6) },
+        confirmPassword: { required, sameAs: sameAs(this.register.password) }
+      }
     }
   },
   methods: {
-    onSubmit() {
-       console.log("1");
+    onSubmitLogin() {
       if (this.v$.$invalid) {
         this.v$.$touch();
         return;
@@ -102,6 +152,16 @@ export default {
         email: this.email,
         password: this.password
       };
+      this.$router.push("/");
+    },
+    onSubmitRegister() {
+      
+      if (this.v$.$invalid) {
+        this.v$.$touch();
+        return;
+      }
+      console.log(this.v$.register.confirmPassword.sameAs);
+      console.log(this.register);
       this.$router.push("/");
     },
     onClickLogOut(event) {
