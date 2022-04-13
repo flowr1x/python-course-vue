@@ -82,6 +82,9 @@
     line-height: 1.2;
     margin-bottom: 30px;
   }
+  &__item {
+    position: relative;
+  }
   &__item:not(:last-child) {
     margin-bottom: 10px;
   }
@@ -93,6 +96,7 @@
     font-size: inherit;
     color: $text-color;
     transition: .3s;
+    
     &::placeholder {
       color: $text-color;
     }
@@ -100,6 +104,14 @@
       background: $text-color;
       color: $primary-color;
     }
+    &:focus + #checkbox-label > .svg-icon__eye {
+      path, polygon, rect {
+        fill: $primary-color;
+    }
+    }
+  }
+  &__input_password {
+    padding-right: 40px;
   }
   &__btn {
     cursor: pointer;
@@ -115,6 +127,18 @@
   }
 }
 
+// Eye on field password
+#checkbox-label {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 15px;
+  top: 15%;
+  display: block;
+}
+#checkbox-password {
+  display: none;
+}
 // Responsive
 /* PC */
 @media (max-width: 1087px) {
