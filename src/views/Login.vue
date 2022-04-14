@@ -63,7 +63,7 @@
           </div>
       </form>
       <!-- Form Register -->
-       <form action="#" class="form form_signup" @submit.prevent="onSubmitLogIn">
+       <form action="#" class="form form_signup">
           <h3 class="form__title">Регистрация</h3>
           <div class="form__item">
             <input type="text" 
@@ -85,6 +85,7 @@
             <input type="text" 
               class="form__input" 
               placeholder="Номер группы"
+              v-maska="['##.##.##-#-##', '##.##.##-##-##',]"
               v-model="register.group"
               :class="{'form__input_invalid': 
                 (v$.register.group.$dirty && v$.register.group.required.$invalid)}">
@@ -211,16 +212,6 @@ export default {
     onClickLogIn(event) {
       document.querySelector(".form__box").classList.remove("form__box_active");
     },
-    showPassword() {
-      const collectionPassword = document.querySelectorAll(".form__input_password");
-      for (let password of collectionPassword) {
-        if (password.getAttribute("type") == "password") {
-          password.setAttribute("type", "text");
-        } else {
-          password.setAttribute("type", "password");
-        }
-      }     
-    }
   }
 }
 </script>

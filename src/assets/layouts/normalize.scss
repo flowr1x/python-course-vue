@@ -22,6 +22,10 @@ select {
 select::-ms-expand {
     display: none;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
 :focus,:active { outline: none;}
 a:focus, a:active { outline: none; }
 nav, footer, header, aside {display: block;}
