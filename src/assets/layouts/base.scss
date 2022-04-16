@@ -1,6 +1,8 @@
 /*
   ========  =MAIN CONFIG= ======== 
 */
+$header-size: 80px;
+
 html,
 body {
     height: 100vh;
@@ -12,6 +14,20 @@ body {
 
     // Monserrat 
     // Bebass- заголовки
+}
+
+.svg-icon {
+  width: 32px;
+  height: 32px;
+
+  path, polygon, rect {
+      fill: $text-color;
+  }
+
+  circle {
+      stroke: $text-color;
+      stroke-width: 1;
+  }
 }
 
 .wrapper {
@@ -28,5 +44,6 @@ body {
 }
 
 .page {
+    padding-top: $header-size;
     flex: 1 1 auto;
 }
