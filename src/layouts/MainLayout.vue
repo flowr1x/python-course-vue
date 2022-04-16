@@ -20,7 +20,10 @@
       </section>
       <section class="page__manual manual">
         <div class="manual__container">
-          <h2 class="manual__title">Содержание</h2>
+          <div class="manual__title">
+            <h2>Содержание </h2>
+            <icon-burger/>
+          </div>
           <div class="manual__content">
             <aside class="manual__aside">
               <nav class="manual__nav nav-aside">

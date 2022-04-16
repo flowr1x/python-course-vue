@@ -3,6 +3,11 @@
 */
 $header-size: 80px;
 
+%shadow {
+  box-shadow: 2px 9px 50px hsla(0, 0, 0, .1),
+        -2px 9px 60px hsla(0, 0, 0, .1);
+}
+
 html,
 body {
     height: 100vh;
@@ -27,6 +32,49 @@ body {
   circle {
       stroke: $text-color;
       stroke-width: 1;
+  }
+}
+
+.icon-menu__burger {
+  display: block;
+  cursor: pointer;
+  &::before {
+    content: "";
+    height: 80px;
+    width: 57px;
+    position: absolute;
+    top: -100%;
+    left: 0;
+  }
+  span {
+    position: relative;
+    @extend %menu__icon;
+  }
+  span::before, span::after {
+    content: "";
+    @extend %menu__icon;  
+    position: absolute;
+    transition: all .3s ease 0s;   
+  }
+  span::before {
+    top: -7px;
+  }
+  span::after {
+    top: 7px;
+  }
+  &.menu-icon_active {
+    &::before {
+      top: -1px;
+    }
+    span {
+      background: transparent;
+      &:before {
+        transform: rotate(45deg) translate(5px, 6px);
+      }
+      &:after {
+        transform: rotate(-45deg) translate(4px, -5px);
+      }
+    }
   }
 }
 

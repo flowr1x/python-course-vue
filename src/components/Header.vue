@@ -3,11 +3,7 @@
   <header class="header">
     <div class="header__content">
       <div class="header__logo logo-header">
-        <div class="logo-header__menu-icon" 
-          @click="isOpen = !isOpen" 
-          :class="{'menu-icon_active': isOpen}">
-          <span></span>
-        </div>
+        <icon-burger class="logo-header__menu-icon" @onClickBurger="currentStateBurger" />
         <router-link teg="a" :to="'/'" class="logo-header__link">
             <div class="logo-header__text">Pyth</div>
             <svg class="svg-icon logo-header__icon" 
@@ -54,7 +50,7 @@
             <div class="logo-header__text">n</div>
         </router-link>
       </div>
-      <div class="header__menu menu" :class="{menu_active:isOpen}">
+      <div class="header__menu menu" :class="{menu_active:isMenuBurger}">
         <nav class="menu__nav">
           <ul class="menu__list">
             <li class="menu__item" v-for="menu in headerMenuList" :key="menu.path">
@@ -92,12 +88,16 @@ export default {
         {name: "Практические работы", path: "/practice"},
         {name: "Видеоуроки", path: "/video"},
       ],
-      isOpen: false,
       lastScroll: 0,
       defaultScroll: 100,
+      isMenuBurger: false,
     }
   },
   methods: {
+    currentStateBurger(state) {
+      this.isMenuBurger = state;
+      console.log();
+    },
     scrollNow: () => window.pageYOffset || document.documentElement.scrollTop,
     headerContainerHide: () => document.querySelector(".header__content").classList.contains("header__content_hide"),
     showHeaderDuringScroll(event) {
@@ -107,6 +107,7 @@ export default {
           (this.lastScroll < this.scrollNow()) && 
           !this.headerContainerHide()) {
         headerContent.classList.add("header__content_hide");
+        this.isMenuBurger = false;
       } else if (this.scrollNow() < this.lastScroll && this.headerContainerHide()){
         headerContent.classList.remove("header__content_hide");
       }
