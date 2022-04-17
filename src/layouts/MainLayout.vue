@@ -22,18 +22,12 @@
         <div class="manual__container">
           <div class="manual__title">
             <h2>Содержание </h2>
-            <icon-burger/>
+            <icon-burger @onClickBurger="getAsideHide"/>
           </div>
-          <div class="manual__content">
-            <aside class="manual__aside">
+          <div class="manual__content ">
+            <aside class="manual__aside" :class="{'manual__aside_hide': !isActive}">
               <nav class="manual__nav nav-aside">
-                <div class="nav-aside__button"
-                  @click="isActive = !isActive" 
-                  :class="{'nav-aside__button_active': isActive}"
-                >
-                  Меню раздела <span></span>
-                </div>
-                <div class="nav-aside__body" :class="{'nav-aside__body_active': isActive}">
+                <div class="nav-aside__body" :class="{'nav-aside__body_active': !isActive}">
                   <aside-list v-for="item in listManualItem"
                     :key="item.path"
                     :title="item.title"
@@ -43,7 +37,7 @@
                 </div>
               </nav>
             </aside>
-            <div class="manual__list list-manual">
+            <div class="manual__list list-manual" :class="{'list-manual_fill': !isActive}">
               <router-view />
             </div>
           </div>
@@ -165,6 +159,11 @@ export default {
                 path: "/theory_19",
             },
           ]
+    }
+  },
+  methods: {
+    getAsideHide(isOpen) {
+      this.isActive = isOpen;
     }
   }
 }
