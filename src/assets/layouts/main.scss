@@ -234,20 +234,39 @@
     }
   }
 }
-
 .manual__btn-top {
-    text-align: right;
-    margin: 10px 0;
-}
-#btn-scroll-top {
-  text-align: center;
-  padding: 10px;
-  background-color: $additional-color;
+  height: 50px;
+  width: 50px;
+  border:2px solid $highlight-color;
   display: inline-block;
   cursor: pointer;
   transition: all .3s ease 0s;
+ 
+  position: fixed;
+  bottom: 100%;
+  right: 0px;
+  z-index: 100;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: .7;
+  visibility: hidden;
   &:hover {
-    background-color: rgba($additional-color, 0.4);
+    box-shadow: inset 0 0 0 2em $highlight-color;
+    opacity: 1;
+    & svg {
+      margin-bottom: 10px
+    }
+  }
+  & svg {
+    transition: all .3s ease 0s;
+    transform: rotate(-90deg);
+  }
+  &_hide {
+    bottom: 0px;
+    visibility: visible;
   }
 }
 
