@@ -1,9 +1,9 @@
 <template>
-  <GlobalEvents @scroll="showHeaderDuringScroll"/>
+  <GlobalEvents @scroll="showHeaderDuringScroll" @click="onClick"/>
   <header class="header">
     <div class="header__content">
       <div class="header__logo logo-header">
-        <icon-burger class="logo-header__menu-icon" @onClickBurger="currentStateBurger" />
+        <icon-burger :isActive="isMenuBurger" class="logo-header__menu-icon" id="header__menu-burger" />
         <router-link teg="a" :to="'/'" class="logo-header__link">
             <div class="logo-header__text">Pyth</div>
             <svg class="svg-icon logo-header__icon" 
@@ -94,10 +94,6 @@ export default {
     }
   },
   methods: {
-    currentStateBurger(state) {
-      this.isMenuBurger = state;
-      console.log();
-    },
     scrollNow: () => window.pageYOffset || document.documentElement.scrollTop,
     headerContainerHide: () => document.querySelector(".header__content").classList.contains("header__content_hide"),
     showHeaderDuringScroll(event) {
@@ -113,6 +109,16 @@ export default {
       }
         this.lastScroll = this.scrollNow();
     },
+    onClick(event) {
+      const click = event.composedPath().includes(document.querySelector(".menu"));
+      const menuIcon = event.target.closest("#header__menu-burger");
+     
+      if ((!click && !menuIcon && this.isMenuBurger) || (menuIcon && this.isMenuBurger)) {
+        this.isMenuBurger = false;
+      } else if (menuIcon && !this.isMenuBurger) {
+        this.isMenuBurger = true;
+      }
+      } 
   }
 }
 </script>
