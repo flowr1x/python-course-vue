@@ -23,7 +23,7 @@
         <div class="manual__container">
           <div class="manual__title">
             <h2>Содержание </h2>
-            <icon-burger id="menu__icon_aside" @onClickBurger="getAsideHide"/>
+            <icon-burger id="menu__icon_aside" :isActive="isActive" @click="isActive = !isActive"/>
           </div>
           <div class="manual__content ">
             <aside class="manual__aside" :class="{'manual__aside_hide': !isActive}">
@@ -170,9 +170,6 @@ export default {
     }
   },
   methods: {
-    getAsideHide(isOpen) {
-      this.isActive = isOpen;
-    },
     showButtonToTopHide(event) {
       if (this.offestBtnTop < window.pageYOffset && !this.isActiveBtnToTop) {
         this.isActiveBtnToTop = true;

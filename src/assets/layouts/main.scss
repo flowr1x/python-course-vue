@@ -157,20 +157,39 @@
   }
   
   &__item {
+    display: block;
     transition: background .3s ease 0s;
-
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
     a {
-      padding: 20px;
       color: $text-color;
       display: block;
+      padding: 20px;
     }   
 
-    :hover {
+    &:hover {
       background: $primary-sdw-color;
     }
   }
   &__chapter {
       margin-bottom: 10px;
+  }
+}
+
+.wave {
+  background-color: $text-color;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: wave .5s linear;
+  pointer-events: none;
+  position: absolute;
+}
+
+@keyframes wave {
+  100% {
+   transform: scale(2);
+   opacity: 0;
   }
 }
 

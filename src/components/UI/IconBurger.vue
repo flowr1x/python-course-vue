@@ -15,11 +15,5 @@ export default {
       isOpen: false,
     }
   },
-  methods: {
-    onClickBurger() {
-      this.isOpen = !this.isOpen;
-      this.$emit("onClickBurger", this.isOpen);
-    }
-  }
 }
 </script>
