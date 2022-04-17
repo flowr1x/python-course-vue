@@ -3,8 +3,10 @@
         <router-link
             tag="li"
             :to="path"
+            active-class="nav-aside__item_active"
             class="nav-aside__item" 
             @click="onClickBtnInWave"
+            exact
             >
             <a href="#">
                 <h4 class="nav-aside__chapter">{{ title }}</h4>
