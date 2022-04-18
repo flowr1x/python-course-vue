@@ -112,8 +112,9 @@ export default {
     onClick(event) {
       const click = event.composedPath().includes(document.querySelector(".menu"));
       const menuIcon = event.target.closest("#header__menu-burger");
-     
-      if ((!click && !menuIcon && this.isMenuBurger) || (menuIcon && this.isMenuBurger)) {
+      const menuLink = event.target.closest(".menu__link");
+
+      if ((!click && !menuIcon && this.isMenuBurger) || (menuIcon && this.isMenuBurger) || (click && menuLink)) {
         this.isMenuBurger = false;
       } else if (menuIcon && !this.isMenuBurger) {
         this.isMenuBurger = true;

@@ -30,6 +30,7 @@
               <nav class="manual__nav nav-aside">
                 <div class="nav-aside__body" :class="{'nav-aside__body_active': !isActive}">
                   <aside-list v-for="item in listManualItem"
+                    class="nav-aside__item" 
                     :key="item.path"
                     :title="item.title"
                     :subtitle="item.subtitle"
@@ -186,7 +187,7 @@ export default {
         window.scrollBy(0, -60);
         setTimeout(this.scrollToTop, 0);
       } 
-    }
+    },
   }
 }
 </script>

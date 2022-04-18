@@ -128,7 +128,7 @@
     a {
       color: $text-color;
       display: block;
-      padding: 20px;
+      padding: 10px;
     }   
 
     &:hover {
@@ -140,22 +140,6 @@
   }
   &__chapter {
       margin-bottom: 10px;
-  }
-}
-
-.wave {
-  background-color: rgba($text-color, .5);
-  border-radius: 50%;
-  transform: scale(0);
-  animation: wave .5s linear;
-  pointer-events: none;
-  position: absolute;
-}
-
-@keyframes wave {
-  100% {
-   transform: scale(2);
-   opacity: 0;
   }
 }
 
@@ -199,7 +183,33 @@
 }
 
 .list-sub {
-  margin-bottom: 20px;
+  margin: 0 0px 20px 15px;
+  &__item {
+    padding: 0 0 4px 16px;
+    position: relative;
+    &::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: $text-color;
+      position: absolute;
+      top: 4px;
+      left: 0;
+      transition: all .3s ease 0s;
+    }
+    &::after {
+      content: "";
+
+    }
+    &:hover {
+      &::before {
+        background: $highlight-color;
+        border-radius: 0;
+        right: 0;
+      }
+    }
+  }
 
   &__item:not(:last-child) {
       margin-bottom: 35px;
@@ -213,10 +223,6 @@
 
   &__link {
     color: $text-color;
-    &:hover {
-      color: $text-color;
-      text-decoration: underline;
-    }
   }
 }
 .manual__btn-top {
