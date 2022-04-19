@@ -9,7 +9,7 @@
         <ul class="list-manual__list list-sub">
           <li class="list-sub__item" v-for="li in item.shortlinks" :key="li.path">
             <div class="list-sub__content">
-              <router-link :to="li.path" class="list-sub__link">{{ li.title }}</router-link>
+              <router-link :to="{path:li.path, hash: li.link}" class="list-sub__link">{{ li.title }}</router-link>
             </div>
           </li>
         </ul>

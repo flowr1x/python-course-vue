@@ -10,7 +10,7 @@
         <button class="block-item__btn btn" @click="onClickLogOut">Зарегистрироваться</button>
       </section>
     </div>
-    <div class="form__box">
+    <div class="form__box" ref="formBox">
       <!-- Form Login -->
       <form action="#" class="form form_signin" @submit.prevent="onSubmitLogUp">
           <h3 class="form__title">Вход</h3>
@@ -204,10 +204,10 @@ export default {
       this.$router.push("/");
     },
     onClickLogOut(event) {
-      document.querySelector(".form__box").classList.add("form__box_active");
+      this.$refs.formBox.classList.add("form__box_active");
     },
     onClickLogIn(event) {
-      document.querySelector(".form__box").classList.remove("form__box_active");
+      this.$refs.formBox.classList.remove("form__box_active");
     },
     showPassword() {
       const collectionPassword = document.querySelectorAll(".form__input_password");

@@ -7,7 +7,7 @@
     <div class="text-manual__body">
       <div class="text-manual__content">
         <section class="text-manual__doc-section">
-          <h2 class="text-manual__section-title">Программа. Язык программирования</h2>
+          <h2 id="title1" class="text-manual__section-title">Программа. Язык программирования</h2>
           <div class="text-manual__section-block">
             <p>Программу можно представить как набор последовательных команд (алгоритм) для объекта
               (исполнителя), который должен их выполнить для достижения определенной цели. Так
@@ -27,7 +27,7 @@
           </div> 
         </section>
         <section class="text-manual__doc-section">
-          <h2 class="text-manual__section-title">
+          <h2 id="title2" class="text-manual__section-title">
             Основные этапы исторического развития языков программирования
           </h2>
           <div class="text-manual__section-block">
@@ -81,7 +81,7 @@
           </div>
         </section>
         <section class="text-manual__doc-section">
-          <h2 class="text-manual__section-title">Разнообразие языков программирования</h2>
+          <h2 id="title3" class="text-manual__section-title">Разнообразие языков программирования</h2>
           <div class="text-manual__section-block">
             <p>В настоящее время существует множество различающихся и похожих между собой языков
               программирования. Причина такого явления становится понятна, если представить то
@@ -103,7 +103,7 @@
           </div>
         </section>
         <section class="text-manual__doc-section">
-          <h2 class="text-manual__section-title">Трансляция</h2>
+          <h2 id="title4" class="text-manual__section-title">Трансляция</h2>
           <div class="text-manual__section-block">
             <p>Ранее было сказано, что для перевода кода с языка программирования высокого уровня на
               машинный язык требуется специальная программа – транслятор.

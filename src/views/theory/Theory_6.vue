@@ -6,9 +6,8 @@
     </div>
     <div class="text-manual__body">
       <div class="text-manual__content">
-        <div class="content-inner">
-          <section  class="text-manual__doc-section">
-            <h2 class="text-manual__section-title">Определение</h2>
+        <section  class="text-manual__doc-section">
+            <h2 id="title1" class="text-manual__section-title">Определение</h2>
             <div class="text-manual__section-block">
               <p>Ход выполнения программы может быть <em>линейным</em>, то есть таким, когда выражения
                 выполняются друг за другом, начиная с первого и заканчивая последним. Ни одна строка
@@ -160,8 +159,7 @@ print(b - a)</code></pre>
  print(b - a)
 </code></pre>
               </div> 
-          </section>
-        </div>
+        </section>
       </div>
     </div>              
   </div>         

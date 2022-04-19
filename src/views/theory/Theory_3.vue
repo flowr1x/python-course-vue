@@ -8,7 +8,7 @@
       <div class="text-manual__content">
         <div class="content-inner">
           <section  class="text-manual__doc-section">
-            <h2 class="text-manual__section-title">Данные и их типы</h2>
+            <h2 id="title1" class="text-manual__section-title">Данные и их типы</h2>
             <div class="text-manual__section-block">
               <p>В реальной жизни мы совершаем различные действия над окружающими нас предметами,
                   или объектами. Мы меняем их свойства, наделяем новыми функциями. По аналогии с этим
@@ -40,7 +40,7 @@
             </div> 
           </section>
           <section class="text-manual__doc-section">
-            <h2 class="text-manual__section-title">Операции в программировании</h2>
+            <h2 id="title2" class="text-manual__section-title">Операции в программировании</h2>
             <div class="text-manual__section-block">
               <p><b>Операция</b> – это выполнение каких-либо действий над данными, которые в данном случае
                   именуют <b>операндами</b>. Само действие выполняет <b>оператор</b> – специальный инструмент. Если
@@ -66,8 +66,8 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'</code></pre>
                     типов int и str</p>
             </div>
           </section>
-          <section  class="text-manual__doc-section">
-            <h2 class="text-manual__section-title">Изменение типов данных</h2>
+          <section class="text-manual__doc-section">
+            <h2 id="title3" class="text-manual__section-title">Изменение типов данных</h2>
             <div class="text-manual__section-block">
               <p>Приведенную выше операцию все4таки можно выполнить, если превратить число 1 в строку
                   "1". Для изменения одних типов данных в другие в языке Python предусмотрен ряд
@@ -100,8 +100,8 @@ ValueError: invalid literal for int() with base 10: 'hi'</code></pre>
                     места их употребления, надо изучить программирование глубже.</p>
             </div>
           </section>
-          <section  class="text-manual__doc-section">
-            <h2 class="text-manual__section-title">Переменные</h2>
+          <section class="text-manual__doc-section">
+            <h2 id="title4" class="text-manual__section-title">Переменные</h2>
             <div class="text-manual__section-block">
               <p>Данные хранятся в ячейках памяти компьютера. Когда мы вводим число, оно помещается в
                 какую4то ячейку памяти. Но как потом узнать, куда именно? Как впоследствии обращаться к

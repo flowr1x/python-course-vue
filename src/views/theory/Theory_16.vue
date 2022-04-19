@@ -6,6 +6,7 @@
     </div>
     <div class="text-manual__body">
       <section class="text-manual__doc-section">
+        <h2 id="title1" class="text-manual__section-title">Определение списка</h2>
         <div class="text-manual__section-block">
           <p>Список в Python – это встроенный тип (класс) данных, представляющий собой одну из
             разновидностей структур данных. Структуру данных можно представить как сложную
@@ -20,6 +21,11 @@
             только строки. Список также может содержать элементы только одного типа, что делает его
             внешне неотличимым от массива. Но вполне допустимо, чтобы в одном списке содержались
             как числа, так и строки, а также что4нибудь еще.</p>
+          </div> 
+      </section>
+      <section class="text-manual__doc-section">
+        <h2 id="title2" class="text-manual__section-title">Пример: создания и заполнение списка</h2>
+        <div class="text-manual__section-block">
           <p>Создавать списки можно разными способами. Создадим его простым перечисление
             элементов:</p>
           <pre><code class="python">>>> a = [12, 3.85, "black", -4]

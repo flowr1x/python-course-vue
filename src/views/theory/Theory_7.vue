@@ -6,9 +6,8 @@
     </div>
     <div class="text-manual__body">
       <div class="text-manual__content">
-        <div class="content-inner">
-          <section  class="text-manual__doc-section">
-            <h2 class="text-manual__section-title">Ошибки и исключения</h2>
+        <section  class="text-manual__doc-section">
+            <h2 id="title1" class="text-manual__section-title">Ошибки и исключения</h2>
             <div class="text-manual__section-block">
               <p>В любой, особенно большой, программе могут возникать ошибки, приводящие к ее
                   неработоспособности или к тому, что программа делает не то, что должна. Причин
@@ -81,9 +80,9 @@ Traceback (most recent call last):
  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 ZeroDivisionError: division by zero</code></pre>
             </div> 
-          </section>
-          <section  class="text-manual__doc-section">
-            <h2 class="text-manual__section-title">Обработка исключений. Оператор try-except</h2>
+        </section>
+        <section class="text-manual__doc-section">
+            <h2 id="title2" class="text-manual__section-title">Обработка исключений. Оператор try-except</h2>
             <div class="text-manual__section-block">
               <p>Когда ошибки в программе возникают в процессе написания кода или его тестирования, то
                   код исправляется программистом так, чтобы ошибок не возникало. Однако нередко действия
@@ -223,8 +222,7 @@ except ValueError:
 …</code></pre>
               <p>Здесь в тело except вложен свой внутренний обработчик исключений.</p>
           </div>
-          </section>
-        </div>
+        </section>
       </div>
     </div>              
   </div>

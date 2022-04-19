@@ -17,6 +17,7 @@ const routes = [
   {
     path: "/theory_1",
     name: "theory_1",
+    hash: "div",
     meta: { layout: "main" },
     component: () => import("../views/theory/Theory_1.vue")
   },
@@ -144,12 +145,21 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes,
   scrollBehavior(to, from, savedPosition) {
-    return {
-      x: 0, y: 0
+    if (to.hash) {
+      return {
+        top: 10,
+        el: to.hash,
+        behavior: "smooth",
+      }
     }
-  }
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0, left: 0 }
+    }
+  },
+  routes,
 })
 
 export default router

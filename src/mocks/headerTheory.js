@@ -4,10 +4,10 @@ export default [
         subtitle: "Краткая история языков программирования",
         path: "/theory_1",
         shortlinks: [
-            {title: "Программа. Язык программирования", path: "/"},
-            {title: "Основные этапы исторического развития языков программирования", path: "/"},
-            {title: "Разнообразия языков программирования", path: "/"},
-            {title: "Трансляция", path: "/"},
+            {title: "Программа. Язык программирования", path: "/theory_1", link: "#title1"},
+            {title: "Основные этапы исторического развития языков программирования", path: "/theory_1", link: "#title2"},
+            {title: "Разнообразия языков программирования", path: "/theory_1", link: "#title3"},
+            {title: "Трансляция", path: "/theory_1", link: "#title4"},
         ]
     },
     { 
@@ -15,10 +15,10 @@ export default [
         subtitle: "Краткая историческая справка",
         path: "/theory_2",
         shortlinks: [
-            {title: "Краткая историческая справка", path: "/"},
-            {title: "Основные особенности языка", path: "/"},
-            {title: "Дзен Питона", path: "/"},
-            {title: "Как писать программы на Python", path: "/"},
+            {title: "Краткая историческая справка", path: "/theory_2", link: "#title1"},
+            {title: "Основные особенности языка", path: "/theory_2", link: "#title2"},
+            {title: "Дзен Питона", path: "/theory_2", link: "#title3"},
+            {title: "Как писать программы на Python", path: "/theory_2", link: "#title4"},
         ]
     },
     { 
@@ -26,10 +26,10 @@ export default [
         subtitle: "Типы данных. Переменные",
         path: "/theory_3",
         shortlinks: [
-            {title: "Данные и их типы", path: "/"},
-            {title: "Операции в программировании", path: "/"},
-            {title: "Изменение типов данных", path: "/"},
-            {title: "Переменные", path: "/"},
+            {title: "Данные и их типы", path: "/theory_3", link: "#title1"},
+            {title: "Операции в программировании", path: "/theory_3", link: "#title2"},
+            {title: "Изменение типов данных", path: "/theory_3", link: "#title3"},
+            {title: "Переменные", path: "/theory_3", link: "#title4"},
         ]
     },
     { 
@@ -37,8 +37,8 @@ export default [
         subtitle: "Ввод и вывод данных",
         path: "/theory_4",
         shortlinks: [
-            {title: "Данные и их типы", path: "/"},
-            {title: "Ввод данных. Функция input()", path: "/"},
+            {title: "Данные и их типы", path: "/theory_4", link: "#title1"},
+            {title: "Ввод данных. Функция input()", path: "/theory_4", link: "#title2"},
         ]
     },
     { 
@@ -46,10 +46,9 @@ export default [
         subtitle: "Логические выражения и операторы",
         path: "/theory_5",
         shortlinks: [
-            {title: "Сложные логические выражения", path: "/"},
-            {title: "Операции в программировании", path: "/"},
-            {title: "Изменение типов данных", path: "/"},
-            {title: "Переменные", path: "/"},
+            {title: "Логические выражения и логический тип данных", path: "/theory_5", link: "#title1"},
+            {title: "Логические операторы", path: "/theory_5", link: "#title2"},
+            {title: "Сложные логические выражения", path: "/theory_5", link: "#title3"},
         ]
     },
     { 
@@ -57,9 +56,9 @@ export default [
         subtitle: "Ветвление. Условный операторы",
         path: "/theory_6",
         shortlinks: [
-            {title: "Определение", path: "/"},
-            {title: "Условный оператор", path: "/"},
-            {title: "Множественное ветвление: if-elif-else", path: "/"},
+            {title: "Определение", path: "/theory_6", link: "#title1"},
+            {title: "Условный оператор", path: "/theory_6", link: "#title2"},
+            {title: "Множественное ветвление: if-elif-else", path: "/theory_6", link: "#title3"},
         ]
     },
     { 
@@ -67,9 +66,8 @@ export default [
         subtitle: "Ошибки и исключения. Обработка исключений",
         path: "/theory_7",
         shortlinks: [
-            {title: "Ошибки и исключения", path: "/"},
-            {title: "Обработка исключений. Оператор try-except", path: "/"},
-            {title: "Множественное ветвление: if-elif-else", path: "/"},
+            {title: "Ошибки и исключения", path: "/theory_7", link: "#title1"},
+            {title: "Обработка исключений. Оператор try-except", path: "/theory_7", link: "#title2"},
         ]
     },
     { 
@@ -77,9 +75,8 @@ export default [
         subtitle: "Циклы в программировании. Цикл while",
         path: "/theory_8",
         shortlinks: [
-            {title: "Цикл while", path: "/"},
-            {title: "Обработка исключений. Оператор try-except", path: "/"},
-            {title: "Множественное ветвление: if-elif-else", path: "/"},
+            {title: "Введение в циклы", path: "/theory_8", link: "#title1"},
+            {title: "Цикл while", path: "/theory_8", link: "#title2"},
         ]
     },
     { 
@@ -87,9 +84,10 @@ export default [
         subtitle: "Функции в программировании",
         path: "/theory_9",
         shortlinks: [
-            {title: "Определение Функции. Оператор def", path: "/"},
-            {title: "Вызов функции", path: "/"},
-            {title: "Функции придают программе структуру", path: "/"},
+            {title: "Введение в функции", path: "/theory_9", link: "#title1"},
+            {title: "Определение Функции. Оператор def", path: "/theory_9", link: "#title2"},
+            {title: "Вызов функции", path: "/theory_9", link: "#title3"},
+            {title: "Функции придают программе структуру", path: "/theory_9", link: "#title4"},
         ]
     },
     { 
@@ -97,7 +95,7 @@ export default [
         subtitle: "Локальные и глобальные переменные",
         path: "/theory_10",
         shortlinks: [
-            {title: "Возврат нескольких значений", path: "/"},
+            {title: "Область видимости", path: "/theory_10", link: "#title1"},
         ]
     },
     { 
@@ -105,7 +103,7 @@ export default [
         subtitle: "Возврат значений из функции. Оператор return",
         path: "/theory_11",
         shortlinks: [
-            {title: "Произвольное количество аргументов", path: "/"},
+            {title: "Возврат значений", path: "/theory_11", link: "#title1"},
         ]
     },
     { 
@@ -113,7 +111,8 @@ export default [
         subtitle: "Параметры и аргументы функции",
         path: "/theory_12",
         shortlinks: [
-            {title: "Функции для работы с символами", path: "/"},
+            {title: "Что могу еще функции?", path: "/theory_12", link: "#title1"},
+            {title: "Произвольное количество аргументов", path: "/theory_12", link: "#title2"},
         ]
     },
     { 
@@ -121,7 +120,9 @@ export default [
         subtitle: "Встроенные функции",
         path: "/theory_13",
         shortlinks: [
-            {title: "Ключевое слово Import", path: "/"},
+            {title: "Разные встроенные функции", path: "/theory_13", link: "#title1"},
+            {title: "Функциия для работы с символами", path: "/theory_13", link: "#title2"},
+            {title: "Математические функции", path: "/theory_13", link: "#title3"},
         ]
     },
     { 
@@ -129,7 +130,7 @@ export default [
         subtitle: "Модуль",
         path: "/theory_14",
         shortlinks: [
-            {title: "Генератор псевдослучайных чисел - random", path: "/"},
+            {title: "Ключевое слово import", path: "/theory_14", link: "#title1"},
         ]
     },
     { 
@@ -137,9 +138,9 @@ export default [
         subtitle: "Генератор псевдослучайных чисел - random",
         path: "/theory_15",
         shortlinks: [
-            {title: "Определение", path: "/"},
-            {title: "Функции целых чисел randint() и randrange()", path: "/"},
-            {title: "Функция random() - случайные вещественные числа", path: "/"},
+            {title: "Определение random", path: "/theory_15", link: "#title1"},
+            {title: "Функции целых чисел randint() и randrange()", path: "/theory_15", link: "#title2"},
+            {title: "Функция random() - случайные вещественные числа", path: "/theory_15" , link: "#title3"},
         ]
     },
     { 
@@ -147,9 +148,8 @@ export default [
         subtitle: "Списки",
         path: "/theory_16",
         shortlinks: [
-            {title: "Определение", path: "/"},
-            {title: "Пример: созданеи и заполнение списка", path: "/"},
-            {title: "Функция random() - случайные вещественные числа", path: "/"},
+            {title: "Определение списка", path: "/theory_16", link: "#title1"},
+            {title: "Пример: создания и заполнение списка", path: "/theory_16", link: "#title2"},
         ]
     },
     { 
@@ -157,9 +157,10 @@ export default [
         subtitle: "Цикл for",
         path: "/theory_17",
         shortlinks: [
-            {title: "Функция range()", path: "/"},
-            {title: "Цикл for и range()", path: "/"},
-            {title: "Функция enumerate()", path: "/"},
+            {title: "Определение цикла for", path: "/theory_17", link: "#title1"},
+            {title: "Функция range()", path: "/theory_17", link: "#title2"},
+            {title: "Цикл for и range()", path: "/theory_17", link: "#title3"},
+            {title: "Функция enumerate()", path: "/theory_17", link: "#title4"},
         ]
     },
     { 
@@ -167,9 +168,8 @@ export default [
         subtitle: "Строки",
         path: "/theory_18",
         shortlinks: [
-            {title: "Определение", path: "/"},
-            {title: "Методы строк", path: "/"},
-            {title: "Функция enumerate()", path: "/"},
+            {title: "Определение строк", path: "/theory_18", link: "#title1"},
+            {title: "Методы строк", path: "/theory_18", link: "#title2"},
         ]
     },
     { 
@@ -177,9 +177,9 @@ export default [
         subtitle: "Кортеж",
         path: "/theory_19",
         shortlinks: [
-            {title: "Строки", path: "/"},
-            {title: "Основные команды", path: "/"},
-            {title: "Нарезка строк", path: "/"},
+            {title: "Строки", path: "/theory_19", link: "#title1"},
+            {title: "Основные команды", path: "/theory_19", link: "#title2"},
+            {title: "Нарезка строк", path: "/theory_19", link: "#title3"},
         ]
     },
 ]

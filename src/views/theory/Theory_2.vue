@@ -7,7 +7,7 @@
     <div class="text-manual__body">
       <div class="text-manual__content">
         <section class="text-manual__doc-section">
-          <h2 class="text-manual__section-title">Краткая историческая справка</h2>
+          <h2 id="title1" class="text-manual__section-title">Краткая историческая справка</h2>
           <div class="text-manual__section-block">
             <p>Язык программирования Python был создан к 1991 году голландцем Гвидо ван Россумом.</p>
             <p>Свое имя – Пайтон (или Питон) – получил от названия телесериала, а не пресмыкающегося.</p>
@@ -21,7 +21,7 @@
           </div> 
         </section>                                    
         <section class="text-manual__doc-section">
-          <h2 class="text-manual__section-title">Основные особенности языка</h2>
+          <h2 id="title2"  class="text-manual__section-title">Основные особенности языка</h2>
           <div class="text-manual__section-block">
             <p>Python – интерпретируемый язык программирования. Это значит, что исходный код частями
                 преобразуется в машинный в процессе его чтения специальной программой –интерпретатором. </p>
@@ -43,7 +43,7 @@
           </div>
         </section>
         <section class="text-manual__doc-section">
-          <h2 class="text-manual__section-title">Дзен Питона</h2>
+          <h2 id="title3" class="text-manual__section-title">Дзен Питона</h2>
           <div class="text-manual__section-block">
             <p>Если интерпретатору Питона дать команду <b>import this</b> ("импортируй это" здесь видимо
               следует понимать как "импортируй самого себя"), то выведется так называемый "Дзен
@@ -117,7 +117,7 @@
             </div>
           </div>            
         </section>
-        <section class="text-manual__doc-section">
+        <section id="title4"  class="text-manual__doc-section">
           <h2 class="text-manual__section-title">Как писать программы на Python</h2>
           <div class="text-manual__section-block">
             <h3>Интерактивный режим</h3>

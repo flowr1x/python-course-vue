@@ -5,7 +5,8 @@
       <div class="text-manual__subtitle">Встроенные функции</div>
     </div>
     <div class="text-manual__body">
-      <section  class="text-manual__doc-section">
+      <section class="text-manual__doc-section">
+        <h2 id="title1" class="text-manual__section-title">Разные встроенные функции</h2>
         <div class="text-manual__section-block">
           <p>Язык Python включает много уже определенных, т. е. встроенных в него, функций.
             Программист не видит их определений, они скрыты где-то в "недрах" языка. Достаточно
@@ -24,6 +25,11 @@
               <p>математические функции – abs(), round(), divmod(), pow(), max(), min(), sum()</p>
             </li>
           </ul>
+        </div>
+      </section>
+      <section class="text-manual__doc-section">
+        <h2 id="title2" class="text-manual__section-title">Функциия для работы с символами</h2>
+        <div class="text-manual__section-block">
           <p>Функция ord() позволяет получить номер символа по таблице Unicode. Соответственно,
               принимает она в качестве аргумента одиночный символ, заключенный в кавычки:</p>
           <pre><code class="python">>>> ord('z')
@@ -57,6 +63,11 @@ False
 >>> len(s2)
 7</code></pre>
           <p>Кроме строк в len() можно передавать другие, еще не изученные нами, структуры данных.</p>
+        </div>
+      </section> 
+      <section class="text-manual__doc-section">
+        <h2 id="title3" class="text-manual__section-title">Математические функции</h2>
+        <div class="text-manual__section-block">
           <p>Функция abs() возвращает абсолютное значение числа:</p>
           <pre><code class="python">>>> abs(-2.2)
 2.2
@@ -148,7 +159,7 @@ Number: 3.46</code></pre>
           <pre><code class="python">>>> max(a)
 12</code></pre>
         </div>
-      </section> 
+      </section>
     </div>      
   </div>
 </template>

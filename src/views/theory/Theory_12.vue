@@ -4,8 +4,9 @@
       <h1 class="text-manual__title">Тема 12</h1>
       <div class="text-manual__subtitle">Параметры и аргументы функции</div>
     </div>
-      <div class="text-manual__body">
+    <div class="text-manual__body">
       <div class="text-manual__section-block">
+        <h2 id="title1" class="text-manual__section-title">Что могу еще функции?</h2>
         <p>В программировании функции могут не только возвращать данные, но также принимать их,
           что реализуется с помощью так называемых параметров, которые указываются в скобках в
           заголовке функции. Количество параметров может быть любым</p>
@@ -42,7 +43,7 @@
           целесообразно. Однако, если надо, всегда можно сделать это принудительно.</p>
       </div>
       <section  class="text-manual__doc-section">
-        <h2 class="text-manual__section-title">Произвольное количество аргументов</h2>
+        <h2 id="title2" class="text-manual__section-title">Произвольное количество аргументов</h2>
         <div class="text-manual__section-block">
           <p>Обратим внимание еще на один момент. Количество аргументов и параметров совпадает.
             Нельзя передать три аргумента, если функция принимает только два. Нельзя передать один

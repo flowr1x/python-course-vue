@@ -6,6 +6,7 @@
     </div>
     <div class="text-manual__body">
       <section  class="text-manual__doc-section">
+        <h2 id="title1" class="text-manual__section-title">Ключевое слово import</h2>
         <div class="text-manual__section-block">
           <p>Встроенные в язык программирования функции доступны сразу. Чтобы их вызвать, не надо
             выполнять никаких дополнительных действий. Однако за время существования любого

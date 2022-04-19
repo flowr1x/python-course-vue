@@ -6,6 +6,7 @@
     </div>
       <div class="text-manual__body">
         <div class="text-manual__section-block">
+          <h2 id="title1" class="text-manual__section-title">Введение в функции</h2>
           <p>Функция в программировании представляет собой обособленный участок кода, который
               можно вызывать, обратившись к нему по имени, которым он был назван. При вызове
               происходит выполнение команд тела функции.</p>
@@ -66,7 +67,7 @@ print("Всего", a+b, "шт.")</code></pre>
             тогда, когда он понадобится.</p>
         </div>
         <section  class="text-manual__doc-section">
-          <h2 class="text-manual__section-title">Определение функции. Оператор def</h2>
+          <h2 id="title2" class="text-manual__section-title">Определение функции. Оператор def</h2>
           <div class="text-manual__section-block">
             <p>В языке программирования Python функции определяются с помощью оператора def.
               Рассмотрим код:</p>
@@ -91,8 +92,8 @@ print("Всего", a+b, "шт.")</code></pre>
               никогда не выполните ее тела.</p>
           </div> 
         </section>
-        <section  class="text-manual__doc-section">
-          <h2 class="text-manual__section-title">Вызов функции</h2>
+        <section class="text-manual__doc-section">
+          <h2 id="title3" class="text-manual__section-title">Вызов функции</h2>
           <div class="text-manual__section-block">
             <p>Рассмотрим полную версию программы с функцией:</p>
             <pre><code class="python">def countFood():
@@ -144,8 +145,8 @@ NameError: name 'countFood' is not defined</code></pre>
                 программисты даже в этом случае предпочитают соблюдать определенные правила.</p>
           </div>
         </section>
-        <section  class="text-manual__doc-section">
-            <h2 class="text-manual__section-title">Функции придают программе структуру</h2>
+        <section class="text-manual__doc-section">
+            <h2 id="title4" class="text-manual__section-title">Функции придают программе структуру</h2>
             <div class="text-manual__section-block">
               <p>Польза функций не только в возможности многократного вызова одного и того же кода из
                 разных мест программы. Не менее важно, что благодаря им программа обретает истинную

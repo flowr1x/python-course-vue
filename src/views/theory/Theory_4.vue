@@ -8,7 +8,7 @@
       <div class="text-manual__content">
         <div class="content-inner">
           <section  class="text-manual__doc-section">
-            <h2 class="text-manual__section-title">Вывод данных. Функции print()</h2>
+            <h2 id="title1" class="text-manual__section-title">Вывод данных. Функции print()</h2>
             <div class="text-manual__section-block">
               <p>Мы уже встречались с функцией print(). Она отвечает за вывод данных, по4умолчанию на
                   экран. Если код содержится в файле, то без нее не обойтись. В интерактивном режиме в ряде
@@ -114,7 +114,7 @@
                   понадобился бы отдельный урок. Нам пока будет достаточно этого.</p>
             </div> 
           </section>
-          <section  class="text-manual__doc-section">
+          <section id="title2" class="text-manual__doc-section">
             <h2 class="text-manual__section-title">Ввод данных. Функция input()</h2>
             <div class="text-manual__section-block">
               <p>За ввод в программу данных с клавиатуры в Python отвечает функция <b>input()</b>. Когда

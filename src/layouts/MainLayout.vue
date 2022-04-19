@@ -70,7 +70,7 @@ export default {
     return {
       isActive: false,
       listManualItem: listManualItem,
-      offestBtnTop: 400,
+      offestBtnTop: 80,
       isActiveBtnToTop: false,
     }
   },

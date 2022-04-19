@@ -5,17 +5,17 @@
       <div class="text-manual__subtitle">Циклы в программировании. Цикл while</div>
     </div>
     <div class="text-manual__body">
-      <div class="text-manual__doc-content">
-        <div class="text-manual__content-inner">
-          <div class="text-manual__section-block">
+      <div class="text-manual__content">
+        <div class="text-manual__section-block">
+            <h2 id="title1" class="text-manual__section-title">Введение в циклы</h2>
             <p>Циклы являются такой же важной частью структурного программирования, как условные
               операторы. С помощью циклов можно организовать повторение выполнения участков кода.
               Потребность в этом возникает довольно часто. Например, пользователь последовательно
               вводит числа, и каждое из них требуется добавлять к общей сумме. Или нужно вывести на
               экран квадраты ряда натуральных чисел и тому подобные задачи.</p>
-          </div>
-          <section  class="text-manual__doc-section">
-            <h2 class="text-manual__section-title">Цикл while</h2>
+        </div>
+        <section class="text-manual__doc-section">
+            <h2 id="title2" class="text-manual__section-title">Цикл while</h2>
             <div class="text-manual__section-block">
               <p>"While" переводится с английского как "пока". Но не в смысле "до свидания", а в смысле
                   "пока имеем это, делаем то".</p>
@@ -182,8 +182,7 @@ print("Ресурс исчерпан")</code></pre>
                   Можно назвать переменную4счетчик как угодно. Однако так принято в программировании,
                   что счетчики обозначают именами i и j (иногда одновременно требуются два счетчика).</p>
               </div> 
-          </section>
-        </div>
+        </section>
       </div>
     </div>              
   </div>

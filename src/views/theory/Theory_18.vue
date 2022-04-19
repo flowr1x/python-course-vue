@@ -6,7 +6,7 @@
     </div>
     <div class="text-manual__body">
       <section  class="text-manual__doc-section">
-        <h2 class="text-manual__section-title">Определение</h2>
+        <h2 id="title1" class="text-manual__section-title">Определение строк</h2>
         <div class="text-manual__section-block">
           <p>Мы уже рассматривали строки как простой тип данных наряду с целыми и вещественными
               числами и знаем, что строка – это последовательность символов, заключенных в одинарные
@@ -43,7 +43,7 @@
         </div> 
       </section>
       <section  class="text-manual__doc-section">
-        <h2 class="text-manual__section-title">Методы строк</h2>
+        <h2 id="title2" class="text-manual__section-title">Методы строк</h2>
         <div class="text-manual__section-block">
           <p>В Python для строк есть множество методов. Посмотреть их можно по команде dir(str),
             получить информацию по каждому – help(str.имя_метода). Рассмотрим наиболее интересные

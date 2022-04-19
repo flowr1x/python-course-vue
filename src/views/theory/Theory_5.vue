@@ -6,9 +6,8 @@
     </div>
     <div class="text-manual__body">
       <div class="text-manual__content">
-        <div class="content-inner">
-          <section  class="text-manual__doc-section">
-            <h2 class="text-manual__section-title">Логические выражения и логический тип данных</h2>
+        <section class="text-manual__doc-section">
+            <h2 id="title1" class="text-manual__section-title">Логические выражения и логический тип данных</h2>
             <div class="text-manual__section-block">
               <p>Часто в реальной жизни мы соглашаемся с каким-либо утверждением или отрицаем его.
                   Например, если вам скажут, что сумма чисел 3 и 5 больше 7, вы согласитесь, скажете: «Да,
@@ -55,9 +54,9 @@ False
 </code></pre>
               <p>И здесь работает правило: всё, что не 0 и не пустота, является правдой.</p>
             </div> 
-          </section>
-          <section  class="text-manual__doc-section">
-            <h2 class="text-manual__section-title">Логические операторы</h2>
+        </section>
+        <section class="text-manual__doc-section">
+            <h2 id="title2" class="text-manual__section-title">Логические операторы</h2>
             <div class="text-manual__section-block">
               <p>Говоря на естественном языке (например, русском) мы обозначаем сравнения словами
                   "равно", "больше", "меньше". В языках программирования используются специальные знаки,
@@ -86,9 +85,9 @@ False
                   присваивается переменной c. Выражение a, b, c просто выводит значения переменных на
                   экран.</p>
             </div>
-          </section>
-          <section  class="text-manual__doc-section">
-            <h2 class="text-manual__section-title">Сложные логические выражения</h2>
+        </section>
+        <section class="text-manual__doc-section">
+            <h2 id="title3" class="text-manual__section-title">Сложные логические выражения</h2>
             <div class="text-manual__section-block">
               <p>Логические выражения типа kByte >= 1023 являются простыми, так как в них выполняется
                   только одна логическая операция. Однако, на практике нередко возникает необходимость в
@@ -139,8 +138,7 @@ True
               <p>Число 5 трактуется как истина, отрицание истины дает ложь. Ноль приравнивается к False.
                   Отрицание False дает True.</p>
             </div>
-          </section>
-        </div>
+        </section>
       </div>
     </div>              
   </div>

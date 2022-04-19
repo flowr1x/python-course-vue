@@ -5,7 +5,9 @@
       <div class="text-manual__subtitle">Цикл for</div>
     </div>
     <div class="text-manual__body">
-      <div class="text-manual__section-block">
+      <section class="text-manual__doc-section">
+        <h2 id="title1" class="text-manual__section-title">Определение цикла for</h2>
+        <div class="text-manual__section-block">
         <p>Цикл for в языке программирования Python предназначен для перебора элементов структур
           данных и некоторых других объектов. Это не цикл со счетчиком, каковым является for во
           многих других языках.</p>
@@ -57,8 +59,9 @@
 [14, 44, 24, 34]</code></pre>
         <p>Кроме того, с циклом while мы избавились от переменной element. </p>
       </div>
+      </section>
       <section  class="text-manual__doc-section">
-        <h2 class="text-manual__section-title">Функция range()</h2>
+        <h2 id="title2" class="text-manual__section-title">Функция range()</h2>
         <div class="text-manual__section-block">
           <p>Теперь пришло время познакомиться со встроенной в Python функцией range(). "Range"
             переводится как "диапазон". Она может принимать один, два или три аргумента. Их
@@ -95,7 +98,7 @@ TypeError: 'range' object does not support item assignment</code></pre>
         </div> 
       </section>
       <section  class="text-manual__doc-section">
-        <h2 class="text-manual__section-title">Цикл for и range()</h2>
+        <h2 id="title3" class="text-manual__section-title">Цикл for и range()</h2>
         <div class="text-manual__section-block">
           <p>Итак, зачем нам понадобилась функций range() в теме про цикл for? Дело в том, что вместе
             они образуют неплохой тандем. For как цикл перебора элементов, в отличие от while,
@@ -122,7 +125,7 @@ range(0, 4)</code></pre>
         </div>
       </section>
       <section class="text-manual__doc-section">
-        <h2 class="text-manual__section-title">Функция enumerate()</h2>
+        <h2 id="title4" class="text-manual__section-title">Функция enumerate()</h2>
         <div class="text-manual__section-block">
           <p>В Python есть еще одна встроенная функция, которая часто используется в заголовке for. Это
             функция enumerate(). Если range() позволяет получить только индексы элементов списка, то
