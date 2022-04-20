@@ -31,7 +31,7 @@ const routes = [
 listTheory.forEach((component) => {
   routes.push({
     path: `/${component.name}`,
-    meta: {layout: "main"},
+    meta: {layout: "content"},
     name: component.name,
     component
   });
