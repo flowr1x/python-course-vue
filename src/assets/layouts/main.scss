@@ -149,6 +149,7 @@
 }
 
 .list-manual {
+  transition: all .2s ease-in-out 0s;
   min-width: 0;
   flex-direction: column;
   display: flex;
@@ -302,9 +303,9 @@
     .manual__content {
       flex-direction: column;
     }
-
+    
     .manual__aside {
-      flex: 0 1 100%;
+      width: 100%;
     }
 
     .nav-aside {
