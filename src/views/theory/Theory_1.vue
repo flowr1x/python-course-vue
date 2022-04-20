@@ -166,3 +166,9 @@
     </div>              
   </div>
 </template>
+
+<script>
+export default {
+  name: "theory_1"
+}
+</script>
