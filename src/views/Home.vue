@@ -1,4 +1,5 @@
 <template>
+
   <div class="manual__list list-manual"> <!--manuel__list list-manual-->
     <div class="list-manual__item" v-for="item in listManualItem" :key="item.path">
       <div class="list-manual__header">
@@ -32,6 +33,5 @@ export default {
       listManualItem: listManualItem
     }
   },
-  
 }
 </script>

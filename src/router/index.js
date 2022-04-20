@@ -47,11 +47,6 @@ const router = createRouter({
         behavior: "smooth",
       }
     }
-    if (savedPosition) {
-      return savedPosition
-    } else {
-      return { top: 0, left: 0 }
-    }
   },
   routes,
 })

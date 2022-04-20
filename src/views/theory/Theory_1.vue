@@ -169,6 +169,6 @@
 
 <script>
 export default {
-  name: "theory_1"
+  name: "theory_1",
 }
 </script>

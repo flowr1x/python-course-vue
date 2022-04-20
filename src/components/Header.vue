@@ -120,6 +120,6 @@ export default {
         this.isMenuBurger = true;
       }
       } 
-  }
+  },
 }
 </script>
