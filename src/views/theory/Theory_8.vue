@@ -187,3 +187,8 @@ print("Ресурс исчерпан")</code></pre>
     </div>              
   </div>
 </template>
+<script>
+export default {
+  name: "theory_8"
+}
+</script>

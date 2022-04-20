@@ -227,3 +227,8 @@ except ValueError:
     </div>              
   </div>
 </template>
+<script>
+export default {
+  name: "theory_7"
+}
+</script>

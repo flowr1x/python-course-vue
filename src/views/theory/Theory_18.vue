@@ -138,3 +138,9 @@ This is a ball. It's red.</code></pre>
     </div>     
   </div>
 </template>
+<script>
+export default {
+  name: "theory_18"
+}
+</script>
+

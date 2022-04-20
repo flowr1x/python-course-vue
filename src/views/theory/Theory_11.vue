@@ -136,3 +136,8 @@ print(cylinder())</code></pre>
     </div>              
   </div>
 </template>
+<script>
+export default {
+  name: "theory_11"
+}
+</script>

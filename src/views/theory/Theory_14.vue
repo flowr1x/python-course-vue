@@ -126,3 +126,9 @@ gcd(...)
     </div>
   </div>
 </template>
+<script>
+export default {
+  name: "theory_14"
+}
+</script>
+

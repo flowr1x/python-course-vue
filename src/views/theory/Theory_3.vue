@@ -165,3 +165,8 @@ ValueError: invalid literal for int() with base 10: 'hi'</code></pre>
     </div>
   </div>     
 </template>
+<script>
+export default {
+  name: "theory_3"
+}
+</script>

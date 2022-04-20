@@ -163,3 +163,9 @@ Number: 3.46</code></pre>
     </div>      
   </div>
 </template>
+<script>
+export default {
+  name: "theory_13"
+}
+</script>
+

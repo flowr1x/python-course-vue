@@ -164,3 +164,8 @@ print(b - a)</code></pre>
     </div>              
   </div>         
 </template>
+<script>
+export default {
+  name: "theory_6"
+}
+</script>

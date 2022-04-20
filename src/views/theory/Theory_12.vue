@@ -101,3 +101,8 @@
     </div>            
   </div>
 </template>
+<script>
+export default {
+  name: "theory_12"
+}
+</script>

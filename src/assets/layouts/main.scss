@@ -299,7 +299,12 @@
         width: 100%;
       }
     }
-    
+    .manual__container {
+      padding: 0;
+    }
+    .manual__title {
+      padding: 0 15px;
+    }
     .manual__content {
       flex-direction: column;
     }
@@ -319,6 +324,20 @@
         display: none;
       }
     }
+
+    .list-manual {
+      &__item {
+        padding: 20px;
+        background-color: $bg-color;
+        box-shadow: none;
+
+        &:hover {
+          transform: translateY(0);
+          box-shadow: none;
+        }
+      }
+    }
+    
 }
 
 /* MOBILE SMALL */
@@ -337,6 +356,15 @@
           content: '';
           top: 10px;
       }
+    }
+  }
+
+  .list-manual {
+    &__buttons {
+      text-align: center;
+    }
+    &__btn {
+      width: 100%;
     }
   }
 }

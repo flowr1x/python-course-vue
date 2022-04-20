@@ -177,3 +177,8 @@
     </div>
   </div>      
 </template>
+<script>
+export default {
+  name: "theory_4"
+}
+</script>

@@ -143,3 +143,9 @@ True
     </div>              
   </div>
 </template>
+
+<script>
+export default {
+  name: "theory_5"
+}
+</script>

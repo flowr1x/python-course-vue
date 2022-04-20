@@ -65,3 +65,9 @@
     </div>          
   </div>
 </template>
+<script>
+export default {
+  name: "theory_19"
+}
+</script>
+

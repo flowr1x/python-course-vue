@@ -14,7 +14,7 @@
           </li>
         </ul>
         <div class="list-manual__buttons">
-          <router-link :to="item.path" class="list-manual__btn btn btn-red">Посмотреть главу</router-link>
+          <router-link :to="item.path" class="list-manual__btn btn">Посмотреть главу</router-link>
         </div>
       </div>  
     </div>

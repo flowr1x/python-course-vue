@@ -123,3 +123,8 @@
     </div>             
   </div>
 </template>
+<script>
+export default {
+  name: "theory_16"
+}
+</script>

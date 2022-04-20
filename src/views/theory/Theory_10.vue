@@ -172,3 +172,8 @@ print("Площадь: %.2f" % result)</code></pre>
     </div>
   </div>
 </template>
+<script>
+export default {
+  name: "theory_10"
+}
+</script>

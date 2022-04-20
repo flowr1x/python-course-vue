@@ -195,3 +195,8 @@ range(0, 4)</code></pre>
     </div>         
   </div>
 </template>
+<script>
+export default {
+  name: "theory_17"
+}
+</script>

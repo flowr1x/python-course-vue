@@ -210,3 +210,8 @@ print("Ошибка ввода")</code></pre>
       </div>  
   </div>
 </template>
+<script>
+export default {
+  name: "theory_9"
+}
+</script>
