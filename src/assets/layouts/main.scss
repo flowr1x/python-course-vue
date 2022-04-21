@@ -34,12 +34,12 @@
   .search-beginpage {
     width: 450px;
     padding: 15px;
-    background-color: $bg-color;
+    background-color: $highlight-color;
     display: flex;
   }
 
   .search-beginpage__input {
-      width: 330px;
+      width: 100%;
       padding: 10px 15px;
       font-size: 15px;
       background: rgba($text-color, 0.9);

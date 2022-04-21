@@ -12,10 +12,9 @@
             </div>
           </div>
           <div class="beginpage__search">
-            <form action="#" class="search-beginpage">
-              <input v-model="searchInput" type="text" class="search-beginpage__input">
-              <button class="search-beginpage__btn">Найти</button>
-            </form>
+            <div class="search-beginpage">
+              <input v-model="searchInput" type="text" class="search-beginpage__input" placeholder="Поиск">
+            </div>
           </div>
         </div>
       </section>
