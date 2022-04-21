@@ -101,7 +101,6 @@
 }
 
 .manual__content {
-  position: relative;
   height: 100%;
   width: 100%;
   margin: auto;
@@ -130,6 +129,7 @@
     transition: background .3s ease 0s;
     position: relative;
     cursor: pointer;
+    overflow: hidden;
     a {
       color: $text-color;
       display: block;

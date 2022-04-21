@@ -13,7 +13,7 @@
           </div>
           <div class="beginpage__search">
             <form action="#" class="search-beginpage">
-              <input type="text" class="search-beginpage__input">
+              <input v-model="searchInput" type="text" class="search-beginpage__input">
               <button class="search-beginpage__btn">Найти</button>
             </form>
           </div>
@@ -40,7 +40,7 @@
               </nav>
             </aside>
             <div class="manual__list list-manual" :class="{'list-manual_fill': !isActive}">
-              <router-view />
+              <router-view :textInput="searchInput"/>
             </div>
           </div>
           <button-scroll-top />
@@ -55,6 +55,7 @@ import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import AsideList from "@/components/AsideList.vue";
 import listManualItem from "@/mocks/headerTheory.js"
+
 export default {
   components: {
     Header, Footer, AsideList
@@ -62,7 +63,8 @@ export default {
   data() {
     return {
       isActive: false,
-      listManualItem: listManualItem,
+      listManualItem,
+      searchInput: "",
     }
   },
 }

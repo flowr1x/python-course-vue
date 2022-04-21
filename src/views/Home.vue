@@ -1,6 +1,5 @@
 <template>
-
-  <div class="manual__list list-manual"> <!--manuel__list list-manual-->
+  <div class="manual__list list-manual">
     <div class="list-manual__item" v-for="item in listManualItem" :key="item.path">
       <div class="list-manual__header">
         <router-link :to="item.path" class="list-manual__link">{{ item.title }}</router-link>
@@ -26,12 +25,21 @@
 import listManualItem from "@/mocks/headerTheory.js";
 export default {
   name: 'Home',
- 
+  props: [
+    'textInput'
+  ],
   data() {
     return {
       isActive: false,    
-      listManualItem: listManualItem
+      listManualItem
     }
   },
+  watch: {
+    textInput(newText, oldText) {
+      this.listManualItem = listManualItem.filter(item => item
+        .subtitle.toLowerCase()
+        .includes(this.textInput.toLowerCase()));
+    }
+  }
 }
 </script>
