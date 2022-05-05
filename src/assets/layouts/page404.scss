@@ -6,7 +6,7 @@
     line-height: 1.2;
   }
   &__error {
-    color: $additional-color;
+    color: var(additional-color);
     font-weight: 600;
     font-size: 38px;
   }

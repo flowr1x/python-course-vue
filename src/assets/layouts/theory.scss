@@ -1,13 +1,13 @@
 .manual__text {
 }
 .text-manual {
-    background: $bg-color;
+    background: var(--bg-color);
 }
 .text-manual__header {
     font-family: "BebasNeue";
     letter-spacing: .5px;
     margin-bottom: 25px;
-    background: $primary-sdw-color;
+    background: var(--primary-sdw-color);
     text-align: center;
     padding: 10px 5px;
 }
@@ -49,7 +49,7 @@
     }
 }
 .text-manual__colortext-red {
-    color: $additional-color;
+    color: var(--additional-color);
 }
 
 .text-manual__diagram {
@@ -65,7 +65,7 @@
         position: relative;
         padding: 15px;
         text-align: center;
-        background: $primary-sdw-color;
+        background: var(--primary-sdw-color);
         &:not(:last-child) {
             margin-bottom: 15px;
         }
@@ -77,7 +77,7 @@
             width: 0;
             height: 0;
             border-right: 50px solid transparent;
-            border-top: 10px solid $primary-sdw-color;
+            border-top: 10px solid var(--primary-sdw-color);
             border-left: 50px solid transparent;
         }
     }
@@ -100,7 +100,7 @@
         padding: 15px;
         margin: 0 auto;
         height: 100%;
-        background-color: $primary-sdw-color;
+        background-color: var(--primary-sdw-color);
         
         h3 {
             font-family: "BebasNeue";
@@ -142,7 +142,7 @@
     margin: 15px 0;
     padding: 10px;
     display: block;
-    background-color: $primary-sdw-color;
+    background-color: var(--primary-sdw-color);
     border-radius: 5px;
 }
 
@@ -158,7 +158,7 @@
         margin-bottom: 10px;
     }    
     &__item {
-        background: $primary-sdw-color;
+        background: var(--primary-sdw-color);
         padding: 10px;
         max-width: 170px;
     }    

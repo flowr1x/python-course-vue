@@ -22,13 +22,17 @@
                 </div>
               </nav>
             </aside>
-            <div class="manual__list list-manual" :class="{'list-manual_fill': !isActive}">
+            <div class="manual__list list-manual">
               <router-view />
+              <div class="manual__btns-change-page btns-change-page">
+                <button @click="buttonToPrevPage" class="btns-change-page__btn">Предыдущая</button>
+                <button @click="buttonToNextPage" class="btns-change-page__btn">Следующая</button>
+              </div>
             </div>
           </div>
-          <button-scroll-top />
         </div>
       </section>
+      <button-scroll-top />
     </main>
     <Footer/>
   </div>
@@ -38,6 +42,8 @@ import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import AsideList from "@/components/AsideList.vue";
 import listManualItem from "@/mocks/headerTheory.js"
+
+
 export default {
   components: {
     Header, Footer, AsideList
@@ -45,9 +51,10 @@ export default {
   data() {
     return {
       isActive: false,
-      listManualItem: listManualItem,
+      listManualItem,
+      pagePrev: this.$route.path,
+      pageNext: this.$route.path
     }
-  },
-  
+  }
 }
 </script>

@@ -53,7 +53,7 @@ export default {
 .list-theme-enter-from,
 .list-theme-leave-to {
   opacity: 0;
-  transform: translateX(30px);
+  transform: translateX(100%);
 }
 .list-theme-move {
   transition: transform .5s ease;

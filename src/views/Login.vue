@@ -13,7 +13,7 @@
     <div class="form__box" ref="formBox">
       <!-- Form Login -->
       <form action="#" class="form form_signin" @submit.prevent="onSubmitLogUp">
-          <h3 class="form__title">Вход</h3>
+          <h3 class="form__title" @click="myMethod">Вход</h3>
           <div class="form__item">
             <my-input-form
               placeholder="Email" 
@@ -147,6 +147,7 @@
 import useVuelidate from '@vuelidate/core'
 import { required, email, minLength, sameAs } from '@vuelidate/validators'
 import MyInputForm from '../components/UI/MyInputForm.vue'
+import { useToast } from "vue-toastification";
 
 export default {
   components: { MyInputForm },
@@ -187,20 +188,29 @@ export default {
     }
   },
   methods: {
-    onSubmitLogUp() {
+    myMethod() {
+      const toast = useToast();
+      toast.error("Bitch");
+      console.log(toast);
+    },
+    async onSubmitLogUp() {
       if (this.v$.login.$invalid) {
         this.v$.login.$touch();
         return;
       }
-      console.log(this.login);
-      this.$router.push("/");
+      try {
+        await this.$store.dispatch("login", this.login);
+        this.$router.push("/");
+        const toast = useToast();
+        toast("Вы попали на сайт");
+      } catch (error) {}
+
     },
     onSubmitLogIn() {
       if (this.v$.register.$invalid) {
         this.v$.register.$touch();
         return;
-      }
-      console.log(this.register);
+      }  
       this.$router.push("/");
     },
     onClickLogOut(event) {

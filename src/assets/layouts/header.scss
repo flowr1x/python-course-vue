@@ -2,7 +2,7 @@
 %menu__icon {
   width: 28px;
   height: 3px; 
-  background-color: $text-color;
+  background-color: var(--text-color);
   display: block;
 }
 
@@ -12,7 +12,7 @@
 .header__content {
   padding: 5px 15px;
   min-height: $header-size;
-  background: $bg-color;
+  background: var(--bg-color);
   position: fixed;
   z-index: 100;
   width: 100%;
@@ -40,7 +40,7 @@
   &__link {
     display: flex;
     align-items: center;
-    color: $text-color;
+    color: var(--text-color);
     text-transform: uppercase; 
     font-size: 24px;
     font-weight: 500;
@@ -55,7 +55,7 @@
     transition: all 0.3s ease 0s;
     transform: rotate(180deg);
     path, polygon, rect {
-      fill: $highlight-color;
+      fill: var(--highlight-color);
     }
   }
 }
@@ -74,7 +74,7 @@
         margin-right: 20px;
     }
     &__link {
-        color: $text-color;
+        color: var(--text-color);
         line-height: 1.2;
         font-size: 16px;
         padding: 5px 0;
@@ -96,7 +96,7 @@
         left: 50%;
         right: 50%;
         bottom: 0;
-        background: $highlight-color; // Improve
+        background: var(--highlight-color); // Improve
         height: 4px;
         -webkit-transition-property: left, right;
         transition-property: left, right;
@@ -161,7 +161,7 @@
         display: block;
         box-shadow: 2px 9px 50px hsla(0, 0, 0, .1),
         -2px 9px 60px hsla(0, 0, 0, .1);
-        background: $primary-color;
+        background: var(--primary-color);
         width: 50%;
         height: 100vh;
         padding: 90px 0 0 15px;
@@ -177,7 +177,7 @@
             margin: 0 0 10px 0;
         }
         &__link {
-            color: $text-color;
+            color: var(--text-color);
             font-size: 24px;
         }
         &_active {
@@ -191,7 +191,7 @@
   .menu {   
     width: 60%;
     &__link {
-        color: $text-color;
+        color: var(--text-color);
         font-size: 20px;
     }
 }

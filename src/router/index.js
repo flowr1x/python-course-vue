@@ -47,6 +47,11 @@ const router = createRouter({
         behavior: "smooth",
       }
     }
+    else {
+      return {
+        top: 0, left: 0
+      }
+    }
   },
   routes,
 })

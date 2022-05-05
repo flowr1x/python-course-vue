@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
     <component :is="layout">
       <router-view/>
     </component>
@@ -7,10 +7,12 @@
 </template>
 
 <script>
+
 import EmptyLayout from "@/layouts/EmptyLayout.vue"; 
 import MainLayout from "@/layouts/MainLayout.vue"; 
 import MiddleLayout from "@/layouts/MiddleLayout.vue"; 
 import ContentLayout from "@/layouts/ContentLayout.vue"; 
+
 
 export default {
   computed: {
@@ -23,3 +25,8 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+
+@import "@/assets/layouts/index.scss";
+</style>

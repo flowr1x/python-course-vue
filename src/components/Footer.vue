@@ -1,7 +1,7 @@
 <template>
-    <footer class="footer"> <!--footer-->
+    <footer class="footer">
         <div class="footer__container">
-            &copy; Florix
+            &copy; Flowrix
         </div>
-    </footer> <!--footer-->
+    </footer>
 </template>
