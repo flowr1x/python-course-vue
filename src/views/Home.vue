@@ -20,10 +20,12 @@
         </div>  
       </div>
     </transition-group>
+    <div @click="changeThemesApp">Switch mode themes</div>
   </div>
 </template>
 
 <script>
+import themes from "@/themes/index.js";
 import listManualItem from "@/mocks/headerTheory.js";
 export default {
   name: 'Home',
@@ -41,6 +43,15 @@ export default {
       this.listManualItem = listManualItem.filter(item => item
         .subtitle.toLowerCase()
         .includes(this.textInput.toLowerCase()));
+    }
+  },
+  methods: {
+    changeThemesApp() {
+      let bodyStyles = document.body.style;
+      const darkTheme = themes.dark;
+      for (let color in darkTheme) {
+        bodyStyles.setProperty(color, darkTheme[color]);
+      }
     }
   }
 }

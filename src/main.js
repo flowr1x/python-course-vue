@@ -4,8 +4,7 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 
-
-
+import "@/assets/layouts/index.scss";
 
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";

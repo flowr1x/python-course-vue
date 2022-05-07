@@ -1,8 +1,9 @@
-// COLORS 
-$primary-color: #333; 
-$primary-sdw-color: rgb(27, 27, 27);
-$bg-color: rgb(75, 75, 75);
 
-$text-color: #d9dcec;
-$highlight-color: #f4a460;
-$additional-color: #ba2f2f;
+:root {
+  --primary-color: #333; 
+  --primary-sdw-color: rgb(27, 27, 27);
+  --bg-color: rgb(75, 75, 75);
+  --text-color: #d9dcec;
+  --highlight-color: #f4a460;
+  --additional-color: #ba2f2f;
+}
