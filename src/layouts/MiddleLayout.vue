@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <Header/>
+    <Header @toggle="$emit('toggle')"/>
     <main class="page">
       <router-view/>
     </main>

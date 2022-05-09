@@ -1,7 +1,6 @@
 <template>
-  
   <div class="wrapper">
-    <Header/>
+    <Header :mode="mode" @toggle="$emit('toggle')"/>
     <main class="page">
       <section class="page__beginpage beginpage">
         <div class="beginpage__container">
@@ -56,6 +55,10 @@ import AsideList from "@/components/AsideList.vue";
 import listManualItem from "@/mocks/headerTheory.js"
 
 export default {
+  props: [
+    "mode"
+  ],
+  emits: ["toggle"],
   components: {
     Header, Footer, AsideList
   },

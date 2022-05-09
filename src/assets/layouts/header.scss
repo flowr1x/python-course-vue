@@ -18,7 +18,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-
+  transition: all .3s ease 0s;
   @extend %shadow;
   transition: transform .3s ease 0s;
 

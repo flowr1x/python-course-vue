@@ -1,19 +1,25 @@
 .page__profile {
+  padding: 35px 0px;
 }
 .profile__container {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
 }
 .profile__content {
+  flex: 0 1 50%;
 }
 .profile__title {
-  font-size: 24px;
+  font-size: 32px;
   line-height: 1.2;
   margin-bottom: 20px;
+  text-transform: uppercase;
 }
-.profile__name-user {
-  font-size: 16px;
+.form-profile {
+  &__item:not(:last-child) {
+    margin-bottom: 15px;
+  }
 }
-.profile__btn {
+.profile__btn-exit {
+  flex: 0 1 50%;
+  text-align: right;
 }

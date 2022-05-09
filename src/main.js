@@ -33,7 +33,7 @@ onAuthStateChanged(getAuth(), () => {
     app = createApp(App);
 
     app.component('GlobalEvents', GlobalEvents);
-   
+    app.provide("mode", "dark");
     components.forEach(component => {
       app.component(component.name, component);
     });

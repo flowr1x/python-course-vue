@@ -131,14 +131,24 @@ $header-size: 80px;
 /*
   ========  =MAIN CONFIG PAGE= ======== 
 */
-
+.app {
+  background: var(--primary-color);
+  color: var(--text-color);
+}
 body {
   height: 100vh;
   font-size: 14px;
-  background: var(--primary-color);
-  color: var(--text-color);
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
+}
+
+.dark {
+  --primary-color: #313131; 
+  --primary-sdw-color: #414141;
+  --bg-color: #525252;
+  --text-color: #d9dcec;
+  --highlight-color: #f4a460;
+  --additional-color: #ba2f2f;
 }
 .wrapper {
   overflow: hidden;
