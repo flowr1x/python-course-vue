@@ -25,8 +25,16 @@
             <div class="manual__list list-manual">
               <router-view />
               <div class="manual__btns-change-page btns-change-page">
-                <button @click="buttonToPrevPage" class="btns-change-page__btn">Предыдущая</button>
-                <button @click="buttonToNextPage" class="btns-change-page__btn">Следующая</button>
+                <div class="btns-change-page__block">
+                  <button button class="btns-change-page__btn" 
+                    :class="{'btns-change-page__btn_hide':!this.prevPath}" 
+                    @click="this.$router.push(prevPath)">Предыдущая</button>
+                </div>
+                <div class="btns-change-page__block">
+                  <button class="btns-change-page__btn"
+                    :class="{'btns-change-page__btn_hide':!this.nextPath}" 
+                    @click="this.$router.push(nextPath)">Следующая</button>
+                </div>
               </div>
             </div>
           </div>
@@ -51,10 +59,42 @@ export default {
   data() {
     return {
       isActive: false,
-      listManualItem,
-      pagePrev: this.$route.path,
-      pageNext: this.$route.path
+      listManualItem, 
+      currentPath: "",
+      nextPath: "",
+      prevPath: "",
     }
+  },
+  created() {
+    this.setCurrentPath();
+  },
+  watch: {
+    "$route"() {
+      this.setCurrentPath();
+    }
+  },
+  methods: {
+    setCurrentPath() {
+      this.currentPath = this.$route.path;
+      
+      listManualItem.forEach((page, index, arr) => {
+        if (page.path === this.currentPath) {
+          const nextPage = arr[index+1];
+          const prevPage = arr[index-1];
+
+          if (nextPage) this.nextPath = nextPage.path;
+          else this.nextPath = false;
+
+          if (prevPage) this.prevPath = prevPage.path; 
+          else this.prevPath = false;
+        }
+      })
+      console.log("-----------");
+      console.log(this.prevPath);
+      console.log(this.currentPath);
+      console.log(this.nextPath);
+      
+    } 
   }
 }
 </script>

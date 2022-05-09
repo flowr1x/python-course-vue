@@ -274,9 +274,11 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  &__btn {
+  &__block {
     flex: 0 1 50%;
-    
+  }
+  &__btn {
+    width: 100%;
     cursor: pointer;
     padding: 5px 10px;
     display: inline-block;
@@ -293,7 +295,8 @@
     &:hover {
       background: var(--highlight-color);
     }
-    &_block {
+    &_hide {
+      display: none;
       &:hover {
         background: var(--highlight-color);
       }
