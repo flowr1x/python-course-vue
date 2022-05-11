@@ -9,6 +9,7 @@ import "@/assets/layouts/index.scss";
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
 import Maska from "maska"
+import pdf from "pdfvuer"
 import { GlobalEvents } from 'vue-global-events'
 import { initializeApp } from "firebase/app"
 import { getAuth, onAuthStateChanged } from "firebase/auth"
@@ -17,7 +18,7 @@ import components from "@/components/UI/index.js";
 
 let app;
 
-//fireabse
+//  fireabse
 
 initializeApp({
   apiKey: "AIzaSyChUwkELeiInxLEBCoHl6CvtTR_xHRkBsw",
@@ -31,9 +32,9 @@ initializeApp({
 onAuthStateChanged(getAuth(), () => {
   if (!app) {
     app = createApp(App);
-
+    app.component("pdf", pdf);
     app.component('GlobalEvents', GlobalEvents);
-    app.provide("mode", "dark");
+
     components.forEach(component => {
       app.component(component.name, component);
     });
@@ -42,9 +43,7 @@ onAuthStateChanged(getAuth(), () => {
       .use(Maska)
       .use(store)
       .use(router)
-      .mount('#app');
-    
-      
+      .mount('#app'); 
   }
 }); 
 

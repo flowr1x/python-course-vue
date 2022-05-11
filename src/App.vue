@@ -11,7 +11,8 @@ import EmptyLayout from "@/layouts/EmptyLayout.vue";
 import MainLayout from "@/layouts/MainLayout.vue"; 
 import MiddleLayout from "@/layouts/MiddleLayout.vue"; 
 import ContentLayout from "@/layouts/ContentLayout.vue"; 
-
+import MainPracticeLayout from "@/layouts/MainPracticeLayout.vue";
+import ContentPracticeLayout from "@/layouts/ContentPracticeLayout.vue"; 
 
 export default {
   data() {
@@ -28,7 +29,7 @@ export default {
     this.mode = localStorage.getItem("mode");
   },
   components: {
-    EmptyLayout, MainLayout, MiddleLayout, ContentLayout
+    EmptyLayout, MainLayout, MiddleLayout, ContentLayout, MainPracticeLayout, ContentPracticeLayout
   },
   methods: {
     toggle() {

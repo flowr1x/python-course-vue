@@ -5,7 +5,7 @@
       <section class="page__manual manual">
         <div class="manual__container">
           <div class="manual__title">
-            <h2>Содержание </h2>
+            <h2>Содержание</h2>
             <icon-burger id="menu__icon_aside" :isActive="isActive" @click="isActive = !isActive"/>
           </div>
           <div class="manual__content ">
@@ -23,7 +23,7 @@
               </nav>
             </aside>
             <div class="manual__list list-manual">
-              <router-view />
+              <router-view :path="document"/>
               <div class="manual__btns-change-page btns-change-page">
                 <div class="btns-change-page__block">
                   <button button class="btns-change-page__btn" 
@@ -49,7 +49,7 @@
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import AsideList from "@/components/AsideList.vue";
-import listManualItem from "@/mocks/headerTheory.js"
+import {practiceManualItem} from "@/mocks/headerTheory.js"
 
 
 export default {
@@ -59,14 +59,16 @@ export default {
   data() {
     return {
       isActive: false,
-      listManualItem, 
+      listManualItem: practiceManualItem, 
       currentPath: "",
       nextPath: "",
       prevPath: "",
+      document: "",
     }
   },
   created() {
     this.setCurrentPath();
+    this.getDocument();
   },
   watch: {
     "$route"() {
@@ -74,14 +76,17 @@ export default {
     }
   },
   methods: {
+    getDocument() {
+      
+    },
     setCurrentPath() {
       this.currentPath = this.$route.path;
       
-      listManualItem.forEach((page, index, arr) => {
+      practiceManualItem.forEach((page, index, arr) => {
         if (page.path === this.currentPath) {
           const nextPage = arr[index+1];
           const prevPage = arr[index-1];
-
+          this.document = page.document;
           if (nextPage) this.nextPath = nextPage.path;
           else this.nextPath = false;
 

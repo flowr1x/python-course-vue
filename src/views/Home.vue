@@ -15,12 +15,11 @@
             </li>
           </ul>
           <div class="list-manual__buttons">
-            <router-link :to="item.path" class="list-manual__btn btn">Посмотреть главу</router-link>
+            <router-link :to="item.path" class="list-manual__btn btn">Посмотреть</router-link>
           </div>
         </div>  
       </div>
     </transition-group>
-    <div @click="changeThemesApp">Switch mode themes</div>
   </div>
 </template>
 

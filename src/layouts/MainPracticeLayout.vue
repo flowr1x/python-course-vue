@@ -1,18 +1,13 @@
 <template>
   <div class="wrapper">
-    <Header :mode="mode" @toggle="$emit('toggle')"/>
+    <Header @toggle="$emit('toggle')" />
     <main class="page">
       <section class="page__beginpage beginpage">
         <div class="beginpage__container">
           <div class="beginpage__title">
-            <h1>Современный учебник Python</h1>
+            <h1>Практические работы</h1>
             <div class="beginpage__subtitle">
-              Учебник посвещен изучению основ языкy программирования Python. Разработчик Гвидо ван Россум создал Python 20 февраля 1991 года.
-            </div>
-          </div>
-          <div class="beginpage__search">
-            <div class="search-beginpage">
-              <input v-model="searchInput" type="text" class="search-beginpage__input" placeholder="Поиск">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet maiores qui, similique sit praesentium dignissimos, nobis adipisci consequuntur, impedit voluptatem sequi modi officiis voluptas inventore suscipit accusantium saepe minima veritatis.
             </div>
           </div>
         </div>
@@ -37,13 +32,13 @@
                 </div>
               </nav>
             </aside>
-            <div class="manual__list list-manual" :class="{'list-manual_fill': !isActive}">
-              <router-view :textInput="searchInput"/>
+            <div class="manual__list list-manual">
+              <router-view />
             </div>
           </div>
-          <button-scroll-top />
         </div>
       </section>
+      <button-scroll-top />
     </main>
     <Footer/>
   </div>
@@ -52,21 +47,17 @@
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import AsideList from "@/components/AsideList.vue";
-import listManualItem from "@/mocks/headerTheory.js"
+import {practiceManualItem} from "@/mocks/headerTheory.js"
+
 
 export default {
-  props: [
-    "mode"
-  ],
-  emits: ["toggle"],
   components: {
     Header, Footer, AsideList
   },
   data() {
     return {
       isActive: false,
-      listManualItem,
-      searchInput: "",
+      listManualItem: practiceManualItem, 
     }
   },
 }
