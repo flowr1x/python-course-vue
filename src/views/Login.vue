@@ -13,7 +13,7 @@
     <div class="form__box" ref="formBox">
       <!-- Form Login -->
       <form action="#" class="form form_signin" @submit.prevent="onSubmitLogUp">
-          <h3 class="form__title" @click="myMethod">Вход</h3>
+          <h3 class="form__title">Вход</h3>
           <div class="form__item">
             <my-input-form
               placeholder="Email" 
@@ -147,7 +147,7 @@
 import useVuelidate from '@vuelidate/core'
 import { required, email, minLength, sameAs } from '@vuelidate/validators'
 import MyInputForm from '../components/UI/MyInputForm.vue'
-import { useToast } from "vue-toastification";
+import messages from "@/plugins/messages.js"
 
 export default {
   components: { MyInputForm },
@@ -171,6 +171,10 @@ export default {
       confirmPassword: "",
     }
   }),
+  mounted() {
+    const query = this.$route.query.message;
+    if (query) this.$message(messages[query]);
+  },
   validations () {
     return {
       login: {
@@ -188,11 +192,6 @@ export default {
     }
   },
   methods: {
-    myMethod() {
-      const toast = useToast();
-      toast.error("Bitch");
-      console.log(toast);
-    },
     async onSubmitLogUp() {
       if (this.v$.login.$invalid) {
         this.v$.login.$touch();
@@ -201,17 +200,20 @@ export default {
       try {
         await this.$store.dispatch("login", this.login);
         this.$router.push("/");
-        const toast = useToast();
-        toast("Вы попали на сайт");
+        this.$message("С возращением");
       } catch (error) {}
 
     },
-    onSubmitLogIn() {
+    async onSubmitLogIn() {
       if (this.v$.register.$invalid) {
         this.v$.register.$touch();
         return;
       }  
-      this.$router.push("/");
+      try {
+        await this.$store.dispatch("register", this.register);
+        this.$router.push("/");
+        this.$message("Добро пожаловать");
+      } catch(e) {}
     },
     onClickLogOut(event) {
       this.$refs.formBox.classList.add("form__box_active");

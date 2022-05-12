@@ -5,6 +5,7 @@ import router from './router'
 import store from './store'
 
 import "@/assets/layouts/index.scss";
+import messagePlugin from './plugins/message.plugin'
 
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
@@ -32,6 +33,10 @@ initializeApp({
 onAuthStateChanged(getAuth(), () => {
   if (!app) {
     app = createApp(App);
+
+    app.use(Toast);
+    app.use(messagePlugin);
+
     app.component("pdf", pdf);
     app.component('GlobalEvents', GlobalEvents);
 
@@ -39,7 +44,6 @@ onAuthStateChanged(getAuth(), () => {
       app.component(component.name, component);
     });
     app
-      .use(Toast)
       .use(Maska)
       .use(store)
       .use(router)
