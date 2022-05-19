@@ -2,7 +2,7 @@
   <div class="wrapper">
     <Header @toggle="$emit('toggle')"/>
     <main class="page">
-      <router-view/>
+      <router-view />
     </main>
     <Footer/>
   </div>
@@ -15,6 +15,12 @@ import Footer from "@/components/Footer.vue";
 export default {
   components: {
     Header, Footer
-  }
+  },
+
+  async mounted() {
+    if (!Object.keys(this.$store.getters.info).length) {
+      await this.$store.dispatch("fetchInfo");
+    }
+  },
 }
 </script>

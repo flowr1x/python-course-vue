@@ -1,0 +1,18 @@
+$vt-color-default: var(--bg-color) !default;
+$vt-text-color-default: var(--text-color) !default;
+$vt-color-error: var(--additional-color) !default;
+$vt-text-color-error: var(--text-color) !default;
+
+@import "vue-toastification/src/scss/_variables";
+@import "vue-toastification/src/scss/_toastContainer";
+@import "vue-toastification/src/scss/_toast";
+@import "vue-toastification/src/scss/_closeButton";
+@import "vue-toastification/src/scss/_progressBar";
+@import "vue-toastification/src/scss/_icon";
+@import "vue-toastification/src/scss/animations/_bounce";
+
+// My settings
+.#{$vt-namespace}__toast {
+  border-radius: 0px;
+  box-shadow: 0 1px 30px 0px var(--primary-sdw-color);
+}

@@ -8,7 +8,6 @@ import "@/assets/layouts/index.scss";
 import messagePlugin from './plugins/message.plugin'
 
 import Toast from "vue-toastification";
-import "vue-toastification/dist/index.css";
 import Maska from "maska"
 import pdf from "pdfvuer"
 import { GlobalEvents } from 'vue-global-events'

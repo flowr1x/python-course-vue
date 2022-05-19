@@ -5,7 +5,7 @@
       <section class="page__manual manual">
         <div class="manual__container">
           <div class="manual__title">
-            <h2>Содержание </h2>
+            <h2>Содержание</h2>
             <icon-burger id="menu__icon_aside" :isActive="isActive" @click="isActive = !isActive"/>
           </div>
           <div class="manual__content ">
@@ -17,7 +17,7 @@
                     :key="item.path"
                     :title="item.title"
                     :subtitle="item.subtitle"
-                    :path="item.path"    
+                    :path="item.path"
                   />
                 </div>
               </nav>
