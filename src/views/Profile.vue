@@ -31,6 +31,9 @@
             <my-button class="form-profile__button " @submit.prevent="submitHandler">Обновить</my-button>
           </div>
         </form>
+        <div class="profile__posts" v-if="isAdmin">
+          <h3>Это профиль админа</h3>
+        </div>
       </div>
       <div class="profile__btn-exit">
         <a href="#" class="profile__btn btn" @click.prevent="logout">Выйти</a>
@@ -50,6 +53,11 @@ export default {
       v$: useVuelidate() 
     }
   },
+  data() {
+    return {
+      isAdmin: false,
+    }
+  },
   validations() {
     return {
       info: {
@@ -59,13 +67,14 @@ export default {
       }
     }
   },
-  mounted() {
-    this.group = this.info.group;
-    this.firstName = this.info.firstName;
-    this.lastName =  this.info.lastName;
+  async mounted() {
+    if (!Object.keys(this.$store.getters.info).length) {
+      await this.$store.dispatch("fetchInfo");
+    }
+    this.isAdmin = this.$store.getters.isAdmin;
   },
   computed: {
-    ...mapGetters(["info"])
+    ...mapGetters(["info"]),
   },
   methods: {
     async logout() {

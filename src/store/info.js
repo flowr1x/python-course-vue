@@ -2,9 +2,7 @@ import { getDatabase,
   ref, 
   get, 
   child, 
-  set,
-  push, 
-  update } from "firebase/database"
+  set } from "firebase/database"
 
 
 export default {

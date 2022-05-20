@@ -6,6 +6,19 @@ import { signInWithEmailAndPassword,
 import { getDatabase, ref, set } from "firebase/database"
 
 export default {
+  state: {
+    isAdmin: null,
+  },
+  mutations: {
+    setAdmin(state, isAdmin) {
+      console.log(isAdmin);
+      state.isAdmin = isAdmin === "ZPxOXM1h8WO1EzZj6qVDiK8l6hx2";
+    },
+    clearAdmin(state) {
+      console.log("clear");
+      state.isAdmin = null;
+    }
+  },
   actions: {
     async login( {dispatch, commit}, {email, password}) {      
       try {
@@ -32,15 +45,20 @@ export default {
         throw e;
       }
     },
-    getUid() {
-      const auth = getAuth();
-      const user = auth.currentUser;
-      return user ? user.uid : null;
+    getUid({commit}) {
+      const user = getAuth().currentUser;
+      const isAuth = user ? user.uid : null;
+      commit("setAdmin", isAuth)
+      return isAuth;
     },
     async logout({commit}) {
       const auth = getAuth();
       await signOut(auth);
       commit("clearInfo");
+      commit("clearAdmin");
     }
+  },
+  getters: {
+    isAdmin: s => s.isAdmin,
   }
 }
