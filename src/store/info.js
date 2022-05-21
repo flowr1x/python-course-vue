@@ -22,7 +22,6 @@ export default {
       const uid = await dispatch("getUid");
       const db = getDatabase();
       const updateData = {...getters.info, ...toUpdate};
-      console.log(updateData);
       await set(ref(db, `/users/${uid}/info`), updateData);
       commit("setInfo", updateData)
     },

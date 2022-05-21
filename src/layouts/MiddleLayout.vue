@@ -20,3 +20,9 @@ export default {
 
 }
 </script>
+{
+  "rules": {
+    ".read": "false",
+    ".write": "false"
+  },
+}

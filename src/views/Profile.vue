@@ -31,12 +31,10 @@
             <my-button class="form-profile__button " @submit.prevent="submitHandler">Обновить</my-button>
           </div>
         </form>
-        <div class="profile__posts" v-if="isAdmin">
-          <h3>Это профиль админа</h3>
-        </div>
+        <PracticeTableList :list="listPractice"/>
       </div>
       <div class="profile__btn-exit">
-        <a href="#" class="profile__btn btn" @click.prevent="logout">Выйти</a>
+        <a href="#" class="profile__btn btn" disabled @click.prevent="logout">Выйти</a>
       </div>
     </div>
   </div>
@@ -46,11 +44,17 @@
 import useVuelidate from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
 import { mapGetters } from "vuex"
+import listPractice from "@/mocks/practiceWorks.js"
+import PracticeTableList from "../components/PracticeTableList"
 
 export default {
+  components: {
+    PracticeTableList
+  },
   setup() {
     return { 
-      v$: useVuelidate() 
+      v$: useVuelidate(),
+      listPractice
     }
   },
   data() {
