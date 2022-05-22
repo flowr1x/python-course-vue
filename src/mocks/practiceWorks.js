@@ -1,32 +1,13 @@
 export default [
   {
-    id: 1,
-    title: "Практическая 1",
-    ref: "https://google.com",
-    mark: 5,
-  },
-  {
-    id: 2,
-    title: "Практическая 1",
-    ref: "https://google.com",
-    mark: 5,
-  },
-  {
     id: 3,
-    title: "Практическая 1",
-    ref: "https://google.com",
-    mark: 5,
+    title: "work",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, quidem vero corporis provident temporibus commodi similique minima officiis eligendi repellat!",
   },
   {
     id: 4,
-    title: "Практическая 1",
-    ref: "https://google.com",
-    mark: 5,
+    title: "work",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, quidem vero corporis provident temporibus commodi similique minima officiis eligendi repellat!",
   },
-  {
-    id: 5,
-    title: "Практическая 1",
-    ref: "https://google.com",
-    mark: 5,
-  }
+
 ]

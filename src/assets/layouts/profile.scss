@@ -6,24 +6,32 @@
   align-items: flex-start;
 }
 .profile__content {
-  flex: 0 1 50%;
+  flex: 0 1 60%;
 }
 .profile__title {
   font-size: 32px;
   line-height: 1.2;
   margin-bottom: 20px;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .form-profile {
   &__item:not(:last-child) {
     margin-bottom: 15px;
   }
+  &__btn {
+    text-align: right;
+  }
 }
 .profile__parctice-posts {
   padding: 35px 0px;
-
 }
 .practice-posts {
+  &__post {
+    margin-bottom: 15px;
+  }
   &__title {
     font-size: 32px;
     line-height: 1.2;
@@ -32,20 +40,62 @@
   }
   &__wrapper {
     display: flex;
+    gap: 15px;
   }
   &__table {
     width: 100%;
     margin-bottom: 5px;
+    padding: 0;
     & td {
-      width: 20%;
+      width: 34%;
       font-size: 16px;
     }
   }
 }
 
+.profile__practice {
+  padding: 15px 0px;
+}
+.profile-practice {
+  &__title {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  &__label {
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+  &__text {
+    line-height: 1.2;
+
+    & span {
+      font-size: 18px;
+    }
+  }
+  &__headline {
+    margin-bottom: 15px;
+  }
+  &__block {
+    background: var(--bg-color);
+    padding: 10px;
+  }
+  &__block:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  &__buttons {
+    text-align: right;
+  }
+  &__error {
+    color: var(--additional-color);
+    font-size: 18px;
+  }
+}
+
+
 .profile__btn-exit {
-  flex: 0 1 50%;
-  text-align: right;
 }
 
 // RESPONSIVE

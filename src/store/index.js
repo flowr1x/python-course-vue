@@ -5,6 +5,7 @@ import info from "./info.js";
 export default createStore({
   state: {
     error: null,
+    mode: "default"
   },
   mutations: {
     setError(state, error) {
@@ -12,10 +13,19 @@ export default createStore({
     },
     clearError(state) {
       state.error = null;
+    },
+    setMode(state, mode) {
+      state.mode = mode
+    }
+  },
+  actions: {
+    changeDarkMode({commit}, mode) {
+      commit("setMode", mode);
     }
   },
   getters: {
     error: state => state.error,
+    mode: state => state.mode,
   },
   modules: {
     auth, info

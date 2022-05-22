@@ -1,6 +1,6 @@
 <template>
   <div class="app" :class="mode">
-    <component :is="layout" :mode="mode" @toggle="toggle">
+    <component :is="layout">
       <router-view/>
     </component>
   </div>
@@ -15,28 +15,22 @@ import MainPracticeLayout from "@/layouts/MainPracticeLayout.vue";
 import ContentPracticeLayout from "@/layouts/ContentPracticeLayout.vue"; 
 
 export default {
-  data() {
-    return {
-      mode: "default"
-    }
-  },
   computed: {
     layout() {
       return (this.$route.meta.layout || "empty") + "-layout";
+    },
+    mode() {
+      return this.$store.getters.mode;
     }
   },
   created() {
-    this.mode = localStorage.getItem("mode");
+    this.$store.dispatch("changeDarkMode", localStorage.getItem("mode"));
   },
   components: {
     EmptyLayout, MainLayout, MiddleLayout, ContentLayout, MainPracticeLayout, ContentPracticeLayout
   },
   methods: {
-    toggle() {
-      if (this.mode === "dark") this.mode = "default";
-      else this.mode = "dark";
-      localStorage.setItem("mode", this.mode);
-    }
+
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <Header @toggle="$emit('toggle')"/>
+    <Header/>
     <main class="page">
       <router-view />
     </main>
@@ -16,13 +16,11 @@ export default {
   components: {
     Header, Footer
   },
-
+  async mounted() {
+    if (!Object.keys(this.$store.getters.info).length) {
+      await this.$store.dispatch("fetchInfo");
+    }
+  },
 
 }
 </script>
-{
-  "rules": {
-    ".read": "false",
-    ".write": "false"
-  },
-}

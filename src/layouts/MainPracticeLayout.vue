@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <Header @toggle="$emit('toggle')" />
+    <Header/>
     <main class="page">
       <section class="page__beginpage beginpage">
         <div class="beginpage__container">

@@ -61,7 +61,7 @@
       </div>
       <div class="header__icons">     
         <div class="header__icon highlight-icon">
-          <toggle-icon :mode="mode" @toggle="$emit('toggle')"/>
+          <toggle-icon />
         </div>
         <div class="header__icon user-icon">
           <router-link to="/profile">

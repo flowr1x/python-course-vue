@@ -2,9 +2,8 @@
   <div class="toggle">
     <input type="checkbox" 
       class="toggle__input" 
-      id="toggle-input" 
-      :checked="(mode==='dark') ? 'checked' : false"
-      @change="$emit('toggle')">
+      id="toggle-input"
+      @change="toggle">
     <label for="toggle-input" class="toggle__label">
       <svg class="svg-icon" viewBox="0 0 20 20">
             <path d="M17.498,11.697c-0.453-0.453-0.704-1.055-0.704-1.697c0-0.642,
@@ -18,8 +17,13 @@
 <script>
 export default {
   name: "toggle-icon",
-  props: ["mode"],
-  emits: ["toggle"]
+  methods: {
+    toggle() {
+      if (this.$store.getters.mode === "dark") this.$store.dispatch("changeDarkMode", "default");
+      else this.$store.dispatch("changeDarkMode", "dark");
+      localStorage.setItem("mode", this.$store.getters.mode);
+    }
+  }
 }
 </script>
 

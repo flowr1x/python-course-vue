@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <Header :mode="mode" @toggle="$emit('toggle')"/>
+    <Header/>
     <main class="page">
       <section class="page__beginpage beginpage">
         <div class="beginpage__container">
@@ -67,6 +67,11 @@ export default {
       isActive: false,
       listManualItem,
       searchInput: "",
+    }
+  },
+  async mounted() {
+    if (!Object.keys(this.$store.getters.info).length) {
+      await this.$store.dispatch("fetchInfo");
     }
   },
 }

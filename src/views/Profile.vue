@@ -2,7 +2,10 @@
   <div class="page__profile">
     <div class="profile__container">
       <div class="profile__content">
-        <h2 class="profile__title">Профиль</h2>
+        <div class="profile__title">
+          <h2>Профиль</h2>
+          <button class="profile__btn btn"  @click="logout">Выйти</button>
+        </div>
         <form class="profile__form form-profile" @submit.prevent="submitHandler">
           <div class="form-profile__item">
             <my-input-form class="form-profile__input"
@@ -27,14 +30,13 @@
              :class="{'form__input_invalid': 
                 (v$.info.group.$dirty && v$.info.group.required.$invalid)}"/>
           </div>
-          <div class="form-profile__item">
+          <div class="form-profile__item form-profile__btn">
             <my-button class="form-profile__button " @submit.prevent="submitHandler">Обновить</my-button>
           </div>
         </form>
-        <PracticeTableList :list="listPractice"/>
-      </div>
-      <div class="profile__btn-exit">
-        <a href="#" class="profile__btn btn" disabled @click.prevent="logout">Выйти</a>
+        <practice-form @createPractice="createPractice" />
+        <practice-list :list="listPr" @remove="removePractice"/>
+        <!-- <PracticeTableList :list="listPr" v-if="isAdmin"/> -->
       </div>
     </div>
   </div>
@@ -45,21 +47,19 @@ import useVuelidate from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
 import { mapGetters } from "vuex"
 import listPractice from "@/mocks/practiceWorks.js"
-import PracticeTableList from "../components/PracticeTableList"
+import PracticeTableList from "@/components/PracticeTableList"
+import PracticeList from "@/components/PracticeList"
+import PracticeForm from "@/components/PracticeForm"
+
 
 export default {
   components: {
-    PracticeTableList
+    PracticeTableList, PracticeList, PracticeForm
   },
   setup() {
     return { 
       v$: useVuelidate(),
       listPractice
-    }
-  },
-  data() {
-    return {
-      isAdmin: false,
     }
   },
   validations() {
@@ -71,14 +71,16 @@ export default {
       }
     }
   },
-  async mounted() {
-    if (!Object.keys(this.$store.getters.info).length) {
-      await this.$store.dispatch("fetchInfo");
+  data() {
+    return {
+      listPr: listPractice,
     }
-    this.isAdmin = this.$store.getters.isAdmin;
   },
   computed: {
     ...mapGetters(["info"]),
+        isAdmin() {
+      return this.$store.getters.isAdmin;  
+    }
   },
   methods: {
     async logout() {
@@ -93,6 +95,12 @@ export default {
       try {
         await this.$store.dispatch("updateInfo", this.info);
       } catch (error) {}
+    },
+    createPractice(practice) {
+      this.listPr.push(practice);
+    },
+    removePractice(practice) {
+      this.listPr = this.listPr.filter(item => practice.id !== item.id);
     }
   }
 }
