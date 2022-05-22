@@ -34,7 +34,7 @@ export default {
           commit("setInfo", snapshot.val());
         } 
       })
-    }
+    },
   },
   getters: {
     info: s => s.info

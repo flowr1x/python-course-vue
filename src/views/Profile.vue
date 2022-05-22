@@ -101,11 +101,17 @@ export default {
         await this.$store.dispatch("updateInfo", this.info);
       } catch (error) {}
     },
-    createPractice(practice) {
-      this.listPr.push(practice);
+    createPractice(practiceItem) {
+      this.$store.dispatch("createPractice", practiceItem)
     },
-    removePractice(practice) {
-      this.listPr = this.listPr.filter(item => practice.id !== item.id);
+    removePractice(practiceName) {
+      const newPracticeList = {};
+      for (let item in this.practice) {
+        if (practiceName == item) continue;
+        newPracticeList[`${item}`] = this.practice[`${item}`];
+      }
+
+      this.$store.dispatch("removePractice", newPracticeList);
     },
     showDialog() {
       this.dialogVisible = true;
