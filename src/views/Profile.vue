@@ -3,7 +3,7 @@
     <div class="profile__container">
       <div class="profile__content">
         <div class="profile__title">
-          <h2>Профиль</h2>
+          <h2 @click="f">Профиль</h2>
           <button class="profile__btn btn"  @click="logout">Выйти</button>
         </div>
         <form class="profile__form form-profile" @submit.prevent="submitHandler">
@@ -34,8 +34,12 @@
             <my-button class="form-profile__button " @submit.prevent="submitHandler">Обновить</my-button>
           </div>
         </form>
-        <practice-form @createPractice="createPractice" />
-        <practice-list :list="listPr" @remove="removePractice"/>
+        <h3 class="profile__title">Создание практических работ</h3>
+        <my-dialog v-model:show="dialogVisible">
+          <practice-form @createPractice="createPractice" /> 
+        </my-dialog>
+        <my-button @click="showDialog">Создать</my-button>
+        <practice-list :list="practice" @remove="removePractice"/>
         <!-- <PracticeTableList :list="listPr" v-if="isAdmin"/> -->
       </div>
     </div>
@@ -51,12 +55,12 @@ import PracticeTableList from "@/components/PracticeTableList"
 import PracticeList from "@/components/PracticeList"
 import PracticeForm from "@/components/PracticeForm"
 
-
 export default {
   components: {
     PracticeTableList, PracticeList, PracticeForm
   },
   setup() {
+ 
     return { 
       v$: useVuelidate(),
       listPractice
@@ -74,11 +78,12 @@ export default {
   data() {
     return {
       listPr: listPractice,
+      dialogVisible: false,
     }
   },
   computed: {
-    ...mapGetters(["info"]),
-        isAdmin() {
+    ...mapGetters(["info", "practice"]),
+    isAdmin() {
       return this.$store.getters.isAdmin;  
     }
   },
@@ -101,7 +106,10 @@ export default {
     },
     removePractice(practice) {
       this.listPr = this.listPr.filter(item => practice.id !== item.id);
-    }
+    },
+    showDialog() {
+      this.dialogVisible = true;
+    },
   }
 }
 </script>

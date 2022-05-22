@@ -1,6 +1,7 @@
-import { createStore } from 'vuex'
-import auth from "./auth.js"
+import { createStore } from 'vuex';
+import auth from "./auth.js";
 import info from "./info.js";
+import practice from "./practice.js";
 
 export default createStore({
   state: {
@@ -28,6 +29,6 @@ export default createStore({
     mode: state => state.mode,
   },
   modules: {
-    auth, info
+    auth, info, practice
   }
 })

@@ -1,4 +1,9 @@
 $header-size: 90px;
+$layout-1: 110;
+$layout-2: 100;
+$layout-3: 50;
+$layout-4: 10;
+$layout-5: 5;
 
 %shadow {
   box-shadow: 2px 9px 50px hsla(0, 0, 0, .1),
@@ -26,7 +31,7 @@ $header-size: 90px;
 
 // Menu Burger
 #menu__icon_aside {
-  z-index: 50;
+  z-index: $layout-3;
 }
 .icon-menu__burger {
   display: block;
@@ -79,7 +84,7 @@ $header-size: 90px;
   letter-spacing: .2px;
   border: 2px solid var(--highlight-color);
   position: relative;
-  z-index: 10;
+  z-index: $layout-4;
   background: none;
   box-shadow: none;
   transition: all .5s ease 0s;

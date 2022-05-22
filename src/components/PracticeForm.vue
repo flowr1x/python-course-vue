@@ -6,7 +6,7 @@
         <my-input-form 
           class="form-profile__input" 
           placeholder="Номер практической работы"
-          v-model="title"/>
+          v-model.number="title"/>
       </div>
       <div class="form-profile__item"> 
         <my-input-form 

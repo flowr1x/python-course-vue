@@ -17,7 +17,12 @@
   align-items: center;
   justify-content: space-between;
 }
+h3.profile__title  {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
 .form-profile {
+
   &__item:not(:last-child) {
     margin-bottom: 15px;
   }

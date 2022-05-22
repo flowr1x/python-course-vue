@@ -20,6 +20,9 @@ export default {
     if (!Object.keys(this.$store.getters.info).length) {
       await this.$store.dispatch("fetchInfo");
     }
+    if (!Object.keys(this.$store.getters.practice).length) {
+      await this.$store.dispatch("fetchPractice");
+    }
   },
 
 }
