@@ -1,6 +1,6 @@
 <template>
   <div class="profile__practice profile-practice">
-    <h3 class="profile-practice__title">Практические работы</h3>
+    <h3 class="profile-practice__title">Список практические работы</h3>
     <practice-item 
       v-for="(obj, practice) in list" 
       :practice="obj"
