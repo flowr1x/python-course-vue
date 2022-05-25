@@ -4,7 +4,7 @@
       <div class="profile__content">
         <div class="profile__title">
           <h2>Профиль</h2>
-          <button type="submit" class="profile__btn btn" @click="logout">Выйти</button>
+          <my-button class="profile__btn" @click="logout">Выйти</my-button>
         </div>
         <profile-user-info 
           :info="info" 
@@ -79,7 +79,6 @@ export default {
       this.dialogVisible = true;
     },
     async sendPractice(practice) {
-      console.log(practice);
       await this.$store.dispatch("createUserPractice", practice);
     },
   }

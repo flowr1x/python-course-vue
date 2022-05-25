@@ -11,11 +11,9 @@ export default {
   },
   mutations: {
     setAdmin(state, isAdmin) {
-      console.log("Это админ");
       state.isAdmin = isAdmin === "ZPxOXM1h8WO1EzZj6qVDiK8l6hx2";
     },
     clearAdmin(state) {
-      console.log("clear");
       state.isAdmin = null;
     }
   },
