@@ -56,11 +56,11 @@ export default {
         }
       }).catch(e => console.log(e));
     },
-    async createUserPractice({dispatch, commit}, namePractice, userPractice) {
+    async createUserPractice({dispatch, commit}, newUserPractice) {
       const uid = await dispatch("getUid");
       const db = getDatabase();
-      await set(ref(db, `/users/${uid}/practice/${namePractice}`), userPractice);
-      dispatch("fetchUserPractice", updateData);
+      await set(ref(db, `/users/${uid}/practice/${newUserPractice.id}`), newUserPractice);
+      dispatch("fetchUserPractice");
     },
   },
   getters: {

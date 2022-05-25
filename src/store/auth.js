@@ -56,6 +56,8 @@ export default {
       await signOut(auth);
       commit("clearInfo");
       commit("clearAdmin");
+      commit("clearPractice");
+      commit("clearUserPractice");
     }
   },
   getters: {

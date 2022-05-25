@@ -5,8 +5,10 @@
       v-for="(obj, practice) in list" 
       :practice="obj"
       :key="obj.id"
+      :idPractice="practice"
       :userPractice="userPractice"
-      @remove="$emit('remove', practice)"/>
+      @remove="$emit('remove', practice)"
+      @sendPracticeInUser="f"/>
     <div class="profile-practice__error" v-if="!isEmpty(list)">Практических нет</div>
   </div> 
 </template>
@@ -26,8 +28,10 @@ export default {
     isEmpty(obj) {
       for (let item in obj) return true;
       return false
+    },
+    f(newPracticeUser) {
+      this.$emit("sendPracticeInUser", newPracticeUser);
     }
-  }
-
+  },
 }
 </script>

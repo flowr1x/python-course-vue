@@ -16,7 +16,8 @@
         Удалить
       </my-button>
       <my-button 
-        v-if="!isAdmin">
+        v-if="!isAdmin"
+        @click="sendPracticeInUser">
         Отправить
       </my-button>
     </div>
@@ -28,11 +29,12 @@ export default {
   name: "practice-item",
   props: [
     "practice",
-    "userPractice"
+    "userPractice",
+    "idPractice"
   ],
   data() {
     return {
-      ref: this.userPractice?.id,
+      ref: this.userPractice?.[`${this.idPractice}`]?.ref,
     }
   },
   computed: {
@@ -40,5 +42,14 @@ export default {
       return this.$store.getters.isAdmin;  
     },
   },
+  methods: {
+    sendPracticeInUser() {
+      const newPracticeUser = {
+        id: this.idPractice,
+        ref: this.ref
+      };
+      this.$emit("sendPracticeInUser", newPracticeUser);
+    }
+  }
 }
 </script>

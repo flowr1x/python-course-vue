@@ -4,7 +4,7 @@
       <div class="profile__content">
         <div class="profile__title">
           <h2>Профиль</h2>
-          <button class="profile__btn btn"  @click="logout">Выйти</button>
+          <button type="submit" class="profile__btn btn" @click="logout">Выйти</button>
         </div>
         <profile-user-info 
           :info="info" 
@@ -19,7 +19,8 @@
         <practice-list 
           :list="practice"
           :userPractice="userPractice"
-          @remove="removePractice"/>
+          @remove="removePractice"
+          @sendPracticeInUser="sendPractice"/>
         <!-- <PracticeTableList 
           :list="listPr" 
           v-if="isAdmin"/> -->
@@ -76,6 +77,10 @@ export default {
     },
     showDialog() {
       this.dialogVisible = true;
+    },
+    async sendPractice(practice) {
+      console.log(practice);
+      await this.$store.dispatch("createUserPractice", practice);
     },
   }
 }
