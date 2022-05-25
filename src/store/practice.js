@@ -7,6 +7,7 @@ import { getDatabase,
 export default {
   state: {
     practice: {},
+    userPractice: {},
   },
   mutations: {
     setPractice(state, practice) {
@@ -14,13 +15,19 @@ export default {
     },
     clearPractice(state) {
       state.practice = {};
+    },
+    setUserPractice(state, userPractice) {
+      state.userPractice = userPractice;
+    },
+    clearUserPractice(state) {
+      state.userPractice = {};
     }
   },
   actions: {
     async createPractice({dispatch, commit, getters}, newPractice) {
       const db = getDatabase();
       const countItem = Object.keys(getters.practice).length + 1;
-      await set(ref(db, "practice/work_" + countItem), newPractice);
+      await set(ref(db, `practice/${Date.now()}` + countItem), newPractice);
       dispatch("fetchPractice");
     },
     async fetchPractice({dispatch, commit}) {
@@ -37,9 +44,27 @@ export default {
       const db = getDatabase();
       await set(ref(db, "practice/"), newListPractice);
       commit("setPractice", newListPractice);
-    }
+    },
+    async fetchUserPractice({dispatch, commit, getters}) {
+      const uid = await dispatch("getUid");
+      const dbRef = ref(getDatabase());
+      await get(child(dbRef, `users/${uid}/practice`)).then(snapshot => {
+        if (snapshot.exists) {
+          commit("setUserPractice", snapshot.val());
+        } else {
+          console.log("Error: Non Data");
+        }
+      }).catch(e => console.log(e));
+    },
+    async createUserPractice({dispatch, commit}, namePractice, userPractice) {
+      const uid = await dispatch("getUid");
+      const db = getDatabase();
+      await set(ref(db, `/users/${uid}/practice/${namePractice}`), userPractice);
+      dispatch("fetchUserPractice", updateData);
+    },
   },
   getters: {
-    practice: s => s.practice
+    practice: s => s.practice,
+    userPractice: s => s.userPractice,
   }
 }

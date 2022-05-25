@@ -16,14 +16,17 @@ export default {
   components: {
     Header, Footer
   },
-  async mounted() {
-    if (!Object.keys(this.$store.getters.info).length) {
-      await this.$store.dispatch("fetchInfo");
-    }
-    if (!Object.keys(this.$store.getters.practice).length) {
-      await this.$store.dispatch("fetchPractice");
-    }
-  },
+  // async mounted() {
+  //   if (!Object.keys(this.$store.getters.info).length) {
+  //     await this.$store.dispatch("fetchInfo");
+  //   }
+  //   if (!Object.keys(this.$store.getters.practice).length) {
+  //     await this.$store.dispatch("fetchPractice");
+  //   }
+  //   if (!Object.keys(this.$store.getters.userPractice).length) {
+  //     await this.$store.dispatch("fetchUserPractice");
+  //   }
+  // },
 
 }
 </script>

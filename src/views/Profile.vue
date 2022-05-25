@@ -6,14 +6,23 @@
           <h2>Профиль</h2>
           <button class="profile__btn btn"  @click="logout">Выйти</button>
         </div>
-        <profile-user-info :info="info" @submitHandler="submitHandler"/>
-        <h3 class="profile__title">Создание практических работ</h3>
-        <my-dialog v-model:show="dialogVisible">
-          <practice-form @createPractice="createPractice" /> 
-        </my-dialog>
-        <my-button @click="showDialog">Создать</my-button>
-        <practice-list :list="practice" @remove="removePractice"/>
-        <!-- <PracticeTableList :list="listPr" v-if="isAdmin"/> -->
+        <profile-user-info 
+          :info="info" 
+          @submitHandler="submitHandler"/>
+        <div v-if="isAdmin" class="profile__create-practice">
+          <h3 class="profile__title">Создание практических работ</h3>
+          <my-dialog v-model:show="dialogVisible">
+            <practice-form @createPractice="createPractice" />
+          </my-dialog>
+          <my-button @click="showDialog">Создать</my-button>
+        </div>
+        <practice-list 
+          :list="practice"
+          :userPractice="userPractice"
+          @remove="removePractice"/>
+        <!-- <PracticeTableList 
+          :list="listPr" 
+          v-if="isAdmin"/> -->
       </div>
     </div>
   </div>
@@ -38,7 +47,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["info", "practice"]),
+    ...mapGetters(["info", "practice", "userPractice"]),
     isAdmin() {
       return this.$store.getters.isAdmin;  
     }

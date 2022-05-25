@@ -23,8 +23,18 @@ export default {
       return this.$store.getters.mode;
     }
   },
-  created() {
+  async created() {
     this.$store.dispatch("changeDarkMode", localStorage.getItem("mode"));
+    if (!Object.keys(this.$store.getters.userPractice).length && !this.$store.getters.isAdmin) {
+      await this.$store.dispatch("fetchUserPractice");
+    }
+    if (!Object.keys(this.$store.getters.info).length) {
+      await this.$store.dispatch("fetchInfo");
+    }
+    if (!Object.keys(this.$store.getters.practice).length) {
+      await this.$store.dispatch("fetchPractice");
+    }
+
   },
   components: {
     EmptyLayout, MainLayout, MiddleLayout, ContentLayout, MainPracticeLayout, ContentPracticeLayout

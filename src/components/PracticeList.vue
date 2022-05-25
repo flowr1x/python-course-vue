@@ -5,6 +5,7 @@
       v-for="(obj, practice) in list" 
       :practice="obj"
       :key="obj.id"
+      :userPractice="userPractice"
       @remove="$emit('remove', practice)"/>
     <div class="profile-practice__error" v-if="!isEmpty(list)">Практических нет</div>
   </div> 
@@ -17,12 +18,10 @@ export default {
   components: {
     PracticeItem
   },
-  props: {
-    list: {
-      type: Object,
-      required: true,
-    }
-  },
+  props: [
+    "list",
+    "userPractice"
+  ],
   methods: {
     isEmpty(obj) {
       for (let item in obj) return true;

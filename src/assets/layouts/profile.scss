@@ -62,6 +62,7 @@ h3.profile__title  {
   padding: 15px 0px;
 }
 .profile-practice {
+  
   &__title {
     font-size: 24px;
     line-height: 1.2;
@@ -86,8 +87,11 @@ h3.profile__title  {
   &__block {
     background: var(--bg-color);
     padding: 10px;
+    & > *:not(:last-child) {
+      margin-bottom: 15px;
+    }
   }
-  &__block:not(:last-child) {
+  &__inputs > *:not(:last-child) {
     margin-bottom: 15px;
   }
   &__buttons {
