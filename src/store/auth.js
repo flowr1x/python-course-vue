@@ -7,7 +7,7 @@ import { getDatabase, ref, set } from "firebase/database"
 
 export default {
   state: {
-    isAdmin: null,
+    isAdmin: false,
   },
   mutations: {
     setAdmin(state, isAdmin) {
@@ -20,7 +20,8 @@ export default {
   actions: {
     async login( {dispatch, commit}, {email, password}) {      
       try {
-        await signInWithEmailAndPassword(getAuth(), email, password)
+        await signInWithEmailAndPassword(getAuth(), email, password);
+        await dispatch("getUid");
       } catch(e) {
         commit("setError",e); // получение ошибки 
         throw e

@@ -56,11 +56,17 @@ export default {
         }
       }).catch(e => console.log(e));
     },
-    async createUserPractice({dispatch, commit}, newUserPractice) {
-      const uid = await dispatch("getUid");
+    async createUserPractice({dispatch, commit, getters}, {newUserPractice, userId}) {
+      console.log(userId);
+      let uid;
       const db = getDatabase();
+      
+      if (getters.isAdmin) uid = userId;
+      else uid = await dispatch("getUid");
+      
       await set(ref(db, `/users/${uid}/practice/${newUserPractice.id}`), newUserPractice);
-      dispatch("fetchUserPractice");
+      await dispatch("fetchUserPractice");
+      await dispatch("fetchListAllUser");
     },
   },
   getters: {

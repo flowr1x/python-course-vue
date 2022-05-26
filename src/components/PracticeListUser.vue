@@ -12,26 +12,14 @@
 
     <div class="profile-practice__error" v-if="!isEmpty(list)">Практических нет</div>
   </div> 
-  <div class="profile__practice profile-practice">
-    <h3 class="profile-practice__title">Список практические работы</h3>
-      <practice-item-admin 
-      v-for="(obj, practice) in list" 
-      :practice="obj"
-      :key="obj.id"
-      @remove="$emit('remove', practice)"/>
-    <div class="profile-practice__error" v-if="!isEmpty(list)">Практических нет</div>
-  </div> 
 </template>
 <script>
-import PracticeItem from "@/components/PracticeItem.vue";
-
-import PracticeItemAdmin from "@/components/PracticeItemAdmin.vue";
 import PracticeItemUser from "@/components/PracticeItemUser.vue";
 
 export default {
   name: "practice-list",
   components: {
-    PracticeItem, PracticeItemAdmin, PracticeItemUser
+    PracticeItemUser
   },
   props: [
     "list",

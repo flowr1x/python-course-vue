@@ -4,19 +4,12 @@
       <div class="profile-practice__label">Практическая работа: {{ practice.title }}</div>
       <div class="profile-practice__text"><span>Тема</span>: {{ practice.text }}</div>
     </div>
-    <div class="profile-practice__inputs" v-if="userPractice">
+    <div class="profile-practice__inputs">
       <my-input-form placeholder="Ссылка на код" v-model="ref"/>
       <my-input-form placeholder="Оценка" v-model="mark" :disabled="!isAdmin"/>
     </div>
     <div class="profile-practice__buttons">
-      <my-button
-        v-if="isAdmin" 
-        class="profile__btn" 
-        @click="$emit('remove', practice)">
-        Удалить
-      </my-button>
       <my-button 
-    
         @click="sendPracticeInUser">
         Отправить
       </my-button>
@@ -26,7 +19,7 @@
 
 <script>
 export default {
-  name: "practice-item",
+  name: "practice-item-user",
   props: [
     "practice",
     "userPractice",

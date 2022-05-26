@@ -1,7 +1,7 @@
 <template>
   <div class="profile__practice profile-practice">
     <h3 class="profile-practice__title">Поиск пользователей</h3>
-    <my-button>Поиск пользователей</my-button>
+    <my-input-form placeholder="Поиск"/>
     <search-users-in-item 
       v-for="(userData, user) in users" 
       :key="user"

@@ -30,36 +30,12 @@ h3.profile__title  {
     text-align: right;
   }
 }
-.profile__parctice-posts {
-  padding: 35px 0px;
-}
-.practice-posts {
-  &__post {
-    margin-bottom: 15px;
-  }
-  &__title {
-    font-size: 32px;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-  }
-  &__wrapper {
-    display: flex;
-    gap: 15px;
-  }
-  &__table {
-    width: 100%;
-    margin-bottom: 5px;
-    padding: 0;
-    & td {
-      width: 34%;
-      font-size: 16px;
-    }
-  }
-}
 
-.profile__practice {
-  padding: 15px 0px;
+.profile__show {
+  padding: 15px 0;
+  :not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
 .profile-practice {
   & > *:not(:last-child) {
@@ -98,7 +74,13 @@ h3.profile__title  {
     margin-bottom: 15px;
   }
   &__buttons {
-    text-align: right;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  &__btn {
+    flex: 0 1 50%;
   }
   &__error {
     color: var(--additional-color);
