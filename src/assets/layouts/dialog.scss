@@ -8,10 +8,11 @@
   display: flex;
   z-index: 110;
   &__content {
+    overflow: auto;
     padding: 20px;
     margin: auto;
     background: var(--bg-color);
-    min-height: 50px;
+    max-height: 300px;
     min-width: 300px;
   }
 }

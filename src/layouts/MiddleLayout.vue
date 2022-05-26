@@ -26,6 +26,9 @@ export default {
     if (!Object.keys(this.$store.getters.practice).length) {
       await this.$store.dispatch("fetchPractice");
     }
+    if (!Object.keys(this.$store.getters.users).length) {
+      await this.$store.dispatch("fetchListAllUser");
+    }
   },
 
 }

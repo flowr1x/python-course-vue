@@ -9,21 +9,33 @@
         <profile-user-info 
           :info="info" 
           @submitHandler="submitHandler"/>
+
+        <div>
+          <my-dialog v-model:show="dialogVisibleUserSearch">
+            <search-users-in-list :users="users" @sendNameUser="showNameUser"/>
+          </my-dialog>
+          <h3 class="profile__title">Практические работы пользователей</h3>
+          <my-button @click="dialogVisibleUserSearch = true">Поиск пользователей</my-button>
+        </div>
         <div v-if="isAdmin" class="profile__create-practice">
           <h3 class="profile__title">Создание практических работ</h3>
           <my-dialog v-model:show="dialogVisible">
             <practice-form @createPractice="createPractice" />
           </my-dialog>
           <my-button @click="showDialog">Создать</my-button>
+          <div v-if="userPracticeNow">
+            <practice-list
+            :list="practice"
+            :userPractice="userPractice"
+            @remove="removePractice"
+            @sendPracticeInUser="sendPractice"/>
+          </div>
         </div>
         <practice-list 
           :list="practice"
           :userPractice="userPractice"
           @remove="removePractice"
           @sendPracticeInUser="sendPractice"/>
-        <!-- <PracticeTableList 
-          :list="listPr" 
-          v-if="isAdmin"/> -->
       </div>
     </div>
   </div>
@@ -32,23 +44,26 @@
 <script>
 import { mapGetters } from "vuex"
 import listPractice from "@/mocks/practiceWorks.js"
-import PracticeTableList from "@/components/PracticeTableList"
 import PracticeList from "@/components/PracticeList"
 import PracticeForm from "@/components/PracticeForm"
 import ProfileUserInfo from "@/components/ProfileUserInfo"
 
+import SearchUsersInList from "@/components/SearchUsersInList"
+
 export default {
   components: {
-    PracticeTableList, PracticeList, PracticeForm, ProfileUserInfo
+    PracticeList, PracticeForm, ProfileUserInfo, SearchUsersInList
   },
   data() {
     return {
       listPr: listPractice,
       dialogVisible: false,
+      dialogVisibleUserSearch: false,
+      userPracticeNow: "",
     }
   },
   computed: {
-    ...mapGetters(["info", "practice", "userPractice"]),
+    ...mapGetters(["info", "practice", "userPractice", "users"]),
     isAdmin() {
       return this.$store.getters.isAdmin;  
     }
@@ -81,6 +96,9 @@ export default {
     async sendPractice(practice) {
       await this.$store.dispatch("createUserPractice", practice);
     },
+    showNameUser(name) {
+      this.userPracticeNow = this.users[name]?.practice;
+    }
   }
 }
 </script>

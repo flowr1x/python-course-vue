@@ -1,0 +1,24 @@
+<template>
+  <div class="profile__practice profile-practice">
+    <h3 class="profile-practice__title">Поиск пользователей</h3>
+    <my-button>Поиск пользователей</my-button>
+    <search-users-in-item 
+      v-for="(userData, user) in users" 
+      :key="user"
+      :userData="userData"
+      :uid="user"
+      @sendNameUser="(uid) => { this.$emit('sendNameUser', uid)}"
+      />
+  </div>
+</template>
+
+<script>
+import SearchUsersInItem from "@/components/SearchUsersInItem"
+export default {
+  name: "search-users-in-list",
+  props: ["users"],
+  components: {
+    SearchUsersInItem
+  },
+}
+</script>
