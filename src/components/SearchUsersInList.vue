@@ -7,6 +7,7 @@
       :key="user"
       :userData="userData"
       :uid="user"
+      @removeUser="(uid) => { this.$emit('removeUser', uid) }"
       @sendNameUser="(uid) => { this.$emit('sendNameUser', uid)}"
       />
   </div>

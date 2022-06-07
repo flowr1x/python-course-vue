@@ -18,9 +18,12 @@
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 0.2px;       
-    margin-bottom: 10px;      
+    margin-bottom: 10px;  
+    border-bottom: 3px solid var(--text-color);
+    display: inline;
   }
   .beginpage__subtitle {
+    padding-top: 15px;
     font-size: 16px;
     font-weight: 300;
   }

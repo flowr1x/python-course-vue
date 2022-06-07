@@ -1,10 +1,12 @@
 <template>
-   <div class="wrapper">
-      <header class="single-header">
-        <div class="header__logo logo-header">
-          <router-link teg="a" :to="'/welcome'" class="logo-header__link">
-              <div class="logo-header__text">Pyth</div>
-              <svg class="svg-icon logo-header__icon"
+  <div class="form__content">
+    <section class="page__welcome welcome">
+      <div class="welcome__content">
+        <div class="welcome__screen screen-welcome">
+              <div class="screen-welcome__row">
+                <div class="screen-welcome__column">
+                  <div class="screen-welcome__item">
+                    <svg class="svg-icon logo-header__icon"
                 fill="#000000" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 50 50" width="50px" height="50px">
                   <path d="M 25 2 C 20.941406 2
@@ -44,40 +46,26 @@
                     21 Z M 30 39 C 28.898438 39 28 39.898438 28 41 C 28 42.101563 28.898438 43 30 43
                     C 31.101563 43 32 42.101563 32 41 C 32 39.898438 31.101563 39 30 39 Z"
                   />
-                </svg>
-              <div class="logo-header__text">n</div>
-          </router-link>
+                    </svg>
+                    <h2 class="screen-welcome__title">PYTHON LEARN</h2>
+                    <p class="screen-welcome__text">Сборник лекций, прктических работ и наглядных пособий. Конртроль за правильным выполнением от преподавателя.</p>
+                  </div>
+                </div>
+                <div class="screen-welcome__column">
+                  <div class="screen-welcome__item screen-welcome__item_button">
+                    <router-link :to="'/instruction'" class="screen-welcome__btn btn">Инструкция</router-link>
+                    <router-link :to="'/login'" class="screen-welcome__btn btn">Войти в систему</router-link>
+                    <my-button class="screen-welcome__btn">Справка</my-button>
+                  </div>
+                </div>
+              </div>
         </div>
-      </header>
-        <div class="class">
-          <router-view />
-        </div>
-    </div>
-    <div id="intro"></div>
+      </div>
+    </section>
+  </div>
 </template>
-
 <script>
-import messages from "@/plugins/messages.js"
-import Header from "@/components/Header.vue";
-
-
 export default {
-  computed: {
-    error() {
-      return this.$store.getters.error;
-    }
-  },
-   components: {
-    Header
-  },
-  watch: {
-    error(fbError) {
-      console.log(fbError.code);
-      this.$error(messages[fbError.code] || "Неизвестаная ошибка");
-    }
-  }
+  name: "welcome",
 }
 </script>
-<style lang="sass">
-
-</style>

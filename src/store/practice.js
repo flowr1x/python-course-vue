@@ -26,8 +26,9 @@ export default {
   actions: {
     async createPractice({dispatch, commit, getters}, newPractice) {
       const db = getDatabase();
-      const countItem = Object.keys(getters.practice).length + 1;
-      await set(ref(db, `practice/${Date.now()}` + countItem), newPractice);
+      console.log(newPractice);
+      newPractice.id = Date.now() + 5;
+      await set(ref(db, `practice/${Date.now()}`), newPractice);
       dispatch("fetchPractice");
     },
     async fetchPractice({dispatch, commit}) {
@@ -65,7 +66,8 @@ export default {
       else uid = await dispatch("getUid");
       
       await set(ref(db, `/users/${uid}/practice/${newUserPractice.id}`), newUserPractice);
-      await dispatch("fetchUserPractice");
+      
+      // await dispatch("fetchUserPractice");
       await dispatch("fetchListAllUser");
     },
   },

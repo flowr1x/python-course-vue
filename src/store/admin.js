@@ -2,8 +2,8 @@ import { getDatabase,
   ref, 
   get, 
   child, 
-  set } from "firebase/database"
-
+  set } from "firebase/database";
+import {getAuth} from "firebase/auth";
 export default {
   state: {
     users: {},
@@ -23,6 +23,16 @@ export default {
       await get(child(dbRef, "users")).then(snapshot => {
         if (snapshot.exists) commit("setUsers", snapshot.val()); 
       }).catch(e => console.log(e));
+    },
+    async removeUser(uid) {
+      getAuth()
+        .deleteUser(uid)
+        .then(() => {
+          console.log('Successfully deleted user');
+        })
+        .catch((error) => {
+          console.log('Error deleting user:', error);
+        });
     }
   },
   getters: {

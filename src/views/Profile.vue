@@ -12,7 +12,7 @@
         <div class="profile__show">
           <div v-if="isAdmin">
             <my-dialog v-model:show="dialogVisibleUserSearch">
-              <search-users-in-list :users="users" @sendNameUser="showNameUser"/>
+              <search-users-in-list :users="users" @sendNameUser="showNameUser" @removeUser="removeUser"/>
             </my-dialog>
             <h3 class="profile__title">Практические работы пользователей</h3>
             <my-button @click="dialogVisibleUserSearch = true">Поиск пользователей</my-button>
@@ -47,7 +47,7 @@
 
 <script>
 import { mapGetters } from "vuex"
-import listPractice from "@/mocks/practiceWorks.js"
+
 import PracticeListUser from "@/components/PracticeListUser"
 import PracticeForm from "@/components/PracticeForm"
 import ProfileUserInfo from "@/components/ProfileUserInfo"
@@ -60,7 +60,6 @@ export default {
   },
   data() {
     return {
-      listPr: listPractice,
       dialogVisible: false,
       dialogVisibleUserSearch: false,
       userPracticeNow: "",
@@ -102,8 +101,13 @@ export default {
       await this.$store.dispatch("createUserPractice", { "newUserPractice":practice, "userId": this.nowUserId});
     },
     showNameUser(name) {
+      this.userPracticeNow = "";
       this.userPracticeNow = this.users[name]?.practice;
       this.nowUserId = name;
+    },
+    async removeUser(uid) {
+      console.log(uid);
+      await this.$store.dispatch("removeUser", uid);
     }
   }
 }

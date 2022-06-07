@@ -17,12 +17,10 @@
   align-items: center;
   justify-content: space-between;
 }
-h3.profile__title  {
+h3.profile__title {
   font-size: 24px;
-  margin-bottom: 10px;
 }
 .form-profile {
-
   &__item:not(:last-child) {
     margin-bottom: 15px;
   }
@@ -107,5 +105,21 @@ h3.profile__title  {
 
 /* MOBILE SMALL */
 @media (max-width: 479.98px) {
-  
+  h3.profile__title {
+    font-size: 20px;
+  }
+  .profile-practice__title {
+    font-size: 14px;
+  }
+  .profile-practice {
+
+    &__label {
+      font-size: 14px;
+    }
+    &__text {
+      & span {
+        font-size: 14px;
+      }
+    }
+  }
 }

@@ -11,9 +11,10 @@ import Toast from "vue-toastification";
 import Maska from "maska"
 import pdf from "pdfvuer"
 import { GlobalEvents } from 'vue-global-events'
+
 import { initializeApp } from "firebase/app"
 import { getAuth, onAuthStateChanged } from "firebase/auth"
-
+import {TippyDirective, Tippy} from 'tippy.vue';
 import components from "@/components/UI/index.js";
 
 let app;
@@ -35,7 +36,8 @@ onAuthStateChanged(getAuth(), () => {
 
     app.use(Toast);
     app.use(messagePlugin);
-
+    app.directive("tippy", TippyDirective);
+    app.component("tippy", Tippy);
     app.component("pdf", pdf);
     app.component('GlobalEvents', GlobalEvents);
 

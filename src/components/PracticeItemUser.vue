@@ -39,11 +39,12 @@ export default {
   methods: {
     sendPracticeInUser() {
       const newPracticeUser = {
-        id: this.idPractice,
+        id: Date.now(),
         ref: this.ref
       };
       if (this.isAdmin) newPracticeUser.mark = this.mark;
       this.$emit("sendPracticeInUser", newPracticeUser);
+
     }
   }
 }

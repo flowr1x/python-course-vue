@@ -41,6 +41,18 @@ const routes = [
     meta: { layout: "middle" },
     component: () => import("../views/Profile.vue")
   },
+  {
+    path: "/welcome",
+    name: "welcome",
+    meta: { layout: "empty" },
+    component: () => import("../views/Welcome.vue")
+  },
+  {
+    path: "/instruction",
+    name: "instruction",
+    meta: { layout: "empty" },
+    component: () => import("../views/Instruction.vue")
+  },
 ];
 
 listTheory.forEach((component) => {

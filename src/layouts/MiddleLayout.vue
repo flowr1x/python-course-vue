@@ -17,14 +17,12 @@ export default {
     Header, Footer
   },
   async mounted() {
-    if (!Object.keys(this.$store.getters.info).length) {
-      await this.$store.dispatch("fetchInfo");
-    }
-    if (!this.$store.getters.isAdmin) {
-      await this.$store.dispatch("fetchUserPractice");
-    }
     if (!Object.keys(this.$store.getters.practice).length) {
       await this.$store.dispatch("fetchPractice");
+    }
+    await this.$store.dispatch("fetchUserPractice");
+    if (!Object.keys(this.$store.getters.info).length) {
+      await this.$store.dispatch("fetchInfo");
     }
     if (!Object.keys(this.$store.getters.users).length) {
       await this.$store.dispatch("fetchListAllUser");

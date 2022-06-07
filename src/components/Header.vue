@@ -61,7 +61,8 @@
       </div>
       <div class="header__icons">     
         <div class="header__icon highlight-icon">
-          <toggle-icon />
+          <tippy target="tooltip-1" class="tooltip">Сменить тему</tippy>
+          <toggle-icon v-tippy:tooltip-1 />
         </div>
         <div class="header__icon user-icon">
           <router-link to="/profile">
@@ -88,6 +89,7 @@ export default {
         {name: "Учебник", path: "/"},
         {name: "Практические работы", path: "/practice"},
         {name: "Видеоуроки", path: "/video"},
+      
       ],
       lastScroll: 0,
       defaultScroll: 100,

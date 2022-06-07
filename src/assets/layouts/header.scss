@@ -6,6 +6,14 @@
   display: block;
 }
 
+.single-header {
+  position: absolute;
+  height: $header-size;
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
 /*
   ========  =HEADER= ======== 
 */

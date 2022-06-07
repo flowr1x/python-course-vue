@@ -1,0 +1,9 @@
+.tooltip {
+  color: var(--text-color);
+  border: 2px solid var(--highlight-color);
+  // background: var(--highlight-color);
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 5px;
+  transition: .3s;
+}
