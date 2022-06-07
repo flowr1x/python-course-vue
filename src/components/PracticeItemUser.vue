@@ -39,7 +39,7 @@ export default {
   methods: {
     sendPracticeInUser() {
       const newPracticeUser = {
-        id: Date.now(),
+        id: this.idPractice,
         ref: this.ref
       };
       if (this.isAdmin) newPracticeUser.mark = this.mark;

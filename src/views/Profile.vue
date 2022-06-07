@@ -98,9 +98,11 @@ export default {
       this.dialogVisible = true;
     },
     async sendPractice(practice) {
+      console.log(this.nowUserId);
       await this.$store.dispatch("createUserPractice", { "newUserPractice":practice, "userId": this.nowUserId});
     },
     showNameUser(name) {
+      console.log(name);
       this.userPracticeNow = "";
       this.userPracticeNow = this.users[name]?.practice;
       this.nowUserId = name;

@@ -24,14 +24,14 @@ export default {
     }
   },
   actions: {
-    async createPractice({dispatch, commit, getters}, newPractice) {
+    async createPractice({dispatch}, newPractice) {
       const db = getDatabase();
       console.log(newPractice);
       newPractice.id = Date.now() + 5;
       await set(ref(db, `practice/${Date.now()}`), newPractice);
       dispatch("fetchPractice");
     },
-    async fetchPractice({dispatch, commit}) {
+    async fetchPractice({commit}) {
       const dbRef = ref(getDatabase());
 
       await get(child(dbRef, "practice")).then(snapshot => {
@@ -41,12 +41,12 @@ export default {
         else console.log("No data available");
       }).catch(e => console.log(e));
     },
-    async removePractice({dispatch, commit}, newListPractice) {
+    async removePractice({commit}, newListPractice) {
       const db = getDatabase();
       await set(ref(db, "practice/"), newListPractice);
       commit("setPractice", newListPractice);
     },
-    async fetchUserPractice({dispatch, commit, getters}) {
+    async fetchUserPractice({dispatch, commit}) {
       const uid = await dispatch("getUid");
       const dbRef = ref(getDatabase());
       await get(child(dbRef, `users/${uid}/practice`)).then(snapshot => {
@@ -57,17 +57,13 @@ export default {
         }
       }).catch(e => console.log(e));
     },
-    async createUserPractice({dispatch, commit, getters}, {newUserPractice, userId}) {
-      console.log(userId);
-      let uid;
+    async createUserPractice({dispatch, getters}, {newUserPractice, userId}) {
+      console.log(userId + "-----STORE");
+      const uid = getters.isAdmin ? userId : await dispatch("getUid");
       const db = getDatabase();
       
-      if (getters.isAdmin) uid = userId;
-      else uid = await dispatch("getUid");
-      
       await set(ref(db, `/users/${uid}/practice/${newUserPractice.id}`), newUserPractice);
-      
-      // await dispatch("fetchUserPractice");
+      await dispatch("fetchUserPractice");
       await dispatch("fetchListAllUser");
     },
   },
