@@ -54,10 +54,6 @@
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity 1s;
-  .preloader__logo {
-    animation-name: scaleOut;
-    animation-duration: 1s;
-  }
 }
 
 .fade-enter, .fade-leave-to {

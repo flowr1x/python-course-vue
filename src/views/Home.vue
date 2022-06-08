@@ -26,6 +26,8 @@
 <script>
 import themes from "@/themes/index.js";
 import listManualItem from "@/mocks/headerTheory.js";
+import messages from "@/plugins/messages.js";
+
 export default {
   name: 'Home',
   props: [
@@ -36,6 +38,11 @@ export default {
       isActive: false,    
       listManualItem
     }
+  },
+  mounted() {
+    // Проверяет query запрос, для вывода сообщения из messeages.js
+    const query = this.$route.query.message;
+    if (query) this.$message(messages[query]);
   },
   watch: {
     textInput(newText, oldText) {

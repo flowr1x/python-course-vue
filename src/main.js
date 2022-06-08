@@ -11,7 +11,7 @@ import Toast from "vue-toastification";
 import Maska from "maska"
 import pdf from "pdfvuer"
 import { GlobalEvents } from 'vue-global-events'
-import loader from "vue-ui-preloader";
+
 import { initializeApp } from "firebase/app"
 import { getAuth, onAuthStateChanged } from "firebase/auth"
 import {TippyDirective, Tippy} from 'tippy.vue';
@@ -45,7 +45,6 @@ onAuthStateChanged(getAuth(), () => {
       app.component(component.name, component);
     });
     app
-      .use(loader)
       .use(Maska)
       .use(store)
       .use(router)

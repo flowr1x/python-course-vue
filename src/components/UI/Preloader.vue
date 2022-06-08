@@ -57,18 +57,11 @@
 
 <script>
 export default {
-  name: "preloader",
-  data() {
-    return {
-      show: true,
-    }
-  },
-  mounted() {
-    this.showToggle();
-  },
-  methods: {
-    showToggle() {
-      setTimeout(() => {this.show = false}, 1000)
+  name: "Preloader",
+  props: {
+    show: {
+      type: Boolean,
+      default: false,
     }
   }
 }

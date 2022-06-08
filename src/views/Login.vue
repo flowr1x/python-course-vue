@@ -143,16 +143,20 @@
       </div>
     </div>
   </div>
+  <Preloader :show="showLoader"/>
 </template>
 
 <script>
 import useVuelidate from '@vuelidate/core'
 import { required, email, minLength, sameAs } from '@vuelidate/validators'
-import MyInputForm from '../components/UI/MyInputForm.vue'
 import messages from "@/plugins/messages.js"
+import Preloader from "@/components/UI/Preloader.vue";
+import {mapGetters, mapActions} from "vuex"
 
 export default {
-  components: { MyInputForm },
+  components: { 
+    Preloader 
+  },
   name: "login",
   setup() {
     return { 
@@ -171,9 +175,11 @@ export default {
       lastName: "",
       password: "",
       confirmPassword: "",
-    }
+    },
+    showLoader: false,
   }),
   mounted() {
+    // Проверяет query запрос, для вывода сообщения из messeages.js
     const query = this.$route.query.message;
     if (query) this.$message(messages[query]);
   },
@@ -194,16 +200,20 @@ export default {
     }
   },
   methods: {
+    ...mapActions({loginToPage:"login", registerToPage: "register"}),
     async onSubmitLogUp() {
       if (this.v$.login.$invalid) {
         this.v$.login.$touch();
         return;
       }
+      this.showLoader = true;
       try {
-        await this.$store.dispatch("login", this.login);
-        this.$router.push("/");
-        this.$message("С возращением");
-      } catch (error) {}
+        await this.loginToPage(this.login);
+        this.$router.push("/?message=comeback");
+      } catch (error) {
+      } finally {
+        this.showLoader = false;
+      }
 
     },
     async onSubmitLogIn() {
@@ -211,11 +221,14 @@ export default {
         this.v$.register.$touch();
         return;
       }  
+      this.showLoader = true;
       try {
-        await this.$store.dispatch("register", this.register);
-        this.$router.push("/");
-        this.$message("Добро пожаловать");
-      } catch(e) {}
+        await this.registerToPage(this.register);
+        this.$router.push("/?message=welcome");
+      } catch(e) {
+      } finally {
+        this.showLoader = false;
+      }
     },
     onClickLogOut(event) {
       this.$refs.formBox.classList.add("form__box_active");

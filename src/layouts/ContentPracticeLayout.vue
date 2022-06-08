@@ -50,11 +50,14 @@ import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import AsideList from "@/components/AsideList.vue";
 import {practiceManualItem} from "@/mocks/headerTheory.js"
-
+import Preloader from "@/components/UI/Preloader.vue";
 
 export default {
   components: {
-    Header, Footer, AsideList
+    Header, 
+    Footer, 
+    AsideList,
+    Preloader
   },
   data() {
     return {
