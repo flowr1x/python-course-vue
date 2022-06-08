@@ -53,6 +53,8 @@
           </div>
         </div>
       </section>
+      <preloader/>
+     <!-- <loader object="#ff9633" color1="#ffffff" color2="#17fd3d" size="5" speed="2" bg="#343a40" objectbg="#999793" opacity="100" name="circular"></loader> -->
       <button-scroll-top />
     </main>
     <Footer/>
@@ -63,11 +65,16 @@ import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import AsideListVideo from "@/components/AsideListVideo.vue";
 import {videoManualItem} from "@/mocks/headerTheory.js"
+import Preloader from "@/components/UI/Preloader.vue"
+
 
 
 export default {
   components: {
-    Header, Footer, AsideListVideo
+    Header, 
+    Footer,
+    AsideListVideo,
+    Preloader,
   },
   data() {
     return {
