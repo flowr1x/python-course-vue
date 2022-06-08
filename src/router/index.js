@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import listTheory from "@/views/theory/index.js"; 
+import { getAuth } from "firebase/auth"
 
 const routes = [
   {
@@ -32,13 +33,13 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    meta: { layout: "main" },
+    meta: { layout: "main", auth: true},
     component: Home
   },
   {
     path: "/profile",
     name: "profile",
-    meta: { layout: "middle" },
+    meta: { layout: "middle", auth: true},
     component: () => import("../views/Profile.vue")
   },
   {
@@ -56,7 +57,7 @@ const routes = [
   {
     path: "/video",
     name: "video",
-    meta: { layout: "video" },
+    meta: { layout: "video", auth: true},
     component: () => import("../views/Video.vue")
   },
 ];
@@ -64,7 +65,7 @@ const routes = [
 listTheory.forEach((component) => {
   routes.push({
     path: `/${component.name}`,
-    meta: {layout: "content"},
+    meta: {layout: "content", auth: true},
     name: component.name,
     component
   });
@@ -88,5 +89,17 @@ const router = createRouter({
   },
   routes,
 })
+
+router.beforeEach((to, from, next) => {
+  const currentUser = getAuth().currentUser;
+  const requierAuth = to.matched.some(record => record.meta.auth);
+
+  if (requierAuth && !currentUser) {
+    next("/welcome");
+  } else {
+    next();
+  }
+
+});
 
 export default router
