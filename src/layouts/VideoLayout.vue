@@ -35,6 +35,20 @@
             </aside>
             <div class="manual__list list-manual">
               <router-view :link="nowVideo"/>
+              <div class="manual__list list-manual">
+              <div class="manual__btns-change-page btns-change-page">
+                <div class="btns-change-page__block">
+                  <button button class="btns-change-page__btn" 
+                    :class="{'btns-change-page__btn_hide':!this.prevVideo}" 
+                    @click="getPrevVideo()">Предыдущая</button>
+                </div>
+                <div class="btns-change-page__block">
+                  <button class="btns-change-page__btn"
+                    :class="{'btns-change-page__btn_hide':!this.nextVideo}" 
+                    @click="getNextVideo()">Следующая</button>
+                </div>
+              </div>
+              </div>
             </div>
           </div>
         </div>
@@ -60,12 +74,40 @@ export default {
       isActive: false,
       listManualItem: videoManualItem, 
       nowVideo: "",
+      nextVideo: "",
+      prevVideo: "",
     }
   },
+  mounted() {
+    this.nowVideo = this.listManualItem[0].link;
+    this.setCurrentPath();
+  },
   methods: {
+    setCurrentPath() {
+      this.listManualItem.forEach((page, index, arr) => {
+        if (page.link === this.nowVideo) {
+          const nextVideo = arr[index+1];
+          const prevVideo = arr[index-1];
+
+          if (nextVideo) this.nextVideo = nextVideo.link;
+          else this.nextVideo = false;
+
+          if (prevVideo) this.prevVideo = prevVideo.link; 
+          else this.prevVideo = false;
+          console.log(this.nowVideo + "___" + this.nextVideo + "___" + this.prevVideo + "___");
+        }
+      })
+    },
+    getNextVideo() {
+      this.getReferense(this.nextVideo);
+    },
+    getPrevVideo() {
+       this.getReferense(this.prevVideo);
+    },
     getReferense(link) {
       this.nowVideo = link;
+      this.setCurrentPath();
     }
-  }
+  },
 }
 </script>
