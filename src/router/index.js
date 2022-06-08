@@ -53,6 +53,12 @@ const routes = [
     meta: { layout: "empty" },
     component: () => import("../views/Instruction.vue")
   },
+  {
+    path: "/video",
+    name: "video",
+    meta: { layout: "video" },
+    component: () => import("../views/Video.vue")
+  },
 ];
 
 listTheory.forEach((component) => {

@@ -227,4 +227,46 @@ export const practiceManualItem = [
     document: "./static/practice_9-10.pdf",
     path: "/theory_1",
   },
+];
+export const videoManualItem = [
+  { 
+    title: "Видео 1",
+    subtitle: "Введение",
+    link: "i0g4mQbMexg",
+  },
+  { 
+    title: "Видео 2",
+    subtitle: "Структура программы на языке Python, Операторы и переменные, Типы данных",
+    link: "ElrGFetSVPQ",
+  },
+  { 
+    title: "Видео 3",
+    subtitle: "Ввод и вывод данных в программах на языке Python",
+    link: "aIOI_AN7G6U",
+  },
+  { 
+    title: "Видео 4",
+    subtitle: "Линейные алгоритмы обработки целочисленных данных",
+    link: "LmVC1_bdXmQ",
+  },
+  { 
+    title: "Видео 5",
+    subtitle: "Линейные алгоритмы обработки вещественных чисел",
+    link: "4OChqLRCR9I",
+  },
+  { 
+    title: "Видео 6",
+    subtitle: "Структура программы на языке Python, Операторы и переменные, Типы данных",
+    link: "4OChqLRCR9I",
+  },
+  { 
+    title: "Видео 7",
+    subtitle: "Структура программы на языке Python, Операторы и переменные, Типы данных",
+    link: "ElrGFetSVPQ",
+  },
+  { 
+    title: "Видео 8",
+    subtitle: "Структура программы на языке Python, Операторы и переменные, Типы данных",
+    link: "ElrGFetSVPQ",
+  },
 ]

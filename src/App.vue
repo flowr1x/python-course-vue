@@ -13,6 +13,7 @@ import MiddleLayout from "@/layouts/MiddleLayout.vue";
 import ContentLayout from "@/layouts/ContentLayout.vue"; 
 import MainPracticeLayout from "@/layouts/MainPracticeLayout.vue";
 import ContentPracticeLayout from "@/layouts/ContentPracticeLayout.vue"; 
+import VideoLayout from "@/layouts/VideoLayout.vue"; 
 
 export default {
   computed: {
@@ -37,7 +38,7 @@ export default {
 
   },
   components: {
-    EmptyLayout, MainLayout, MiddleLayout, ContentLayout, MainPracticeLayout, ContentPracticeLayout
+    EmptyLayout, MainLayout, MiddleLayout, ContentLayout, MainPracticeLayout, ContentPracticeLayout,VideoLayout
   },
 }
 </script>
