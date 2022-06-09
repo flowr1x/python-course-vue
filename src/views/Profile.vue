@@ -15,8 +15,7 @@
                 <my-dialog v-model:show="dialogVisibleUserSearch">
                   <search-users-in-list 
                     :users="users" 
-                    @searchUserByUid="searchUserByUid" 
-                    @removeUser="removeUser"/>
+                    @searchUserByUid="searchUserByUid"/>
                 </my-dialog>
                 <h3 class="profile__title">Индивидуальные задания пользователей</h3>
                 <my-button @click="dialogVisibleUserSearch = true">Поиск пользователей</my-button>
@@ -54,7 +53,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex"
+import { mapGetters, mapActions } from "vuex"
 
 import PracticeListUser from "@/components/PracticeListUser"
 import PracticeForm from "@/components/PracticeForm"
@@ -83,23 +82,27 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["info", "practice", "userPractice", "users"]),
-    isAdmin() {
-      return this.$store.getters.isAdmin;  
-    }
+    ...mapGetters(["info", "practice", "userPractice", "users", "isAdmin"]),
   },
   methods: {
+    ...mapActions({
+      logoutAccount: "logout",
+      updateInfo: "updateInfo",
+      createPracticeAdmin: "createPractice",
+      removePracticeAdmin: "removePractice",
+      createUserPractice: "createUserPractice",
+    }),
     async logout() {
-      await this.$store.dispatch("logout");
+      await this.logoutAccount();
       this.$router.push("/login?message=logout");
     },
     async submitHandler(info) {
       try {
-        await this.$store.dispatch("updateInfo", info);
+        await this.updateInfo(info);
       } catch (error) {}
     },
     createPractice(practiceItem) {
-      this.$store.dispatch("createPractice", practiceItem)
+      this.createPracticeAdmin(practiceItem)
     },
     removePractice(practiceName) {
       const newPracticeList = {};
@@ -108,22 +111,19 @@ export default {
         newPracticeList[`${item}`] = this.practice[`${item}`];
       }
 
-      this.$store.dispatch("removePractice", newPracticeList);
+      this.removePracticeAdmin(newPracticeList);
     },
     showDialog() {
       this.dialogVisible = true;
     },
     async sendPractice(practice) {
-      await this.$store.dispatch("createUserPractice", { "newUserPractice":practice, "userId": this.nowUserId});
+      await this.createUserPractice({ "newUserPractice":practice, "userId": this.nowUserId});
     },
     searchUserByUid(name) {
       this.userPracticeNow = "";
       this.userPracticeNow = this.users[name]?.practice;
       this.nowUserId = name;
     },
-    async removeUser(uid) {
-      await this.$store.dispatch("removeUser", uid);
-    }
   }
 }
 </script>

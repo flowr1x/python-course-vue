@@ -7,7 +7,6 @@
       :key="user"
       :userData="userData"
       :uid="user"
-      @removeUser="(uid) => { this.$emit('removeUser', uid) }"
       @searchUserByUid="(uid) => { this.$emit('searchUserByUid', uid)}"
       />
   </div>

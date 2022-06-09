@@ -24,16 +24,6 @@ export default {
         if (snapshot.exists) commit("setUsers", snapshot.val()); 
       }).catch(e => console.log(e));
     },
-    async removeUser(uid) {
-      getAuth()
-        .deleteUser(uid)
-        .then(() => {
-          console.log('Successfully deleted user');
-        })
-        .catch((error) => {
-          console.log('Error deleting user:', error);
-        });
-    }
   },
   getters: {
     users: s => s.users,
