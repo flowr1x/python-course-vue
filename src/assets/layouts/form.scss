@@ -1,14 +1,15 @@
 .form__content {
+  padding: 135px 0 25px 0;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
+  justify-content: center;
 }
 .form__inner {
     width: 800px;
     height: 500px;
     padding: 40px 0;
     position: relative;
+    z-index: 1;
 }
 .form__block {
   height: 100%;

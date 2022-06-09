@@ -4,10 +4,11 @@ import info from "./info.js";
 import practice from "./practice.js";
 import admin from "./admin.js";
 
+
 export default createStore({
   state: {
     error: null,
-    mode: "default"
+    mode: "default",
   },
   mutations: {
     setError(state, error) {

@@ -67,7 +67,13 @@
   </div>
 </template>
 <script>
+import messages from "@/plugins/messages.js"
 export default {
   name: "welcome",
+  mounted() {
+    // Проверяет query запрос, для вывода сообщения из messeages.js
+    const query = this.$route.query.message;
+    if (query) this.$message(messages[query]);
+  },
 }
 </script>

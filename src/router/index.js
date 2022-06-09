@@ -100,9 +100,9 @@ router.beforeEach((to, from, next) => {
   const currentUser = getAuth().currentUser;
   const requierAuth = to.matched.some(record => record.meta.auth);
   const nameComponent = to.name;
-  console.log(nameComponent);
+
   if (requierAuth && !currentUser) {
-    next("/welcome");
+    next("/welcome?message=needlog");
   } else if (currentUser && nameComponent === "login") {
     next("/");
   } else {

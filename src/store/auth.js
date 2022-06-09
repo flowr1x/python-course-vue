@@ -9,7 +9,7 @@ import { getDatabase,
 
 export default {
   state: {
-    isAdmin: false,
+    isAdmin: null,
   },
   mutations: {
     setAdmin(state, isAdmin) {

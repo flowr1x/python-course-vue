@@ -4,5 +4,6 @@ export default {
   "auth/wrong-password": "Непрвильный пароль",
   "auth/email-already-in-use": "Этот Email уже занят",
   "welcome": "Добро пожаловать",
-  "comeback": "С возвращением"
+  "comeback": "С возвращением",
+  "needlog": "Необходимо войти в ситему" 
 }
