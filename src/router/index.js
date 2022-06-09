@@ -99,9 +99,12 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const currentUser = getAuth().currentUser;
   const requierAuth = to.matched.some(record => record.meta.auth);
-
+  const nameComponent = to.name;
+  console.log(nameComponent);
   if (requierAuth && !currentUser) {
     next("/welcome");
+  } else if (currentUser && nameComponent === "login") {
+    next("/");
   } else {
     next();
   }
