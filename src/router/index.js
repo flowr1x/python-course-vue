@@ -60,6 +60,12 @@ const routes = [
     meta: { layout: "video", auth: true},
     component: () => import("../views/Video.vue")
   },
+  {
+    path: "/help",
+    name: "help",
+    meta: { layout: "empty"},
+    component: () => import("../views/Help.vue")
+  },
 ];
 
 listTheory.forEach((component) => {

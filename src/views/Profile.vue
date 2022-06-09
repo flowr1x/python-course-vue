@@ -1,48 +1,49 @@
 <template>
-  <div class="page__profile">
-    <div class="profile__container">
-      <div class="profile__content">
-        <div class="profile__title">
-          <h2>Профиль</h2>
-          <my-button class="profile__btn" @click="logout">Выйти</my-button>
-        </div>
-        <profile-user-info 
-          :info="info" 
-          @submitHandler="submitHandler"/>
-        <div class="profile__show">
-          <div v-if="isAdmin">
-            <my-dialog v-model:show="dialogVisibleUserSearch">
-              <search-users-in-list :users="users" @sendNameUser="showNameUser" @removeUser="removeUser"/>
-            </my-dialog>
-            <h3 class="profile__title">Практические работы пользователей</h3>
-            <my-button @click="dialogVisibleUserSearch = true">Поиск пользователей</my-button>
-            <div v-if="userPracticeNow">
-              <practice-list-user
-              :list="practice"
-              :userPractice="userPracticeNow"
-              @sendPracticeInUser="sendPractice"/>
+      <div class="page__profile">
+        <div class="profile__container">
+          <div class="profile__content">
+            <div class="profile__title">
+              <h2>Профиль</h2>
+              <my-button class="profile__btn" @click="logout">Выйти</my-button>
             </div>
-          </div>
-          <div v-if="isAdmin">
-            <h3 class="profile__title">Создать практические работы</h3>
-            <my-dialog v-model:show="dialogVisible">
-              <practice-form @createPractice="createPractice" />
-            </my-dialog>
-            <my-button @click="showDialog">Создать</my-button>
-            <practice-list-admin
-              :list="practice"
-              @remove="removePractice"/>
-          </div>
-          <div v-if="!isAdmin">
-              <practice-list-user
-              :list="practice"
-              :userPractice="userPractice"
-              @sendPracticeInUser="sendPractice"/>
+            <profile-user-info
+              :info="info"
+              @submitHandler="submitHandler"/>
+            <div class="profile__show">
+              <div v-if="isAdmin">
+                <my-dialog v-model:show="dialogVisibleUserSearch">
+                  <search-users-in-list :users="users" @sendNameUser="showNameUser" @removeUser="removeUser"/>
+                </my-dialog>
+                <h3 class="profile__title">Практические работы пользователей</h3>
+                <my-button @click="dialogVisibleUserSearch = true">Поиск пользователей</my-button>
+                <div v-if="userPracticeNow">
+                  <practice-list-user
+                  :list="practice"
+                  :userPractice="userPracticeNow"
+                  @sendPracticeInUser="sendPractice"/>
+                </div>
+              </div>
+              <div v-if="isAdmin">
+                <h3 class="profile__title">Создать практические работы</h3>
+                <my-dialog v-model:show="dialogVisible">
+                  <practice-form @createPractice="createPractice" />
+                </my-dialog>
+                <my-button @click="showDialog">Создать</my-button>
+                <practice-list-admin
+                  :list="practice"
+                  @remove="removePractice"/>
+              </div>
+              <div v-if="!isAdmin">
+                  <practice-list-user
+                  :list="practice"
+                  :userPractice="userPractice"
+                  @sendPracticeInUser="sendPractice"/>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+
 </template>
 
 <script>
@@ -56,7 +57,11 @@ import SearchUsersInList from "@/components/SearchUsersInList"
 
 export default {
   components: {
-    PracticeForm, ProfileUserInfo, SearchUsersInList, PracticeListAdmin, PracticeListUser
+    PracticeForm, 
+    ProfileUserInfo, 
+    SearchUsersInList, 
+    PracticeListAdmin, 
+    PracticeListUser,
   },
   data() {
     return {

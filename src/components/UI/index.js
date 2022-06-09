@@ -4,6 +4,7 @@ import IconBurger from "./IconBurger.vue"
 import ButtonScrollTop from "./ButtonScrollTop.vue"
 import MyToggle from "./MyToggle.vue"
 import MyDialog from "./MyDialog.vue"
+import BubblingText from "./BubblingText.vue"
 
 export default [
   MyButton, 
@@ -11,5 +12,6 @@ export default [
   IconBurger,
   ButtonScrollTop, 
   MyToggle, 
-  MyDialog
+  MyDialog,
+  BubblingText,
 ]

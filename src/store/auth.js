@@ -3,7 +3,9 @@ import { signInWithEmailAndPassword,
   signOut, 
   createUserWithEmailAndPassword,
   } from "firebase/auth"
-import { getDatabase, ref, set } from "firebase/database"
+import { getDatabase, 
+  ref, 
+  set } from "firebase/database"
 
 export default {
   state: {
@@ -15,10 +17,13 @@ export default {
     },
     clearAdmin(state) {
       state.isAdmin = null;
+    },
+    setLoadingStatus(state, loadingStatus) {
+      state.loadingStatus = loadingStatus;
     }
   },
   actions: {
-    async login( {dispatch, commit}, {email, password}) {      
+    async login( {dispatch, commit}, {email, password}) { 
       try {
         await signInWithEmailAndPassword(getAuth(), email, password);
         await dispatch("getUid");
@@ -29,7 +34,7 @@ export default {
     },
     async register({dispatch, commit}, {email, password, group, firstName, lastName}) {
       try {
-        await createUserWithEmailAndPassword(getAuth(), email, password);
+        await createUserWithEmailAndPassword(getAuth(), email, password)
         const uid = await dispatch("getUid");
 
         const db = getDatabase();

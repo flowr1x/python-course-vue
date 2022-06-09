@@ -12,6 +12,7 @@ import Maska from "maska"
 import pdf from "pdfvuer"
 import { GlobalEvents } from 'vue-global-events'
 
+
 import { initializeApp } from "firebase/app"
 import { getAuth, onAuthStateChanged } from "firebase/auth"
 import {TippyDirective, Tippy} from 'tippy.vue';
@@ -51,4 +52,3 @@ onAuthStateChanged(getAuth(), () => {
       .mount('#app'); 
   }
 }); 
-
