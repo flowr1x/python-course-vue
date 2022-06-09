@@ -10,19 +10,25 @@
               :info="info"
               @submitHandler="submitHandler"/>
             <div class="profile__show">
+              <!-- ПОИСК ПРАКТИЧЕСКИХ РАБОТ USER -->
               <div v-if="isAdmin">
                 <my-dialog v-model:show="dialogVisibleUserSearch">
-                  <search-users-in-list :users="users" @sendNameUser="showNameUser" @removeUser="removeUser"/>
+                  <search-users-in-list 
+                    :users="users" 
+                    @searchUserByUid="searchUserByUid" 
+                    @removeUser="removeUser"/>
                 </my-dialog>
-                <h3 class="profile__title">Практические работы пользователей</h3>
+                <h3 class="profile__title">Индивидуальные задания пользователей</h3>
                 <my-button @click="dialogVisibleUserSearch = true">Поиск пользователей</my-button>
-                <div v-if="userPracticeNow">
-                  <practice-list-user
-                  :list="practice"
-                  :userPractice="userPracticeNow"
-                  @sendPracticeInUser="sendPractice"/>
+                <div v-if="nowUserId">
+                  <show-practice-list-user
+                    :userPractice="userPracticeNow"
+                    @sendPracticeInUser="sendPractice"/>
                 </div>
+                <div class="profile-practice__error" v-else-if="!nowUserId">Выберете пользователя</div>
+                
               </div>
+              <!-- СОЗДАНИЕ ПРАТИЧЕСКИХ РАБОТ -->
               <div v-if="isAdmin">
                 <h3 class="profile__title">Создать практические работы</h3>
                 <my-dialog v-model:show="dialogVisible">
@@ -33,6 +39,7 @@
                   :list="practice"
                   @remove="removePractice"/>
               </div>
+              <!-- ДОБАВЛЕНИЕ ССЫЛКИ ЮЗЕРОМ -->
               <div v-if="!isAdmin">
                   <practice-list-user
                   :list="practice"
@@ -55,6 +62,9 @@ import ProfileUserInfo from "@/components/ProfileUserInfo"
 import PracticeListAdmin from "@/components/PracticeListAdmin"
 import SearchUsersInList from "@/components/SearchUsersInList"
 
+import ShowPracticeListUser from "@/components/ShowPracticeListUser"
+
+
 export default {
   components: {
     PracticeForm, 
@@ -62,6 +72,7 @@ export default {
     SearchUsersInList, 
     PracticeListAdmin, 
     PracticeListUser,
+    ShowPracticeListUser,
   },
   data() {
     return {
@@ -103,17 +114,14 @@ export default {
       this.dialogVisible = true;
     },
     async sendPractice(practice) {
-      console.log(this.nowUserId);
       await this.$store.dispatch("createUserPractice", { "newUserPractice":practice, "userId": this.nowUserId});
     },
-    showNameUser(name) {
-      console.log(name);
+    searchUserByUid(name) {
       this.userPracticeNow = "";
       this.userPracticeNow = this.users[name]?.practice;
       this.nowUserId = name;
     },
     async removeUser(uid) {
-      console.log(uid);
       await this.$store.dispatch("removeUser", uid);
     }
   }

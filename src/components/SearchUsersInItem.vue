@@ -8,7 +8,7 @@
       <my-button class="profile-practice__btn" @click="$emit('removeUser', uid)">
         Удалить
       </my-button>
-      <my-button class="profile-practice__btn" @click="$emit('sendNameUser', uid)">
+      <my-button class="profile-practice__btn" @click="$emit('searchUserByUid', uid)">
         Выбрать
       </my-button>
     </div>

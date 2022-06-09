@@ -1,10 +1,10 @@
 <template>
   <div class="profile__practice profile-practice">
-      <practice-item-admin 
-      v-for="(obj, practice) in list" 
-      :practice="obj"
-      :key="obj.id"
-      @remove="$emit('remove', practice)"/>
+    <practice-item-admin 
+      v-for="(practiceObj, practiceName) in list" 
+      :practice="practiceObj"
+      :key="practiceName"
+      @remove="$emit('remove', practiceName)"/>
     <div class="profile-practice__error" v-if="!isEmpty(list)">Практических нет</div>
   </div> 
 </template>
@@ -24,9 +24,6 @@ export default {
       for (let item in obj) return true;
       return false
     },
-    f(newPracticeUser) {
-      this.$emit("sendPracticeInUser", newPracticeUser);
-    }
   },
 }
 </script>

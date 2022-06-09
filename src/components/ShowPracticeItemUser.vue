@@ -19,17 +19,21 @@
 
 <script>
 export default {
-  name: "practice-item-user",
+  name: "show-practice-item-user",
+
   props: [
     "practice",
-    "userPractice",
-    "idPractice"
   ],
+  
   data() {
     return {
-      ref: this.userPractice?.[`${this.idPractice}`]?.ref,
-      mark: this.userPractice?.[`${this.idPractice}`]?.mark,
+      ref: "",
+      mark: "",
     }
+  },
+  mounted() {
+    this.ref = this.practice?.ref;
+    this.mark = this.practice?.mark;
   },
   computed: {
     isAdmin() {
@@ -38,18 +42,9 @@ export default {
   },
   methods: {
     sendPracticeInUser() {
-      const newPracticeUser = {
-        name: this.idPractice,
-        id: Date.now(),
-        ref: this.ref,
-        mark: this.mark ? this.mark : "",
-        title: this.practice.title,
-        text: this.practice.text
-      };
-
-      // if (this.isAdmin) newPracticeUser.mark = this.mark;
-      this.$emit("sendPracticeInUser", newPracticeUser);
-
+      const updatePracticeUser = this.practice;
+      updatePracticeUser.mark = this.mark ? this.mark : ""
+      this.$emit("sendPracticeInUser", updatePracticeUser);
     }
   }
 }

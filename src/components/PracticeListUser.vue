@@ -2,14 +2,12 @@
   <div class="profile__practice profile-practice">
     <h3 class="profile-practice__title">Список практические работы</h3>
     <practice-item-user
-      v-for="(obj, practice) in list" 
-      :practice="obj"
-      :key="obj.id"
-      :idPractice="practice"
+      v-for="(practiceObj, practiceName) in list" 
+      :practice="practiceObj"
+      :key="practiceName"
+      :idPractice="practiceName"
       :userPractice="userPractice"
-      @remove="$emit('remove', practice)"
-      @sendPracticeInUser="f"/>
-
+      @sendPracticeInUser="(item) => this.$emit('sendPracticeInUser', item)"/>
     <div class="profile-practice__error" v-if="!isEmpty(list)">Практических нет</div>
   </div> 
 </template>
@@ -30,9 +28,6 @@ export default {
       for (let item in obj) return true;
       return false
     },
-    f(newPracticeUser) {
-      this.$emit("sendPracticeInUser", newPracticeUser);
-    }
   },
 }
 </script>

@@ -8,7 +8,7 @@
       :userData="userData"
       :uid="user"
       @removeUser="(uid) => { this.$emit('removeUser', uid) }"
-      @sendNameUser="(uid) => { this.$emit('sendNameUser', uid)}"
+      @searchUserByUid="(uid) => { this.$emit('searchUserByUid', uid)}"
       />
   </div>
 </template>

@@ -34,7 +34,6 @@ export default {
   methods: {
     createPractice() {
       const newPost = {
-        id: Date.now(),
         title: this.title,
         text: this.text,
       };

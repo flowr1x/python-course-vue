@@ -47,7 +47,5 @@ export default {
       this.showPreloader = false;
     }
   },
-  methods: {
-  }
 }
 </script>
