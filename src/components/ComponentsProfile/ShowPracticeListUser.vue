@@ -10,7 +10,7 @@
   </div> 
 </template>
 <script>
-import ShowPracticeItemUser from "@/components/ShowPracticeItemUser.vue";
+import ShowPracticeItemUser from "@/components/ComponentsProfile/ShowPracticeItemUser.vue";
 
 export default {
   name: "show-practice-list-user",

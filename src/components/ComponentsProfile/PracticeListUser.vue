@@ -1,23 +1,27 @@
 <template>
   <div class="profile__practice profile-practice">
-    <practice-item-admin 
+    <h3 class="profile-practice__title">Список практические работы</h3>
+    <practice-item-user
       v-for="(practiceObj, practiceName) in list" 
       :practice="practiceObj"
       :key="practiceName"
-      @remove="$emit('remove', practiceName)"/>
+      :idPractice="practiceName"
+      :userPractice="userPractice"
+      @sendPracticeInUser="(item) => this.$emit('sendPracticeInUser', item)"/>
     <div class="profile-practice__error" v-if="!isEmpty(list)">Практических нет</div>
   </div> 
 </template>
 <script>
-import PracticeItemAdmin from "@/components/PracticeItemAdmin.vue";
+import PracticeItemUser from "@/components/ComponentsProfile/PracticeItemUser.vue";
 
 export default {
-  name: "practice-list-admin",
+  name: "practice-list",
   components: {
-    PracticeItemAdmin
+    PracticeItemUser
   },
   props: [
     "list",
+    "userPractice"
   ],
   methods: {
     isEmpty(obj) {

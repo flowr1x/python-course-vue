@@ -53,12 +53,12 @@
 <script>
 import { mapGetters, mapActions } from "vuex"
 
-import PracticeListUser from "@/components/PracticeListUser"
-import PracticeForm from "@/components/PracticeForm"
-import ProfileUserInfo from "@/components/ProfileUserInfo"
-import PracticeListAdmin from "@/components/PracticeListAdmin"
-import SearchUsersInList from "@/components/SearchUsersInList"
-import ShowPracticeListUser from "@/components/ShowPracticeListUser"
+import PracticeListUser from "@/components/ComponentsProfile/PracticeListUser"
+import PracticeForm from "@/components/ComponentsProfile/PracticeForm"
+import ProfileUserInfo from "@/components/ComponentsProfile/ProfileUserInfo"
+import PracticeListAdmin from "@/components/ComponentsProfile/PracticeListAdmin"
+import SearchUsersInList from "@/components/ComponentsProfile/SearchUsersInList"
+import ShowPracticeListUser from "@/components/ComponentsProfile/ShowPracticeListUser"
 
 
 export default {

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import SearchUsersInItem from "@/components/SearchUsersInItem"
+import SearchUsersInItem from "@/components/ComponentsProfile/SearchUsersInItem"
 export default {
   name: "search-users-in-list",
   props: ["users"],
