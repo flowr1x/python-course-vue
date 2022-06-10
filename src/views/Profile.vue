@@ -52,6 +52,7 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex"
+import messages from "@/plugins/messages.js"
 
 import PracticeListUser from "@/components/ComponentsProfile/PracticeListUser"
 import PracticeForm from "@/components/ComponentsProfile/PracticeForm"
@@ -102,10 +103,15 @@ export default {
     async submitHandler(info) {
       try {
         await this.updateInfo(info);
-      } catch (error) {}
+      } catch (error) {
+
+      } finally {
+        this.$message(messages["update-info"]);
+      }
     },
     createPractice(practiceItem) {
-      this.createPracticeAdmin(practiceItem)
+      this.createPracticeAdmin(practiceItem);
+      this.$message(messages["create-practice"]);
     },
     removePractice(practiceName) {
       const newPracticeList = {};
@@ -115,12 +121,14 @@ export default {
       }
 
       this.removePracticeAdmin(newPracticeList);
+      this.$message(messages["remove-practice"]);
     },
     showDialog() {
       this.dialogVisible = true;
     },
     async sendPractice(practice) {
-      await this.createUserPractice({ "newUserPractice":practice, "userId": this.nowUserId});
+      await this.createUserPractice({ "newUserPractice":practice, "userId": this.nowUserId})
+        .finally(() => this.$message(messages["update-info"]));
     },
     searchUserByUid(name) {
       this.userPracticeNow = "";

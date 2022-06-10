@@ -160,6 +160,7 @@ export default {
       isMenuBurger: false,
     }
   },
+  
   computed: {
     ...mapGetters(["isAdmin"])
   },

@@ -13,7 +13,8 @@ export default {
   },
   mutations: {
     setAdmin(state, isAdmin) {
-      state.isAdmin = isAdmin === "ZPxOXM1h8WO1EzZj6qVDiK8l6hx2";
+      if (isAdmin)
+        state.isAdmin = isAdmin === "ZPxOXM1h8WO1EzZj6qVDiK8l6hx2";
     },
     clearAdmin(state) {
       state.isAdmin = null;

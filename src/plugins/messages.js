@@ -5,5 +5,8 @@ export default {
   "auth/email-already-in-use": "Этот Email уже занят",
   "welcome": "Добро пожаловать",
   "comeback": "С возвращением",
-  "needlog": "Необходимо войти в ситему" 
+  "needlog": "Необходимо войти в ситему",
+  "create-practice": "Создано индивидуальное задание",
+  "remove-practice": "Удалено индивидуальное задание",
+  "update-info": "Данные обновлены",
 }
