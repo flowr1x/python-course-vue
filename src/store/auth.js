@@ -58,10 +58,11 @@ export default {
     async logout({commit}) {
       const auth = getAuth();
       await signOut(auth);
-      commit("clearInfo");
+      commit("clearInfoUser");
       commit("clearAdmin");
-      commit("clearPractice");
-      commit("clearUserPractice");
+      commit("clearCurrentPractices");
+      commit("clearPracticeCurrentUser");
+      commit("clearListAllUsers");
     }
   },
   getters: {

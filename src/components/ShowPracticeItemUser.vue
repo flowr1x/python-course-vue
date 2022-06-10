@@ -20,11 +20,9 @@
 <script>
 export default {
   name: "show-practice-item-user",
-
   props: [
     "practice",
   ],
-  
   data() {
     return {
       ref: "",

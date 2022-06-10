@@ -6,21 +6,21 @@ import { getDatabase,
 
 export default {
   state: {
-    practice: {},
-    userPractice: {},
+    currentPractices: {},
+    practiceCurrentUser: {},
   },
   mutations: {
-    setPractice(state, practice) {
-      state.practice = practice;
+    setCurrentPractices(state, currentPractices) {
+      state.currentPractices = currentPractices;
     },
-    clearPractice(state) {
-      state.practice = {};
+    clearCurrentPractices(state) {
+      state.currentPractices = {};
     },
-    setUserPractice(state, userPractice) {
-      state.userPractice = userPractice;
+    setPracticeCurrentUser(state, practiceCurrentUser) {
+      state.practiceCurrentUser = practiceCurrentUser;
     },
-    clearUserPractice(state) {
-      state.userPractice = {};
+    clearPracticeCurrentUser(state) {
+      state.practiceCurrentUser = {};
     }
   },
   actions: {
@@ -35,9 +35,10 @@ export default {
     async removePractice({commit}, newListPractice) {
       // УДАЛЕНИЕ ПРАТИЧЕСКИХ РАБОТ ADMIN
       await set(ref(getDatabase(), "practice/"), newListPractice);
-      commit("setPractice", newListPractice);
+      commit("setCurrentPractices", newListPractice);
     },
     async createUserPractice({dispatch, getters}, {newUserPractice, userId}) {
+      // СОЗДАНИЕ ПОЛЯ С ПРАТИЧЕСКИМИ РАБОТАМИ 
       const uid = getters.isAdmin ? userId : await dispatch("getUid");
       const db = getDatabase();
       
@@ -54,7 +55,7 @@ export default {
 
       await get(child(dbRef, "practice")).then(snapshot => {
         if (snapshot.exists()) {
-          commit("setPractice", snapshot.val());
+          commit("setCurrentPractices", snapshot.val());
         } else {
           console.log("No data available");
         } 
@@ -67,7 +68,7 @@ export default {
 
       await get(child(dbRef, `users/${uid}/practice`)).then(snapshot => {
         if (snapshot.exists) {
-          commit("setUserPractice", snapshot.val());
+          commit("setPracticeCurrentUser", snapshot.val());
         } else {
           console.log("Error: Non Data");
         }
@@ -75,7 +76,7 @@ export default {
     },
   },
   getters: {
-    practice: s => s.practice,
-    userPractice: s => s.userPractice,
+    getCurrentPractices: s => s.currentPractices,
+    getPracticeCurrentUser: s => s.practiceCurrentUser,
   }
 }

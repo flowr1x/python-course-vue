@@ -17,7 +17,6 @@ export default {
   components: {
     ShowPracticeItemUser
   },
-  
   props: [
     "userPractice"
   ],

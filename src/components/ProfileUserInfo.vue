@@ -60,7 +60,6 @@ export default {
         this.v$.$touch();
         return;
       }
-     
       this.$emit("submitHandler", this.info);
     }
   }

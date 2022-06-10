@@ -29,17 +29,24 @@ export default {
       showPreloader: true,
     }
   },
+  computed: {
+    ...mapGetters([
+      "getCurrentPractices",
+      "getInfoUser",
+      "getListAllUsers",
+    ]),
+  },
   async mounted() {
     try {
-      await this.$store.dispatch("fetchUserPractice");
-      if (!Object.keys(this.$store.getters.practice).length) {
-        await this.$store.dispatch("fetchPractice");
+      await this.fetchUserPractice();
+      if (!Object.keys(this.getCurrentPractices).length) {
+        await this.fetchPractice();
       }
-      if (!Object.keys(this.$store.getters.info).length) {
-        await this.$store.dispatch("fetchInfo");
+      if (!Object.keys(this.getInfoUser).length) {
+        await this.fetchInfo();
       }
-      if (!Object.keys(this.$store.getters.users).length) {
-        await this.$store.dispatch("fetchListAllUser");
+      if (!Object.keys(this.getListAllUsers).length) {
+        await this.fetchListAllUser();
       }
     } catch(error) {
 
@@ -47,5 +54,13 @@ export default {
       this.showPreloader = false;
     }
   },
+  methods: {
+    ...mapActions({
+      fetchUserPractice: "fetchUserPractice",
+      fetchPractice: "fetchPractice",
+      fetchInfo: "fetchInfo",
+      fetchListAllUser: "fetchListAllUser",
+    }),
+  }
 }
 </script>

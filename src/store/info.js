@@ -7,23 +7,23 @@ import { getDatabase,
 
 export default {
   state: {
-    info: {}
+    infoUser: {}
   },
   mutations: {
-    setInfo(state, info) {
-      state.info = info;
+    setInfoUser(state, infoUser) {
+      state.infoUser = infoUser;
     },
-    clearInfo(state) {
-      state.info = {};
+    clearInfoUser(state) {
+      state.infoUser = {};
     }
   },
   actions: {
     async updateInfo({dispatch, commit, getters}, toUpdate) {
       const uid = await dispatch("getUid");
       const db = getDatabase();
-      const updateData = {...getters.info, ...toUpdate};
+      const updateData = {...getters.getInfoUser, ...toUpdate};
       await set(ref(db, `/users/${uid}/info`), updateData);
-      commit("setInfo", updateData)
+      commit("setInfoUser", updateData)
     },
     async fetchInfo({dispatch, commit}) {
       const uid =  await dispatch("getUid");
@@ -31,12 +31,12 @@ export default {
       
       await get(child(dbRef, `users/${uid}/info`)).then((snapshot) => {
         if (snapshot.exists()) {
-          commit("setInfo", snapshot.val());
+          commit("setInfoUser", snapshot.val());
         } 
       })
     },
   },
   getters: {
-    info: s => s.info
+    getInfoUser: s => s.infoUser,
   }
 }

@@ -6,14 +6,14 @@ import { getDatabase,
 import {getAuth} from "firebase/auth";
 export default {
   state: {
-    users: {},
+    listAllUsers: {},
   },
   mutations: {
-    setUsers(state, users) {
-      state.users = users;
+    setListAllUsers(state, listAllUsers) {
+      state.listAllUsers = listAllUsers;
     },
-    clearUsers(state) {
-      state.users = {};
+    clearListAllUsers(state) {
+      state.listAllUsers = {};
     }
   },
   actions: {
@@ -21,11 +21,11 @@ export default {
       const dbRef = ref(getDatabase());
 
       await get(child(dbRef, "users")).then(snapshot => {
-        if (snapshot.exists) commit("setUsers", snapshot.val()); 
+        if (snapshot.exists) commit("setListAllUsers", snapshot.val()); 
       }).catch(e => console.log(e));
     },
   },
   getters: {
-    users: s => s.users,
+    getListAllUsers: s => s.listAllUsers,
   }
 }
