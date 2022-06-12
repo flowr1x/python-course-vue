@@ -1,9 +1,9 @@
 <template>
    <div class="wrapper">
       <Header/>
-      <div class="class">
+      <main class="class">
         <router-view />
-      </div>
+      </main>
     </div>
     <div id="intro"></div>
 </template>

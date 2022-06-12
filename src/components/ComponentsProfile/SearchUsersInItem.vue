@@ -5,10 +5,7 @@
       <div class="profile-practice__text">{{ userData.info.group }}</div>
     </div>
     <div class="profile-practice__buttons">
-      <my-button class="profile-practice__btn">
-        Удалить
-      </my-button>
-      <my-button class="profile-practice__btn" @click="$emit('searchUserByUid', uid)">
+      <my-button class="profile-practice__btn" @click="$emit('searchUserByUid', uid, userData)">
         Выбрать
       </my-button>
     </div>

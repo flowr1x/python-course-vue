@@ -7,7 +7,7 @@
       :key="user"
       :userData="userData"
       :uid="user"
-      @searchUserByUid="(uid) => { this.$emit('searchUserByUid', uid)}"
+      @searchUserByUid="(uid, data) => { this.$emit('searchUserByUid', uid, data)}"
       />
   </div>
 </template>

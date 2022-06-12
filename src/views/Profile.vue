@@ -20,6 +20,7 @@
             <my-button @click="dialogVisibleUserSearch = true">Поиск пользователей</my-button>
             <div v-if="nowUserId">
               <show-practice-list-user
+                :dataUser="dataCurrentUser"
                 :userPractice="userPracticeNow"
                 @sendPracticeInUser="sendPractice"/>
             </div>
@@ -61,7 +62,6 @@ import PracticeListAdmin from "@/components/ComponentsProfile/PracticeListAdmin"
 import SearchUsersInList from "@/components/ComponentsProfile/SearchUsersInList"
 import ShowPracticeListUser from "@/components/ComponentsProfile/ShowPracticeListUser"
 
-
 export default {
   components: {
     PracticeForm, 
@@ -77,6 +77,7 @@ export default {
       dialogVisibleUserSearch: false,
       userPracticeNow: "",
       nowUserId: "",
+      dataCurrentUser: "",
     }
   },
   computed: {
@@ -130,9 +131,11 @@ export default {
       await this.createUserPractice({ "newUserPractice":practice, "userId": this.nowUserId})
         .finally(() => this.$message(messages["update-info"]));
     },
-    searchUserByUid(name) {
+    searchUserByUid(name, data) {
+      // Объединить
       this.userPracticeNow = "";
-      this.userPracticeNow = this.getListAllUsers[name]?.practice;
+      this.dataCurrentUser = data; 
+      this.userPracticeNow = data?.practice;
       this.nowUserId = name;
     },
   }

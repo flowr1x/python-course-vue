@@ -1,6 +1,10 @@
 <template>
   <div class="profile__practice profile-practice">
     <h3 class="profile-practice__title">Список практические работы</h3>
+    <div class="profile-practice__headline">
+      <div class="profile-practice__label">{{ dataUser.info.firstName }} {{ dataUser.info.lastName }}</div>
+      <div class="profile-practice__text">{{ dataUser.info.group }}</div>
+    </div>
     <show-practice-item-user
       v-for="(practiceObj) in userPractice" 
       :practice="practiceObj"
@@ -18,7 +22,8 @@ export default {
     ShowPracticeItemUser
   },
   props: [
-    "userPractice"
+    "userPractice",
+    "dataUser"
   ],
   methods: {
     isEmpty(obj) {
