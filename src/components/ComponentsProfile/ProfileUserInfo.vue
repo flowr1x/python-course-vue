@@ -10,7 +10,7 @@
     </div>
     <div class="form-profile__item"> 
       <my-input-form class="form-profile__input"
-       placeholder="Фамилия"
+        placeholder="Фамилия"
         v-model="info.lastName"
         :class="{'form__input_invalid': 
           (v$.info.lastName.$dirty && v$.info.lastName.required.$invalid)}"/>

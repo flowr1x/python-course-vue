@@ -1,19 +1,28 @@
 <template>
   <div class="profile-practice__block">
     <div class="profile-practice__headline">
-      <div class="profile-practice__label">Практическая работа: {{ practice.title }}</div>
-      <div class="profile-practice__text"><span>Тема</span>: {{ practice.text }}</div>
+      <div class="profile-practice__label">Индивидуальная работа: {{ practice.title }}</div>
+      <div class="profile-practice__text">Тема: {{ practice.text }}</div>
     </div>
-    <div class="profile-practice__inputs">
-      <my-input-form placeholder="Ссылка на код" v-model="ref"/>
-      <my-input-form placeholder="Оценка" v-model="mark" :disabled="!isAdmin"/>
-    </div>
-    <div class="profile-practice__buttons">
-      <my-button 
-        @click="sendPracticeInUser">
-        Отправить
-      </my-button>
-    </div>
+    <form class="form__profile" @submit.prevent="submitHandler">
+      <div class="form-profile__item">
+        <my-input-form 
+          placeholder="Ссылка на код" 
+          v-model="ref"/>
+      </div>
+      <div class="form-profile__item">
+        <my-input-form 
+          placeholder="Оценка" 
+          v-model="mark" 
+          :isDisabled="!isAdmin"/>
+      </div>
+      <div class="form-profile__item form-profile__btn">
+        <my-button 
+          @submit.prevent="submitHandler">
+          Отправить
+        </my-button>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -37,7 +46,7 @@ export default {
     },
   },
   methods: {
-    sendPracticeInUser() {
+    submitHandler() {
       const newPracticeUser = {
         name: this.idPractice,
         id: Date.now(),
@@ -46,11 +55,9 @@ export default {
         title: this.practice.title,
         text: this.practice.text
       };
-
       // if (this.isAdmin) newPracticeUser.mark = this.mark;
       this.$emit("sendPracticeInUser", newPracticeUser);
-
-    }
+    },
   }
 }
 </script>

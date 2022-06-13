@@ -21,8 +21,12 @@ h3.profile__title {
   font-size: 24px;
 }
 .form-profile {
+  padding-top: 30px;
+  &__item {
+    position: relative;
+  }
   &__item:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
   &__btn {
     text-align: right;
@@ -41,25 +45,20 @@ h3.profile__title {
   }
   &__title {
     font-size: 24px;
-    line-height: 1.2;
     margin-bottom: 20px;
     text-transform: uppercase;
   }
-  &__label {
+  &__theme {
     font-size: 18px;
-    line-height: 1.2;
     margin-bottom: 5px;
   }
   &__text {
-    line-height: 1.2;
 
     & span {
       font-size: 18px;
     }
   }
-  &__headline {
-    margin-bottom: 15px;
-  }
+
   &__block {
     background: var(--bg-color);
     padding: 10px;
@@ -67,15 +66,6 @@ h3.profile__title {
     & > *:not(:last-child) {
       margin-bottom: 15px;
     }
-  }
-  &__inputs > *:not(:last-child) {
-    margin-bottom: 15px;
-  }
-  &__buttons {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    gap: 10px;
   }
   &__btn {
     flex: 0 1 50%;
@@ -86,9 +76,6 @@ h3.profile__title {
   }
 }
 
-
-.profile__btn-exit {
-}
 
 // RESPONSIVE
 /* Tablet */

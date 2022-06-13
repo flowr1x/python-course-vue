@@ -83,7 +83,7 @@
     position: relative;
   }
   &__item:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
   }
   &__input {
     background: none;
@@ -94,6 +94,10 @@
     color: var(--text-color);
     transition: .3s;
     
+    &_password {
+      padding-right: 50px;
+    }
+
     &::placeholder {
       color: var(--text-color);
     }
@@ -101,44 +105,63 @@
       background: var(--text-color);
       color: var(--primary-color);
     }
-    &:focus + .checkbox-label > .svg-icon__eye {
+    &:focus + .form__label + .toggle-show > .toggle-show__icon {
       path, polygon, rect {
         fill: var(--primary-color);
       }
     }
   }
-  &__input_password {
-    padding-right: 40px;
-  }
+ 
   &__forgot {
     color: var(--text-color);
     &:hover {
       color: var(--additional-color);
     }
   }
-  &__input_invalid {
+  &__input_invalid > &__input{
     border: 1px solid var(--additional-color);
+  }
+
+  &__label {
+    color: var(--text-color); 
+    opacity: .7;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    top: 12px;
+    transition: 0.3s ease all; 
+    -moz-transition: 0.3s ease all; 
+    -webkit-transition: 0.3s ease all;
+  }
+
+  /* active state */
+  &__input:focus ~ &__label, &__label_active		{
+    top: -20px;
+    font-size: 14px;
+    opacity: 1;
+    color: var(--text-color);
   }
 }
 
 // Eye on field password
-.checkbox-label {
+.toggle-show {
   width: 24px;
   height: 24px;
   position: absolute;
   right: 15px;
   top: 15%;
   display: block;
-}
-.checkbox-password {
-  display: none;
-}
-.svg-icon__eye {
-  
-  &:active {
-    path, polygon, rect {
-      fill: var(--highlight-color);
+  &:active &__icon {
+      path, polygon, rect {
+        fill: var(--highlight-color);
     }
+  }
+  &__icon {
+    path, polygon, rect {
+      transition: fill .3s;
+  }
   }
 }
 
