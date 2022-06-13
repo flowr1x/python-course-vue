@@ -1,18 +1,4 @@
 /*
-  ========  =GLOBAL VARIABLE= ======== 
-*/
-$header-size: 90px;
-
-%shadow {
-  box-shadow: 2px 9px 50px hsla(0, 0, 0, .1),
-        -2px 9px 60px hsla(0, 0, 0, .1);
-}
-
-/*
-  ========  =GLOBAL CLASS= ======== 
-*/
-
-/*
   ========  =BASIC STYLES FOR SVG ICONS= ======== 
 */
 .svg-icon {
@@ -29,133 +15,20 @@ $header-size: 90px;
   }
 }
 /*
-  ========  =THREE-STRIP BUTTON FOR BURGER MENU= ======== 
-*/
-#menu__icon_aside {
-  z-index: 50;
-}
-.icon-menu__burger {
-  display: block;
-  cursor: pointer;
-  width: 30px;
-  height: 18px;
-  position: relative;
-  z-index: 100;
-
-  & span,
-  &::before,
-  &::after {
-    position: absolute;
-    left: 0;
-    height: 10%;
-    width: 100%;
-    transition: all .3s ease 0s;
-    background-color: var(--text-color);
-  }
-  &::before,
-  &::after {
-    content: "";
-  }
-  &::before {
-    top: 0;
-  } 
-  &::after {
-    bottom: 0;
-  } 
-  span {
-    top: 50%;
-    transform: scale(1) translate(0px, -50%);
-  }
-  &.menu-icon_active {
-    & span{
-      width: 60%;
-    }
-  }
-}
-/*
-  ========  =MAIN BUTTONS= ======== 
-*/
-.btn {
-  cursor: pointer;
-  padding: 5px 10px;
-  display: inline-block;
-  color: var(--text-color);
-  font-size: 16px;
-  line-height: 1.2;
-  letter-spacing: .2px;
-  border: 2px solid var(--highlight-color);
-  position: relative;
-  z-index: 10;
-  background: none;
-  box-shadow: none;
-  transition: all .5s ease 0s;
-  &:hover,
-  &:focus {
-    box-shadow: inset 0 0 0 2em var(--highlight-color);
-    &::before {
-      top: -6px;
-      right: -6px;
-      bottom: -6px;
-      left: -6px;
-      opacity: 1;
-    }
-  } 
-  &::before {
-    content: '';
-    position: absolute;
-    transition: all .3s ease 0s;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    border: 2px solid var(--highlight-color);
-  }
-}
-
-.btn__text-primary {
-  color: var(--primary-color);
-}
-/*
-  ========  =WAVE ANIMATION WHEN BUTTON CLICK= ======== 
-*/
-.wave {
-  background-color: var(--text-color);
-  border-radius: 50%;
-  transform: scale(0);
-  animation: wave .5s linear;
-  pointer-events: none;
-  position: absolute;
-}
-
-@keyframes wave {
-  100% {
-   transform: scale(2);
-   opacity: 0;
-  }
-}
-/*
   ========  =MAIN CONFIG PAGE= ======== 
 */
+body {
+  height: 100vh;
+  font-size: 14px;
+  font-family: $font-family-primary;
+  font-weight: 400;
+}
+
 .app {
   background: var(--primary-color);
   color: var(--text-color);
 }
-body {
-  height: 100vh;
-  font-size: 14px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-}
 
-.dark {
-  --primary-color: #313131; 
-  --primary-sdw-color: #414141;
-  --bg-color: #525252;
-  --text-color: #d9dcec;
-  --highlight-color: #f4a460;
-  --additional-color: #ba2f2f;
-}
 .wrapper {
   overflow: hidden;
   min-height: 100vh;
@@ -170,7 +43,7 @@ body {
 }
 
 .page {
-  padding-top: $header-size;
+  padding-top: $height-header;
   flex: 1 1 auto;
   position: relative;
 }

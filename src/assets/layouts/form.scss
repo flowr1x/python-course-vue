@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  @extend %shadow;
+  @extend %box-shadow;
   
 }
 .block-item {
@@ -35,7 +35,7 @@
 .form__box {
   height: 100%;
   width: 50%;
-  @extend %shadow;
+  @extend %box-shadow;
   background: var(--primary-color);
   position: absolute;
   top: 0;

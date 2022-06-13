@@ -5,7 +5,7 @@
     padding-bottom: 10px;
 }
 .text-manual__header {
-    font-family: "BebasNeue";
+    font-family: $font-family-secondary;
     letter-spacing: .5px;
     margin-bottom: 25px;
     background: var(--primary-sdw-color);
@@ -28,7 +28,7 @@
     margin-bottom: 30px;
 }
 .text-manual__section-title {
-    font-family: "BebasNeue";
+    font-family: $font-family-secondary;
     letter-spacing: .5px;
     font-weight: 600;
     font-size: 24px;
@@ -45,7 +45,7 @@
     }
     h3 {
         font-size: 18px;
-        font-family: "BebasNeue";
+        font-family: $font-family-secondary;
         letter-spacing: .5px;
         font-weight: 600;
         margin-bottom: 10px;
@@ -112,7 +112,7 @@
         background-color: var(--primary-sdw-color);
         
         h3 {
-            font-family: "BebasNeue";
+            font-family: $font-family-secondary;
             font-size: 22px;
             margin-bottom: 10px;
             text-transform: uppercase;

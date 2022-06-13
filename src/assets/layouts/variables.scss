@@ -1,0 +1,47 @@
+/*
+  ========  =INNER VARIABLES= ======== 
+*/
+$x-color-blue: #133676;
+$x-color-blue-dark: #0e2753;
+$x-color-blue-light: #153d86;
+$x-color-white: #d9dcec;
+$x-color-orange: #f4a460;
+$x-color-red: #ba2f2f;
+
+$height-header: 90px;
+
+$layout-top: 110;
+$layout-middle: 100;
+$layout-bottom: 50;
+$layout-more-bottom: 10;
+
+
+%box-shadow {
+  box-shadow: 2px 9px 50px hsla(0, 0, 0, .1),
+        -2px 9px 60px hsla(0, 0, 0, .1);
+}
+
+/*
+  ========  =GLOBAL VARIABLES= ======== 
+*/
+
+$font-family-primary: 'Montserrat', sans-serif;
+$font-family-secondary: 'BebasNeue', sans-serif;
+
+:root {
+  --primary-color: #133676; 
+  --primary-sdw-color: #0e2753;
+  --bg-color: #153d86;
+  --text-color: #d9dcec;
+  --highlight-color: #f4a460;
+  --additional-color: #ba2f2f;
+}
+
+.dark {
+  --primary-color: #313131; 
+  --primary-sdw-color: #414141;
+  --bg-color: #525252;
+  --text-color: #d9dcec;
+  --highlight-color: #f4a460;
+  --additional-color: #ba2f2f;
+}

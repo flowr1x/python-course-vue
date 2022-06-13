@@ -176,7 +176,7 @@
     
     &:hover {
       transform: translateY(-3px);
-      @extend %shadow;
+      @extend %box-shadow;
     }
     &:not(:last-child) {
       margin-bottom: 20px;

@@ -8,7 +8,7 @@
 
 .single-header {
   position: absolute;
-  height: $header-size;
+  height: $height-header;
   display: flex;
   align-items: center;
   margin: 0 15px;
@@ -19,7 +19,7 @@
 */
 .header__content {
   padding: 15px;
-  min-height: $header-size;
+  min-height: $height-header;
   background: var(--bg-color);
   position: fixed;
   z-index: 100;
@@ -27,11 +27,11 @@
   display: flex;
   align-items: center;
   transition: all .3s ease 0s;
-  @extend %shadow;
+  @extend %box-shadow;
   transition: transform .3s ease 0s;
 
   &_hide {
-    transform: translateY(-$header-size - 10);
+    transform: translateY(-$height-header - 10);
   }
 }
 .header__bottom {
