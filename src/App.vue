@@ -11,9 +11,6 @@ import EmptyLayout from "@/layouts/EmptyLayout.vue";
 import MainLayout from "@/layouts/MainLayout.vue"; 
 import MiddleLayout from "@/layouts/MiddleLayout.vue"; 
 import ContentLayout from "@/layouts/ContentLayout.vue"; 
-import MainPracticeLayout from "@/layouts/MainPracticeLayout.vue";
-import ContentPracticeLayout from "@/layouts/ContentPracticeLayout.vue"; 
-import VideoLayout from "@/layouts/VideoLayout.vue"; 
 
 export default {
   computed: {
@@ -31,7 +28,7 @@ export default {
     this.$store.dispatch("getUid");
   },
   components: {
-    EmptyLayout, MainLayout, MiddleLayout, ContentLayout, MainPracticeLayout, ContentPracticeLayout,VideoLayout
+    EmptyLayout, MainLayout, MiddleLayout, ContentLayout
   },
 }
 </script>

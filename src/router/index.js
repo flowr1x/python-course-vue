@@ -11,7 +11,7 @@ const routes = [
   },
   {
     path: "/practice",
-    meta: {layout: "mainPractice"},
+    meta: {layout: "main"},
     component: () => import("../views/Practice.vue"),
   },
   {
@@ -47,7 +47,7 @@ const routes = [
   {
     path: "/video",
     name: "video",
-    meta: { layout: "video", auth: true},
+    meta: { layout: "main", auth: true},
     component: () => import("../views/Video.vue")
   },
   {
