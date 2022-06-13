@@ -188,45 +188,19 @@ export const practiceManualItem = [
   { 
     title: "Практическая работа 1",
     subtitle: "Линейные вычислительные процессы",
-    document: "./static/practice_1.pdf",
-    path: "/practice_1",
+    link: "./static/practice_1.pdf",
   },
   { 
     title: "Практическая работа 2",
     subtitle: "Раветляющиеся вычислительные процессы",
-    document: "./static/practice_2.pdf",
-    path: "/practice_2",
+    link: "./static/practice_2.pdf",
   },
   { 
-    title: "Практическая работа 3",
-    subtitle: "Циклические вычислительные процессы. Цикл For",
-    document: "./static/practice_3.pdf",
-    path: "/theory_1",
+    title: "Практическая работа 2",
+    subtitle: "Раветляющиеся вычислительные процессы",
+    link: "./static/practice_3.pdf",
   },
-  { 
-    title: "Практическая работа 4",
-    subtitle: "Циклические вычислительные процессы. Цикл While ... Do",
-    document: "./static/practice_4.pdf",
-    path: "/theory_1",
-  },
-  { 
-    title: "Практическая работа 5",
-    subtitle: "Программирование одномерных массивов с помощью цикла For, 6 программирование массивов с помощью цикла While",
-    document: "./static/practice_5.pdf",
-    path: "/theory_1",
-  },
-  { 
-    title: "Практическая работа 7-8",
-    subtitle: "Двумерные массивы. Простейшие алгоритмы обработки",
-    document: "./static/practice_7-8.pdf",
-    path: "/theory_1",
-  },
-  { 
-    title: "Практическая работа 9-10",
-    subtitle: "Списки",
-    document: "./static/practice_9-10.pdf",
-    path: "/theory_1",
-  },
+
 ];
 export const videoManualItem = [
   { 

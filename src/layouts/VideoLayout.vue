@@ -1,10 +1,8 @@
 <template>
-  <ContentContainer :status="showPreloader">
-    <template #content>
-      <div class="wrapper">
-        <Header/>
-        <main class="page">
-          <section class="page__beginpage beginpage">
+  <div class="wrapper">
+    <Header/>
+    <main class="page">
+      <section class="page__beginpage beginpage">
             <div class="beginpage__container">
               <div class="beginpage__title">
                 <h1>Видеоуроки</h1>
@@ -13,8 +11,8 @@
                 </div>
               </div>
             </div>
-          </section>
-          <section class="page__manual manual">
+      </section>
+      <section class="page__manual manual">
             <div class="manual__container">
               <div class="manual__title">
                 <h2>Содержание</h2>
@@ -54,13 +52,11 @@
                 </div>
               </div>
             </div>
-          </section>
-          <button-scroll-top />
-        </main>
-        <Footer/>
-      </div>
-    </template>
-  </ContentContainer>
+      </section>
+      <button-scroll-top />
+    </main>
+    <Footer/>
+  </div>
 </template>
 <script>
 import Header from "@/components/Header.vue";

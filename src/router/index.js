@@ -10,16 +10,6 @@ const routes = [
     component: () => import("../views/404.vue"),
   },
   {
-    path: "/practice_1",
-    meta: {layout: "contentPractice"},
-    component: () => import("../views/practice/Practice_1.vue"),
-  },
-  {
-    path: "/practice_2",
-    meta: {layout: "contentPractice"},
-    component: () => import("../views/practice/Practice_2.vue"),
-  },
-  {
     path: "/practice",
     meta: {layout: "mainPractice"},
     component: () => import("../views/Practice.vue"),

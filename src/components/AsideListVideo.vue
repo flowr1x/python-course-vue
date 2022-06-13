@@ -2,10 +2,8 @@
     <ul class="nav-aside__list">
         <li
             tag="li"
-            
             class="nav-aside__item" 
             @click="onClickBtnInWave"
-          
             >
             <a href="#">
                 <h4 class="nav-aside__chapter">{{ title }}</h4>
