@@ -1,7 +1,7 @@
 .screen-welcome {
   background: var(--bg-color);
   padding: 20px;
-
+  @extend %box-shadow;
   max-width: 800px;
   height: 400px;
   display: flex;

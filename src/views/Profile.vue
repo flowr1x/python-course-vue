@@ -1,6 +1,7 @@
 <template>
   <div class="page__profile">
     <div class="profile__container">
+      
       <div class="profile__content">
         <div class="profile__title">
           <h2>Профиль</h2>
@@ -45,7 +46,11 @@
               :userPractice="getPracticeCurrentUser"
               @sendPracticeInUser="sendPractice"/>
           </div>
+          
+            
+          
         </div>
+        <my-swip/>
       </div>
     </div>
   </div>
@@ -62,6 +67,8 @@ import PracticeListAdmin from "@/components/ComponentsProfile/PracticeListAdmin"
 import SearchUsersInList from "@/components/ComponentsProfile/SearchUsersInList"
 import ShowPracticeListUser from "@/components/ComponentsProfile/ShowPracticeListUser"
 
+import MySwip from "@/components/ComponentsProfile/MySwip"
+
 export default {
   components: {
     PracticeForm, 
@@ -70,6 +77,7 @@ export default {
     PracticeListAdmin, 
     PracticeListUser,
     ShowPracticeListUser,
+    MySwip
   },
   data() {
     return {
@@ -141,3 +149,16 @@ export default {
   }
 }
 </script>
+
+<style>
+.swiper-box {
+  
+  min-width: 0;
+  height: 200px;
+  box-shadow: 2px 9px 50px hsla(0, 0, 0, .1),
+        -2px 9px 60px hsla(0, 0, 0, .1);
+}
+.swiper-wrapper {
+  width: 100%;
+}
+</style>
