@@ -1,8 +1,8 @@
 <template>
   <div class="profile-practice__block">
-    <div class="profile-practice__headline">
-      <div class="profile-practice__label">Индивидуальная работа: {{ practice.title }}</div>
-      <div class="profile-practice__text">Тема: {{ practice.text }}</div>
+    <div class="profile-practice__header">
+      <div class="profile-practice__theme">Индивидуальная работа: {{ practice.title }}</div>
+      <div class="profile-practice__theme">Тема: {{ practice.text }}</div>
     </div>
     <form class="form__profile" @submit.prevent="submitHandler">
       <div class="form-profile__item">
@@ -14,7 +14,7 @@
         <my-input-form 
           placeholder="Оценка" 
           v-model="mark" 
-          :isDisabled="!isAdmin"/>
+          :isDisabled="true"/>
       </div>
       <div class="form-profile__item form-profile__btn">
         <my-button 
@@ -31,13 +31,13 @@ export default {
   name: "practice-item-user",
   props: [
     "practice",
-    "userPractice",
+    "userPractices",
     "idPractice"
   ],
   data() {
     return {
-      ref: this.userPractice?.[`${this.idPractice}`]?.ref,
-      mark: this.userPractice?.[`${this.idPractice}`]?.mark,
+      ref: this.userPractices?.[`${this.idPractice}`]?.ref,
+      mark: this.userPractices?.[`${this.idPractice}`]?.mark,
     }
   },
   computed: {

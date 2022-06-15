@@ -9,6 +9,13 @@
   flex: 0 1 60%;
   min-width: 0;
 }
+.main-window {
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
 .profile__title {
   font-size: 32px;
   line-height: 1.2;
@@ -21,11 +28,9 @@
 h3.profile__title {
   font-size: 24px;
 }
+
 .form-profile {
   padding-top: 30px;
-  &__item {
-    position: relative;
-  }
   &__item:not(:last-child) {
     margin-bottom: 30px;
   }
@@ -34,27 +39,21 @@ h3.profile__title {
   }
 }
 
-.profile__show {
-  padding: 15px 0;
-  :not(:last-child) {
-    margin-bottom: 10px;
-  }
-}
 .profile-practice {
-  & > *:not(:last-child) {
-    margin-bottom: 15px;
-  }
+
   &__title {
     font-size: 24px;
     margin-bottom: 20px;
     text-transform: uppercase;
+  }
+  &__header {
+    margin-bottom: 30px;
   }
   &__theme {
     font-size: 18px;
     margin-bottom: 5px;
   }
   &__text {
-
     & span {
       font-size: 18px;
     }
@@ -63,10 +62,7 @@ h3.profile__title {
   &__block {
     background: var(--bg-color);
     padding: 10px;
-
-    & > *:not(:last-child) {
-      margin-bottom: 15px;
-    }
+    flex: 0 1 100%;
   }
   &__btn {
     flex: 0 1 50%;

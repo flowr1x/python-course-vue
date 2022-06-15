@@ -1,10 +1,10 @@
 <template>
   <div class="profile-practice__block">
-    <div class="profile-practice__headline">
-      <div class="profile-practice__label">Практическая работа: {{ practice.title }}</div>
-      <div class="profile-practice__text">Тема: {{ practice.text }}</div>
+    <div class="profile-practice__header">
+      <div class="profile-practice__theme">Индивидуальная работа: {{ practice.title }}</div>
+      <div class="profile-practice__theme">Тема: {{ practice.text }}</div>
     </div>
-    <div class="profile-practice__buttons">
+    <div class="form-profile__item form-profile__btn">
       <my-button
         class="profile__btn" 
         @click="$emit('remove')">

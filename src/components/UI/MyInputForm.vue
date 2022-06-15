@@ -1,5 +1,5 @@
 <template>
-  <div class="from__box-input">
+  <div class="form__box_input">
     <input :type="type" 
       class="form__input" 
       :value="modelValue" 

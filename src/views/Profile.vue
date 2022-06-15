@@ -7,50 +7,57 @@
           <h2>Профиль</h2>
           <my-button class="profile__btn" @click="logout">Выйти</my-button>
         </div>
-        <!-- ИНФОРМАЦИЯ О USER -->
-        <profile-user-info :info="getInfoUser" @submitHandler="submitHandler"/>
-        <div class="profile__show">
+        <div class="profile__main-window main-windows">
+          <!-- ИНФОРМАЦИЯ О USER -->
+          <profile-user-info :info="getInfoUser" @submitHandler="submitHandler" class="main-window__item"/>
           <!-- ПОИСК ПРАКТИЧЕСКИХ РАБОТ USER -->
-          <div v-if="isAdmin">
-            <my-dialog v-model:show="dialogVisibleUserSearch">
-              <search-users-in-list 
-                :users="getListAllUsers" 
-                @searchUserByUid="searchUserByUid"/>
-            </my-dialog>
-            <h3 class="profile__title">Индивидуальные задания пользователей</h3>
-            <my-button @click="dialogVisibleUserSearch = true">Поиск пользователей</my-button>
+          <div v-if="isAdmin" class="main-window__item">
+            <div class="slider__header">
+              <div class="slider__title">Индивидуальные задания пользователя</div>
+              <my-dialog v-model:show="dialogVisibleUserSearch">
+                <search-users-in-list 
+                  :users="getListAllUsers" 
+                  @searchUserByUid="searchUserByUid"/>
+              </my-dialog>
+              <my-button @click="dialogVisibleUserSearch = true">Поиск пользователей</my-button>
+            </div>
             <div v-if="nowUserId">
-              <show-practice-list-user
-                :dataUser="dataCurrentUser"
-                :userPractice="userPracticeNow"
+              <my-slider
+                :practices="userPracticeNow"
                 @sendPracticeInUser="sendPractice"/>
             </div>
             <div class="profile-practice__error" v-else-if="!nowUserId">Выберете пользователя</div>
-            
           </div>
           <!-- СОЗДАНИЕ ПРАТИЧЕСКИХ РАБОТ -->
-          <div v-if="isAdmin">
-            <h3 class="profile__title">Создать практические работы</h3>
-            <my-dialog v-model:show="dialogVisible">
-              <practice-form @createPractice="createPractice" />
-            </my-dialog>
-            <my-button @click="showDialog">Создать</my-button>
+          <div v-if="isAdmin" class="main-window__item">
+            <div class="slider__header">
+              <div class="slider__title">Созданные индивидуальные задания</div>
+              <my-dialog v-model:show="dialogVisible">
+                <practice-form @createPractice="createPractice" />
+              </my-dialog>
+              <my-button @click="showDialog">Создать</my-button>
+            </div>
             <practice-list-admin
               :list="getCurrentPractices"
-              @remove="removePractice"/>
+              @remove="removePractice"
+              @createPractice="createPractice"/>
           </div>
           <!-- ДОБАВЛЕНИЕ ССЫЛКИ ЮЗЕРОМ -->
-          <div v-if="!isAdmin">
+          <div v-if="!isAdmin" class="main-window__item">
               <practice-list-user
               :list="getCurrentPractices"
-              :userPractice="getPracticeCurrentUser"
+              :practices="getPracticeCurrentUser"
               @sendPracticeInUser="sendPractice"/>
           </div>
-          
-            
-          
+          <!-- Страрые работы юзера нельзя изменять -->
+          <div v-if="!isAdmin" class="main-window__item">
+            <div class="slider__header">
+              <div class="slider__title">Индивидуальные задания пользователя</div>
+            </div>
+            <my-slider
+              :practices="getPracticeCurrentUser"/>
+          </div>
         </div>
-        <my-swip/>
       </div>
     </div>
   </div>
@@ -65,19 +72,16 @@ import PracticeForm from "@/components/ComponentsProfile/PracticeForm"
 import ProfileUserInfo from "@/components/ComponentsProfile/ProfileUserInfo"
 import PracticeListAdmin from "@/components/ComponentsProfile/PracticeListAdmin"
 import SearchUsersInList from "@/components/ComponentsProfile/SearchUsersInList"
-import ShowPracticeListUser from "@/components/ComponentsProfile/ShowPracticeListUser"
-
-import MySwip from "@/components/ComponentsProfile/MySwip"
+import MySlider from "@/components/ComponentsProfile/MySlider"
 
 export default {
   components: {
     PracticeForm, 
-    ProfileUserInfo, 
+    ProfileUserInfo,  
     SearchUsersInList, 
     PracticeListAdmin, 
     PracticeListUser,
-    ShowPracticeListUser,
-    MySwip
+    MySlider,
   },
   data() {
     return {
@@ -118,6 +122,9 @@ export default {
         this.$message(messages["update-info"]);
       }
     },
+    showDialog() {
+      this.dialogVisible = true;
+    },
     createPractice(practiceItem) {
       this.createPracticeAdmin(practiceItem);
       this.$message(messages["create-practice"]);
@@ -149,16 +156,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.swiper-box {
-  
-  min-width: 0;
-  height: 200px;
-  box-shadow: 2px 9px 50px hsla(0, 0, 0, .1),
-        -2px 9px 60px hsla(0, 0, 0, .1);
-}
-.swiper-wrapper {
-  width: 100%;
-}
-</style>

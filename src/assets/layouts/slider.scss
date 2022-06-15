@@ -1,0 +1,27 @@
+.slider {
+  &__content {}
+  &__title {
+    display: flex;
+    font-size: $font-size-h2;
+    justify-content: center;
+    font-family: $font-family-secondary;
+    align-items: center;
+  }
+  &__header {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-sdw-color);
+    justify-content: center;
+    align-items: center;
+  }
+  &__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    padding: 20px 40px;
+    background-color: var(--bg-color);
+    position: relative;
+  }
+}

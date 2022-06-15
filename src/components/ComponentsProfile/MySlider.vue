@@ -1,5 +1,5 @@
 <template>
-   <div class="slider">
+  <div class="slider">
     <swiper
       class="slider__content"
       :modules="modules"
@@ -14,30 +14,29 @@
     >
       <swiper-slide
         class="slider__slide"
-        v-for="(practiceObj, practiceName) in list" 
-        :key="practiceName">
-        <practice-item-admin 
-          :practice="practiceObj"
-          @remove="$emit('remove', practiceName)"/>
+        v-for="practice in practices"
+        :key="practice.id">
+        <my-slide 
+          :practice="practice"
+          @sendPracticeInUser="(item) => $emit('sendPracticeInUser', item)"/>
       </swiper-slide>
     </swiper>
-    <div class="profile-practice__error" v-if="!isEmpty(list)">Заданий нет</div>
+    <div class="profile-practice__error" v-if="!isEmpty(practices)">Заданий нет</div>
   </div>
 </template>
 <script>
-import PracticeItemAdmin from "@/components/ComponentsProfile/PracticeItemAdmin.vue";
 // Import Swiper Vue.js components
 import { Navigation, Pagination, A11y, EffectCreative, Virtual } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue/swiper-vue';
-
+import MySlide from "@/components/ComponentsProfile/MySlide";
 
 // Import Swiper styles
 import 'swiper/swiper-bundle.css';
 
 export default {
-  name: "practice-list-admin",
+  name: "my-slider",
   props: [
-    "list",
+    "practices",
   ],
   mounted() {
     console.log(this.practices);
@@ -45,8 +44,7 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
-    PracticeItemAdmin,
-    
+    MySlide
   },
   setup() {
     const onSwiper = (swiper) => {
@@ -61,9 +59,9 @@ export default {
       modules: [Navigation, Pagination, A11y, EffectCreative, Virtual],
     };
   },
-  data() {
-    return {
-      dialogVisible: false,
+  computed: {
+    isAdmin() {
+      return this.$store.getters.isAdmin;  
     }
   },
   methods: {
@@ -71,7 +69,6 @@ export default {
       for (let item in obj) return true;
       return false
     },
-
   },
-};
+}
 </script>
