@@ -1,11 +1,11 @@
 <template>
-   <div class="wrapper">
-      <Header/>
-      <div class="class">
-        <router-view />
-        <button-scroll-top />
-      </div>
+  <div class="wrapper">
+    <Header/>
+    <div class="class">
+      <router-view />
+      <button-scroll-top />
     </div>
+  </div>
 </template>
 
 <script>

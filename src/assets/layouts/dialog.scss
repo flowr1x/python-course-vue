@@ -9,10 +9,10 @@
   z-index: 110;
   &__content {
     overflow: auto;
-    padding: 20px;
     margin: auto;
     background: var(--primary-color);
-    max-height: 300px;
-    min-width: 300px;
+    max-height: 500px;
+    min-width: 340px;
+    width: 600px;
   }
 }

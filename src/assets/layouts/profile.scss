@@ -30,7 +30,6 @@ h3.profile__title {
 }
 
 .form-profile {
-  padding-top: 30px;
   &__item:not(:last-child) {
     margin-bottom: 30px;
   }
@@ -63,6 +62,7 @@ h3.profile__title {
     background: var(--bg-color);
     padding: 10px;
     flex: 0 1 100%;
+   
   }
   &__btn {
     flex: 0 1 50%;
@@ -73,7 +73,60 @@ h3.profile__title {
   }
 }
 
+.info-user {
+  background-color: var(--bg-color);
+  
+  &__title {
+    text-align: center;
+    padding: 10px 0;
+    font-family: $font-family-secondary;
+    font-size: $font-size-h2;
+    background-color: var(--primary-sdw-color);
+  }
+  &__content {
+    padding: 30px 15px 15px 15px;
+  }
+}
 
+.search-profile {
+  &__title {
+    background-color: var(--primary-sdw-color);
+    padding: 10px 0;
+    text-align: center;
+    font-family: $font-family-secondary;
+    font-size: $font-size-h3;
+  }
+  &__content {
+    padding: 15px;
+  }
+  &__item {
+    background-color: var(--bg-color);
+    @extend %box-shadow;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+  &__header{
+    background-color: var(--primary-sdw-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    :not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+  &__data {
+    font-size: $font-size-h4;
+    color: var(--highlight-color);
+  }
+  &__btn {
+    padding: 15px;
+    text-align: center;
+  }
+  &__search {
+    margin-bottom: 30px;
+  }
+}
 // RESPONSIVE
 /* Tablet */
 @media (max-width: 991.98px) {
@@ -107,3 +160,12 @@ h3.profile__title {
     }
   }
 }
+@media (max-width: 400px) {
+
+  .search-profile {
+    &__header{
+      flex-direction: column;
+    }
+  }
+}
+
