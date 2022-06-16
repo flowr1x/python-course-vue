@@ -44,6 +44,11 @@
           </div>
           <!-- ДОБАВЛЕНИЕ ССЫЛКИ ЮЗЕРОМ -->
           <div v-if="!isAdmin" class="main-window__item">
+              <div class="slider__header">
+                <div class="slider__title">
+                  Актуальные индивидуальные задания
+                </div>
+              </div>
               <practice-list-user
               :list="getCurrentPractices"
               :practices="getPracticeCurrentUser"

@@ -1,7 +1,6 @@
 <template>
   <div class="wrapper">
     <Header/>
-
     <main class="page">
       <router-view/>
       <button-scroll-top />

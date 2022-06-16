@@ -1,8 +1,5 @@
 <template>
  <div class="slider">
-    <div class="slider__title">
-      Актуальные индивидуальные задания
-    </div>
     <swiper
       class="slider__content"
       :modules="modules"

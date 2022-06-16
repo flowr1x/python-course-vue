@@ -4,7 +4,6 @@
       <h1 class="text-manual__title">Тема 1</h1>
       <div class="text-manual__subtitle">Программа. Язык программирования</div>
     </div>
-    
     <div class="text-manual__body">
       <div class="text-manual__content">
         <section class="text-manual__doc-section">
