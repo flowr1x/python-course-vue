@@ -178,8 +178,6 @@
 
     .menu {   
         display: block;
-        box-shadow: 2px 9px 50px hsla(0, 0, 0, .1),
-        -2px 9px 60px hsla(0, 0, 0, .1);
         background: var(--primary-color);
         width: 50%;
         height: 100vh;
@@ -189,6 +187,8 @@
         left: -100%;
         z-index: 50;
         transition: all .3s ease 0s;
+        box-shadow: 2px 9px 50px rgba(0, 0, 0, .1),
+        -2px 9px 60px rgba(0, 0, 0, .1);
         &__list {
             display: block;
         }

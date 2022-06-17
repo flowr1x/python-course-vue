@@ -7,6 +7,8 @@ import store from './store'
 import "@/assets/layouts/index.scss";
 import messagePlugin from './plugins/message.plugin'
 
+import vSelect from 'vue-select'
+
 import Toast from "vue-toastification";
 import Maska from "maska"
 import pdf from "pdfvuer"
@@ -41,6 +43,7 @@ onAuthStateChanged(getAuth(), () => {
     app.component("tippy", Tippy);
     app.component("pdf", pdf);
     app.component('GlobalEvents', GlobalEvents);
+    app.component('v-select', vSelect);
 
     components.forEach(component => {
       app.component(component.name, component);

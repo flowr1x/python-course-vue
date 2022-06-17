@@ -20,7 +20,7 @@
             :class="{'form__input_invalid':
               (v$.info.lastName.$dirty && v$.info.lastName.required.$invalid)}"/>
         </div>
-        <div class="form-profile__item">
+        <div class="form-profile__item" v-if="!isAdmin">
           <my-input-form class="form-profile__input"
            placeholder="Номер группы"
            v-maska="['##.##.##-#-##', '##.##.##-##-##',]"
@@ -59,6 +59,11 @@ export default {
         firstName: { required },
         lastName: { required },
       }
+    }
+  },
+  computed: {
+    isAdmin() {
+      return this.$store.getters.isAdmin;  
     }
   },
   methods: {

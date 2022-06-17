@@ -170,8 +170,7 @@
   &__item {
     padding: 20px;
     background-color: var(--bg-color);
-    box-shadow: 2px 4px 5px hsla(0, 0, 0, .1),
-    -2px 4px 5px hsla(0, 0, 0, .1);
+    @extend %box-shadow;
     transition: all .2s ease;
     
     &:hover {

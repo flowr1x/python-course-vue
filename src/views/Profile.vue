@@ -22,6 +22,10 @@
               <my-button @click="dialogVisibleUserSearch = true">Поиск пользователей</my-button>
             </div>
             <div v-if="nowUserId">
+              <div class="search-profile__header">
+                <div class="search-profile__data">{{ dataCurrentUser.info.firstName }} {{ dataCurrentUser.info.lastName }}</div>
+                <div class="search-profile__data">{{ dataCurrentUser.info.group }}</div>
+              </div>
               <my-slider
                 :practices="userPracticeNow"
                 @sendPracticeInUser="sendPractice"/>
