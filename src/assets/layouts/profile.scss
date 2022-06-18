@@ -21,8 +21,7 @@
 }
 
 .profile__title {
-  font-size: 32px;
-  line-height: 1.2;
+  font-size: $font-size-h1;
   margin-bottom: 20px;
   text-transform: uppercase;
   display: flex;
@@ -121,7 +120,7 @@ h3.profile__title {
   }
 
   &__content_all {
-    padding: 15px;
+    padding: 30px 15px 15px;
   }
 
   &__item {
@@ -167,8 +166,17 @@ h3.profile__title {
 */
 /* Mobile */
 @media (max-width: 767.98px) {
+  .profile__title {
+    padding: 0 15px;
+  }
   .profile__content {
     flex: 0 1 100%;
+  }
+  .profile__container {
+    padding: 0;
+  }
+  .profile-practice__error {
+    padding: 0 15px;
   }
 }
 
