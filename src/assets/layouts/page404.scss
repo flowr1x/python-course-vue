@@ -1,10 +1,11 @@
 .error-page {
-  
   padding: 0 15px;
+
   &__title {
     font-size: 28px;
     line-height: 1.2;
   }
+  
   &__error {
     color: var(additional-color);
     font-weight: 600;

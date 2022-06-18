@@ -30,8 +30,6 @@
   }
 }
 
-// Block Form 
-
 .form__box {
   height: 100%;
   width: 50%;
@@ -42,10 +40,8 @@
   left: 0;
   z-index: 1000;
   transition: left .3s ease-in-out 0s;
-
   display: flex;
   align-items: center;
-
   overflow: hidden;
 }
 .form__box_active {
@@ -59,7 +55,6 @@
     transition-delay: .25s;
   }
 }
-
 
 .form {
   width: 100%;
@@ -169,11 +164,10 @@
   }
 }
 
-// Responsive
-/* PC */
-@media (max-width: 1087px) {
+/*
+  ========  =RESPONSIVE= ======== 
+*/
 
-}
 /* Tablet */
 @media (max-width: 991.98px) {
   .form__inner {
@@ -204,14 +198,4 @@
     text-align: center;
     padding: 50px;
   }
-}
-
-/* Mobile */
-@media (max-width: 767.98px) {
-
-}
-
-/* MOBILE SMALL */
-@media (max-width: 479.98px) {
-   
 }

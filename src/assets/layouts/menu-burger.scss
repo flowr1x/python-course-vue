@@ -22,20 +22,25 @@
     transition: all .3s ease 0s;
     background-color: var(--text-color);
   }
+
   &::before,
   &::after {
     content: "";
   }
+
   &::before {
     top: 0;
   } 
+
   &::after {
     bottom: 0;
   } 
+
   span {
     top: 50%;
     transform: scale(1) translate(0px, -50%);
   }
+  
   &.menu-icon_active {
     & span{
       width: 60%;

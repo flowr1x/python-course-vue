@@ -1,20 +1,4 @@
 /*
-  ========  =BASIC STYLES FOR SVG ICONS= ======== 
-*/
-.svg-icon {
-  width: 32px;
-  height: 32px;
-
-  path, polygon, rect {
-      fill: var(--text-color);
-  }
-
-  circle {
-      stroke: var(--text-color);
-      stroke-width: 1;
-  }
-}
-/*
   ========  =MAIN CONFIG PAGE= ======== 
 */
 body {
@@ -47,4 +31,21 @@ body {
   padding-top: $height-header;
   flex: 1 1 auto;
   position: relative;
+}
+
+/*
+  ========  =BASIC STYLES FOR SVG ICONS= ======== 
+*/
+.svg-icon {
+  width: 32px;
+  height: 32px;
+
+  path, polygon, rect {
+      fill: var(--text-color);
+  }
+
+  circle {
+      stroke: var(--text-color);
+      stroke-width: 1;
+  }
 }

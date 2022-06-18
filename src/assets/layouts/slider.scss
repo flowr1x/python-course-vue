@@ -1,5 +1,4 @@
 .slider {
-  &__content {}
   &__title {
     display: flex;
     font-size: $font-size-h2;
@@ -7,6 +6,7 @@
     font-family: $font-family-secondary;
     align-items: center;
   }
+
   &__header {
     padding: 15px 10px;
     display: flex;
@@ -16,6 +16,7 @@
     align-items: center;
     gap: 5px;
   }
+  
   &__slide {
     display: flex;
     justify-content: center;
