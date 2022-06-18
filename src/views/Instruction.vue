@@ -2,11 +2,11 @@
   <main class="page">
     <section class="page__beginpage beginpage">
       <div class="beginpage__container">
-        <div class="beginpage__title">
-          <h1>Инструкция пользователя</h1>
-          <div class="beginpage__subtitle">
+        <div class="beginpage__title title-beginpage">
+          <h1 class="title-beginpage__title">Инструкция пользователя</h1>
+          <p class="title-beginpage__text">
             В данном разделе вы узнаете как пользоваться приложением
-          </div>
+          </p>
         </div>
       </div>
     </section>

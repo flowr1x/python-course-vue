@@ -1,7 +1,6 @@
 <template>
   <div class="page__profile">
-    <div class="profile__container">
-      
+    <div class="profile__container">   
       <div class="profile__content">
         <div class="profile__title">
           <h2>Профиль</h2>

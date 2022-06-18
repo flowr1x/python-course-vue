@@ -2,13 +2,11 @@
   padding: 0 15px;
 
   &__title {
-    font-size: 28px;
-    line-height: 1.2;
+    font-size: $font-size-h1;
   }
   
   &__error {
-    color: var(additional-color);
+    color: var(--additional-color);
     font-weight: 600;
-    font-size: 38px;
   }
 }

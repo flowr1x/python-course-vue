@@ -1,34 +1,3 @@
-.form__content {
-  padding: 135px 0 25px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.form__inner {
-    width: 800px;
-    height: 500px;
-    padding: 40px 0;
-    position: relative;
-    z-index: 1;
-}
-.form__block {
-  height: 100%;
-  background: var(--bg-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @extend %box-shadow;
-  
-}
-.block-item {
-  flex: 0 1 50%;
-  text-align: center;
-  &__title {
-    margin-bottom: 20px;
-    font-size: 16px;
-    line-height: 1.2;
-  }
-}
 
 .form__box {
   height: 100%;
@@ -38,21 +7,23 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: $layout-bottom;
   transition: left .3s ease-in-out 0s;
   display: flex;
   align-items: center;
   overflow: hidden;
-}
-.form__box_active {
-  left: 50%;
-  & .form_signin {
-    left: -100%;
-    transition-delay: 0s;
-  }
-  & .form_signup {
-    left: 0;
-    transition-delay: .25s;
+
+  &_active {
+    left: 50%;
+    & .form_signin {
+      left: -100%;
+      transition-delay: 0s;
+    }
+
+    & .form_signup {
+      left: 0;
+      transition-delay: .25s;
+    }
   }
 }
 
@@ -62,28 +33,57 @@
   font-size: 16px;
   position: absolute;
   transition: .5s;
+
+  &__content {
+    padding: 135px 0 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__inner {
+    width: 800px;
+    height: 500px;
+    padding: 40px 0;
+    position: relative;
+  }
+
+  &__block {
+    height: 100%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @extend %box-shadow;
+  }
+
   &_signin {
     left: 0;
     transition-delay: .25s;
   }
+
   &_signup {
     left: 100%;
     transition-delay: 0s;
   }
+
   &__title {
-    font-size: 18px;
-    line-height: 1.2;
+    font-size: $font-size-h3;
     margin-bottom: 30px;
   }
+
   &__item {
     position: relative;
+    
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
   }
-  &__item:not(:last-child) {
-    margin-bottom: 30px;
-  }
+
   &__box_input {
     position: relative;
   }
+
   &__input {
     background: none;
     width: 100%;
@@ -93,17 +93,15 @@
     color: var(--text-color);
     transition: .3s;
     
-    &_password {
-      padding-right: 50px;
-    }
-
     &::placeholder {
       color: var(--text-color);
     }
+
     &:focus {
       background: var(--text-color);
       color: var(--primary-color);
     }
+
     &:focus + .form__label + .toggle-show > .toggle-show__icon {
       path, polygon, rect {
         fill: var(--primary-color);
@@ -114,7 +112,7 @@
   &__forgot {
     color: var(--text-color);
     &:hover {
-      color: var(--additional-color);
+      color: var(--highlight-color);
     }
   }
   &__input_invalid > &__input{
@@ -144,6 +142,16 @@
   }
 }
 
+.block-item {
+  flex: 0 1 50%;
+  text-align: center;
+  
+  &__title {
+    margin-bottom: 20px;
+    font-size: $font-size-h4;
+  }
+}
+
 // Eye on field password
 .toggle-show {
   width: 24px;
@@ -152,6 +160,7 @@
   right: 15px;
   top: 15%;
   display: block;
+
   &:active &__icon {
       path, polygon, rect {
         fill: var(--highlight-color);
@@ -176,6 +185,7 @@
     padding: 0;
     margin: 0 15px;
   }
+
   .form__box {
     width: 100%;
     height: 500px;
@@ -183,15 +193,18 @@
     top: 0;
     transition: 0.3s;
   }
+
   .form__box_active {
     left: 0;
     top: 150px;
   }
+
   .form__block {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
+  
   .block-item {
     flex: 0 1 auto;
     width:100%;

@@ -2,11 +2,11 @@
   <div>
     <section class="page__beginpage beginpage">
       <div class="beginpage__container">
-        <div class="beginpage__title">
-          <h1>Видеоуроки</h1>
-          <div class="beginpage__subtitle">
+        <div class="beginpage__title title-beginpage">
+          <h1 class="title-beginpage__title">Видеоуроки</h1>
+          <p class="title-beginpage__text">
             Раздел с видеоуроками позволяет посмотреть наглядный пример создание программ
-          </div>
+          </p>
         </div>
       </div>
     </section>

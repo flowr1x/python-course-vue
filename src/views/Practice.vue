@@ -2,11 +2,11 @@
   <div>
     <section class="page__beginpage beginpage">
       <div class="beginpage__container">
-        <div class="beginpage__title">
-          <h1>Практические работы</h1>
-          <div class="beginpage__subtitle">
+        <div class="beginpage__title title-beginpage">
+          <h1 class="title-beginpage__title">Практические работы</h1>
+          <p class="title-beginpage__text">
             Здесь расположенны практические работы, после выполенения которых можно получить пратические навыки
-          </div>
+          </p>
         </div>
       </div>
     </section>

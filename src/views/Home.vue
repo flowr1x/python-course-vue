@@ -2,11 +2,11 @@
   <div>
     <section class="page__beginpage beginpage">
       <div class="beginpage__container">
-        <div class="beginpage__title">
-          <h1>Современный учебник Python</h1>
-          <div class="beginpage__subtitle">
+        <div class="beginpage__title title-beginpage">
+          <h1 class="title-beginpage__title">Современный учебник Python</h1>
+          <p class="title-beginpage__text">
             Учебник посвещен изучению основ языкy программирования Python. Разработчик Гвидо ван Россум создал Python 20 февраля 1991 года.
-          </div>
+          </p>
         </div>
         <div class="beginpage__search">
           <div class="search-beginpage">
@@ -24,7 +24,7 @@
             id="menu__icon_aside" :isActive="isActive" 
             @click="isActive = !isActive"/>
         </div>
-        <div class="manual__content ">
+        <div class="manual__content">
           <aside class="manual__aside" :class="{'manual__aside_hide': !isActive}">
             <nav class="manual__nav nav-aside">
               <div class="nav-aside__body" :class="{'nav-aside__body_active': !isActive}">

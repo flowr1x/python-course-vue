@@ -2,11 +2,11 @@
   <main class="page">
     <section class="page__beginpage beginpage">
       <div class="beginpage__container">
-        <div class="beginpage__title">
-          <h1>Справка</h1>
-          <div class="beginpage__subtitle">
+        <div class="beginpage__title title-beginpage">
+          <h1 class="title-beginpage__title">Справка</h1>
+          <p class="title-beginpage__text">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus eius voluptate soluta mollitia dolorem odit?
-          </div>
+          </p>
         </div>
       </div>
     </section>
@@ -34,11 +34,6 @@
       </div>
     </section>
   </main>
-
-
-
-
-
 </template>
 
 <script>
