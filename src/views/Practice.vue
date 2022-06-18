@@ -82,7 +82,7 @@ export default {
         if (page.link === this.nowPractice) {
           const nextPractice = arr[index+1];
           const prevPractice = arr[index-1];
-          console.info(prevPractice);
+          
           if (nextPractice) this.nextPractice = nextPractice.link;
           else this.nextPractice = false;
 

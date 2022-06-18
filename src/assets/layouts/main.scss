@@ -341,6 +341,22 @@
 }
 
 /*
+  ========  =ANIMATION VUE ======== 
+*/
+.list-theme-enter-active,
+.list-theme-leave-active {
+  transition: all 0.3s ease;
+}
+.list-theme-enter-from,
+.list-theme-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.list-theme-move {
+  transition: transform .5s ease;
+}
+
+/*
   ========  =RESPONSIVE= ======== 
 */
 /* Tablet */

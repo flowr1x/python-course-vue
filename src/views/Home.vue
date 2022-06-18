@@ -19,7 +19,10 @@
       <div class="manual__container">
         <div class="manual__title">
           <h2>Содержание</h2>
-          <icon-burger id="menu__icon_aside" :isActive="isActive" @click="isActive = !isActive"/>
+          <icon-burger 
+            v-if="Object.keys(listManualItem).length" 
+            id="menu__icon_aside" :isActive="isActive" 
+            @click="isActive = !isActive"/>
         </div>
         <div class="manual__content ">
           <aside class="manual__aside" :class="{'manual__aside_hide': !isActive}">
@@ -30,8 +33,7 @@
                   :key="item.path"
                   :title="item.title"
                   :subtitle="item.subtitle"
-                  :path="item.path"
-                />
+                  :path="item.path"/>
               </div>
             </nav>
           </aside>
@@ -55,6 +57,7 @@
                   </div>
                 </div>
               </div>
+              <div v-if="!Object.keys(listManualItem).length">Лекций с таким названием не найдено</div>
             </transition-group>
           </section>
         </div>
@@ -64,7 +67,6 @@
 </template>
 
 <script>
-import themes from "@/themes/index.js";
 import listManualItem from "@/mocks/headerTheory.js";
 import messages from "@/plugins/messages.js";
 import AsideList from "@/components/AsideList.vue";
@@ -87,34 +89,12 @@ export default {
     if (query) this.$message(messages[query]);
   },
   watch: {
+    // Поиск лекций из списка 
     textInput(newText, oldText) {
       this.listManualItem = listManualItem.filter(item => item
         .subtitle.toLowerCase()
         .includes(this.textInput.toLowerCase()));
     }
   },
-  methods: {
-    changeThemesApp() {
-      let bodyStyles = document.body.style;
-      const darkTheme = themes.dark;
-      for (let color in darkTheme) {
-        bodyStyles.setProperty(color, darkTheme[color]);
-      }
-    }
-  }
 }
 </script>
-<style scoped>
-.list-theme-enter-active,
-.list-theme-leave-active {
-  transition: all 0.3s ease;
-}
-.list-theme-enter-from,
-.list-theme-leave-to {
-  opacity: 0;
-  transform: translateX(100%);
-}
-.list-theme-move {
-  transition: transform .5s ease;
-}
-</style>
