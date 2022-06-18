@@ -1,7 +1,7 @@
 <template>
   <div class="profile__practice profile-practice">
-    <h3 class="search-profile__title">Создание практических работ</h3>
-    <div class="search-profile__content">
+    <h3 class="search-profile__title">Создание индивидуальных заданий</h3>
+    <div class="search-profile__content search-profile__content_all">
       <form class="profile-practice__form form-profile" @submit.prevent>
         <div class="form-profile__item">
           <my-input-form

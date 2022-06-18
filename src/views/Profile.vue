@@ -5,7 +5,7 @@
       <div class="profile__content">
         <div class="profile__title">
           <h2>Профиль</h2>
-          <my-button class="profile__btn" @click="logout">Выйти</my-button>
+          <my-button class="profile__btn-logout btn-red" @click="logout">Выйти</my-button>
         </div>
         <div class="profile__main-window main-windows">
           <!-- ИНФОРМАЦИЯ О USER -->

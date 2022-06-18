@@ -71,6 +71,13 @@ h3.profile__title {
     color: var(--additional-color);
     font-size: 18px;
   }
+  &__info {
+    color: var(--text-color);
+    font-size: 18px;
+    a {
+       color: var(--highlight-color);
+    }
+  }
 }
 
 .info-user {
@@ -97,6 +104,9 @@ h3.profile__title {
     font-size: $font-size-h3;
   }
   &__content {
+    padding: 0 15px 15px;
+  }
+  &__content_all {
     padding: 15px;
   }
   &__item {
@@ -123,7 +133,7 @@ h3.profile__title {
     text-align: center;
   }
   &__search-box {
-    margin-bottom: 30px;
+    padding: 25px 0;
   }
   &__search-input {
     margin-bottom: 15px;

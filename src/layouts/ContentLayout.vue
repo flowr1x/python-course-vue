@@ -8,7 +8,7 @@
             <h2>Содержание</h2>
             <icon-burger id="menu__icon_aside" :isActive="isActive" @click="isActive = !isActive"/>
           </div>
-          <div class="manual__content ">
+          <div class="manual__content">
             <aside class="manual__aside" :class="{'manual__aside_hide': !isActive}">
               <nav class="manual__nav nav-aside">
                 <div class="nav-aside__body" :class="{'nav-aside__body_active': !isActive}">

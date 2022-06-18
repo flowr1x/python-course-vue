@@ -115,6 +115,8 @@
 .manual__aside {
   width: 250px;
   margin-left: 0;
+ 
+ 
   transition: margin-left .2s ease-in-out 0s;
   &_hide {
     margin-left: -270px;
@@ -123,6 +125,8 @@
 
 .nav-aside {
   &__body {
+    overflow-x: auto;
+    max-height: 450px;
     display: block;
     background-color: var(--bg-color);
   }

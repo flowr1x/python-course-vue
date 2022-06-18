@@ -5,7 +5,7 @@
         <div class="beginpage__title">
           <h1>Практические работы</h1>
           <div class="beginpage__subtitle">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet maiores qui, similique sit praesentium dignissimos, nobis adipisci consequuntur, impedit voluptatem sequi modi officiis voluptas inventore suscipit accusantium saepe minima veritatis.
+            Здесь расположенны практические работы, после выполенения которых можно получить пратические навыки
           </div>
         </div>
       </div>
