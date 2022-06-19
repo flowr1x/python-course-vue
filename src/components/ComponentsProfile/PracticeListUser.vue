@@ -24,7 +24,7 @@
       </swiper-slide>
     </swiper>
     <div class="profile-practice__info" v-if="isEmpty(list)">*В качестве демонстрации работы, можно использовать любое облако кода, например <a href="http://www.online-python.com">www.online-python.com</a></div>
-    <div class="profile-practice__error" v-if="!isEmpty(list)">Актуальные заданий нет</div>
+    <div class="profile-practice__error" v-if="!isEmpty(list)">Актуальныx заданий нет</div>
   </div>
 </template>
 

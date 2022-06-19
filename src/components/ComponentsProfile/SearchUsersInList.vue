@@ -1,7 +1,6 @@
 <template>
   <div class="profile__search search-profile">
     <h3 class="search-profile__title">Поиск пользователей</h3>
-
     <div class="search-profile__content">
       <div class="search-profile__search-box">
         <my-input-form v-model="searchInput" placeholder="Поиск" class="search-profile__search-input"/>
@@ -36,32 +35,46 @@ export default {
       selectedGroup: null,
       currentUsers: {},
       searchInput: "",
+      filterUsers: {}
     }
   },
   mounted() {
-    this.currentUsers = this.users;
-    for (let user in this.users) {
-      const groupUser = this.users[user].info;
-      this.groups.push({code: groupUser, label: groupUser.group});
-    }
+    this.filterGroupAndUser();
   },
   methods: {
     isEmpty(obj) {
       for (let item in obj) return true;
       return false
     },
+    filterGroupAndUser() {
+      // Можно оптимизировать 
+      for (let user in this.users) {
+        const groupUser = this.users[user].info;
+        const repeat = false;
+  
+        for (let group of this.groups) {
+          if (groupUser.group === group.label) repeat = true;
+        }
+  
+        if (!(groupUser.group === "00.00.00-00-00")) {
+          this.currentUsers[user] = this.users[user];
+          this.filterUsers[user] = this.users[user];
+          if (!repeat) this.groups.push({code: groupUser, label: groupUser.group});
+        } 
+      }
+    }
   },
   watch:{
     selectedGroup() {
       if (!this.selectedGroup) {
-        this.currentUsers = this.users;
+        this.currentUsers = this.filterUsers;
       } else {
         this.currentUsers = {};
         
-        for (let user in this.users) {
-          const currentGroup = this.users[user].info.group;
+        for (let user in this.filterUsers) {
+          const currentGroup = this.filterUsers[user].info.group;
           if (this.selectedGroup.label === currentGroup) {
-            this.currentUsers[user] = this.users[user];
+            this.currentUsers[user] = this.filterUsers[user];
           }
         }
       }
@@ -74,12 +87,12 @@ export default {
 
       const textInput = this.searchInput.toLowerCase();
 
-      for (let user in this.users) {
-        const currentUserInfo = this.users[user].info;
+      for (let user in this.filterUsers) {
+        const currentUserInfo = this.filterUsers[user].info;
         const currentUserFullName = (currentUserInfo.firstName + " " + currentUserInfo.lastName).toLowerCase();
         
         if (currentUserFullName.includes(textInput)) {
-          this.currentUsers[user] = this.users[user];
+          this.currentUsers[user] = this.filterUsers[user];
         }
       }
     }
