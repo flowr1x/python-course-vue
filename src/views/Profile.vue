@@ -4,15 +4,18 @@
       <div class="profile__content">
         <div class="profile__title">
           <h2>Профиль</h2>
-          <my-button class="profile__btn-logout btn-red" @click="logout">Выйти</my-button>
+          <my-button class="profile__btn-logout btn__bg-red" @click="logout">Выйти</my-button>
         </div>
-        <div class="profile__main-window main-windows">
+        <div class="profile__dynamic-window dynamic-window">
           <!-- ИНФОРМАЦИЯ О USER -->
-          <profile-user-info :info="getInfoUser" @submitHandler="submitHandler" class="main-window__item"/>
+          <profile-user-info 
+            :info="getInfoUser" 
+            @submitHandler="submitHandler" 
+            class="dynamic-window__item"/>
           <!-- ПОИСК ПРАКТИЧЕСКИХ РАБОТ USER -->
-          <div v-if="isAdmin" class="main-window__item">
+          <div v-if="isAdmin" class="dynamic-window__item">
             <div class="slider__header">
-              <div class="slider__title">Индивидуальные задания пользователя</div>
+              <div class="slider__title">Индивидуальные задания</div>
               <my-dialog v-model:show="dialogVisibleUserSearch">
                 <search-users-in-list 
                   :users="getListAllUsers" 
@@ -32,7 +35,7 @@
             <div class="profile-practice__error" v-else-if="!nowUserId">Выберете пользователя</div>
           </div>
           <!-- СОЗДАНИЕ ПРАТИЧЕСКИХ РАБОТ -->
-          <div v-if="isAdmin" class="main-window__item">
+          <div v-if="isAdmin" class="dynamic-window__item">
             <div class="slider__header">
               <div class="slider__title">Созданные индивидуальные задания</div>
               <my-dialog v-model:show="dialogVisible">
@@ -46,7 +49,7 @@
               @createPractice="createPractice"/>
           </div>
           <!-- ДОБАВЛЕНИЕ ССЫЛКИ ЮЗЕРОМ -->
-          <div v-if="!isAdmin" class="main-window__item">
+          <div v-if="!isAdmin" class="dynamic-window__item">
               <div class="slider__header">
                 <div class="slider__title">
                   Актуальные индивидуальные задания
@@ -58,7 +61,7 @@
               @sendPracticeInUser="sendPractice"/>
           </div>
           <!-- Страрые работы юзера нельзя изменять -->
-          <div v-if="!isAdmin" class="main-window__item">
+          <div v-if="!isAdmin" class="dynamic-window__item">
             <div class="slider__header">
               <div class="slider__title">Индивидуальные задания пользователя</div>
             </div>

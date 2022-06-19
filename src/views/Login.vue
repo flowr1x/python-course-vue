@@ -39,7 +39,7 @@
                 <my-button class="form__btn">Войти</my-button>
               </div>
               <div class="form__item">
-                <a href="#" class="form__forgot">Восстановить пароль</a>
+                <!-- <a href="#" class="form__forgot">Восстановить пароль</a> -->
               </div>
             </form>
             <!-- Form Register -->

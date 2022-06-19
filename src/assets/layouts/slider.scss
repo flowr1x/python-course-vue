@@ -27,3 +27,12 @@
     position: relative;
   }
 }
+
+/* MOBILE SMALL */
+@media (max-width: 479.98px) {
+  .slider {
+    &__title {
+      font-size: $font-size-h3;
+    }
+  }
+}

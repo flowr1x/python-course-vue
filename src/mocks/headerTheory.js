@@ -180,9 +180,8 @@ export default [
     subtitle: "Кортеж",
     path: "/theory_19",
     shortlinks: [
-      {title: "Строки", path: "/theory_19", link: "#title1"},
-      {title: "Основные команды", path: "/theory_19", link: "#title2"},
-      {title: "Нарезка строк", path: "/theory_19", link: "#title3"},
+      {title: "Определение", path: "/theory_19", link: "#title1"},
+      {title: "Списки в кортежах", path: "/theory_19", link: "#title2"},
     ]
   },
 ];
