@@ -24,7 +24,8 @@
         <my-input-form 
           placeholder="Ссылка на код" 
           v-model="ref"
-          :isDisabled="true"/>
+          :isDisabled="true"
+          :isCopy="true"/>
       </div>
       <div class="form-profile__item">
         <my-input-form 
@@ -39,23 +40,6 @@
       </div>
     </form>
   </div>
-
-  <!-- Для админа -->
-  <!-- <div class="profile-practice__block">
-    <div class="profile-practice__headline">
-      <div class="profile-practice__label">Практическая работа: </div>
-      <div class="profile-practice__text">Тема: </div>
-    </div>
-    <div class="profile-practice__inputs">
-      <my-input-form placeholder="Ссылка на код" v-model="ref"/>
-      <my-input-form placeholder="Оценка" v-model="mark" :disabled="!isAdmin"/>
-    </div>
-    <div class="form-profile__item form-profile__btn">
-      <my-button>
-        Отправить
-      </my-button>
-    </div>
-  </div> -->
 </template>
 
 <script>
