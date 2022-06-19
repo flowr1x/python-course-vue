@@ -7,13 +7,15 @@
           <my-input-form
             class="form-profile__input"
             placeholder="Номер практической работы"
-            v-model.number="title"/>
+            v-model="practice.title"
+            :class="{ 'form__input_invalid':(v$.practice.title.$dirty && v$.practice.title.required.$invalid) }"/>
         </div>
         <div class="form-profile__item">
           <my-input-form
             class="form-profile__input"
             placeholder="Тема практической работы"
-            v-model="text"/>
+            v-model="practice.text"
+            :class="{ 'form__input_invalid': (v$.practice.text.$dirty && v$.practice.text.required.$invalid) }"/>
         </div>
         <div class="form-profile__item form-profile__btn">
           <my-button
@@ -24,24 +26,46 @@
     </div>
   </div> 
 </template>
+
 <script>
+import useVuelidate from '@vuelidate/core'
+import { required } from '@vuelidate/validators'
+
 export default {
   name: "practice-form",
+  setup() {
+    return { 
+      v$: useVuelidate() 
+    }
+  },
   data() {
     return {
-      title: "",
-      text: "",
+      practice: {
+        title: "",
+        text: ""
+      }
+    }
+  },
+  validations () {
+    return {
+      practice: {
+        title: { required }, 
+        text: { required },
+      }
     }
   },
   methods: {
     createPractice() {
-      const newPost = {
-        title: this.title,
-        text: this.text,
-      };
-      this.$emit("createPractice", newPost);
-      this.title = "";
-      this.text = "";
+      if (this.v$.practice.$invalid) {
+        this.v$.practice.$touch();
+        return;
+      }
+
+      this.$emit("createPractice", this.practice);
+      this.practice = {
+        title: "",
+        text: ""
+      }
     }
   }
 }
