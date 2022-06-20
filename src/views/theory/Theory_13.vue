@@ -17,6 +17,9 @@
           <p><a href="https://docs.python.org/3/library/functions.html">https://docs.python.org/3/library/functions.html</a> . В переводе на русский можно посмотреть
             <a href="https://pythoner.name/documentation/library/functions">здесь</a>.</p>
           <p>В этом уроке рассмотрим следующие встроенные функции, условно разбив их на группы:</p>
+
+          <div class="text-manual__textcols textcols">
+                <div class="textcols-item">
           <ul>
             <li>
               <p>функции для работы с символами – ord(), chr(), len()</p>
@@ -25,6 +28,8 @@
               <p>математические функции – abs(), round(), divmod(), pow(), max(), min(), sum()</p>
             </li>
           </ul>
+                </div>
+              </div>
         </div>
       </section>
       <section class="text-manual__doc-section">

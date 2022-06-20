@@ -77,6 +77,9 @@ print(b)
                   заголовке условного оператора вернуло бы ложь. Значит, тело не было бы выполнено, и
                   переменная b не изменилась бы.</p>
               <p>Структуру программы можно изобразить следующим образом:</p>
+
+               <div class="text-manual__textcols textcols">
+                <div class="textcols-item">
               <div class="text-manual__show-list show-list">
                   <ul class="show-list__list">
                     <li class="show-list__item">Основной код</li>
@@ -90,6 +93,8 @@ print(b)
                     <li class="show-list__item">Основной код</li>
                     <li class="show-list__item">Основной код</li>
                   </ul>
+              </div>
+                </div>
               </div>
               <p>Основная ветка программы выполняется всегда, а вложенный код лишь тогда, когда в темно-
                 зеленой строчке, обозначающей заголовок условного оператора, случается истина.</p>

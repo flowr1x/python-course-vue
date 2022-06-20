@@ -57,7 +57,10 @@
       font-size: 16px;
       line-height: 1.3;
       list-style-type: disc;
-      margin-left: 15px;
+     
+    }
+    ol li {
+      font-size: 16px;
     }
 }
 .text-manual__colortext-red {
@@ -129,7 +132,7 @@
 }
 
 .text-manual__textcols {
-    padding-left: 25px;
+    padding:10px 0px 10px 40px;
 }
 .textcols {
     &-item {

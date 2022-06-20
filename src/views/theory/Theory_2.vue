@@ -81,7 +81,9 @@
                       let's do more of those!</li>
                 </ol>
               </div>
-              <p>Перевод: </p>
+            </div>
+              <h3>Перевод:</h3>
+            <div class="text-manual__textcols textcols">
               <div class="textcols-item">
                 <ol>
                   <li>Красивое лучше уродливого</li>
