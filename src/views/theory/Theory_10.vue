@@ -22,20 +22,20 @@
               заново.</p>
           <p>Вернемся к нашей программе из прошлого урока, немного упростив ее для удобства:</p>
           <pre><code class="python">def rectangle():
-a = float(input("Ширина: "))
-b = float(input("Высота: "))
-print("Площадь: %.2f" % (a*b))
+ a = float(input("Ширина: "))
+ b = float(input("Высота: "))
+ print("Площадь: %.2f" % (a*b))
 
 def triangle():
-a = float(input("Основание: "))
-h = float(input("Высота: "))
-print("Площадь: %.2f" % (0.5 * a * h))
+ a = float(input("Основание: "))
+ h = float(input("Высота: "))
+ print("Площадь: %.2f" % (0.5 * a * h))
 
 figure = input("1-прямоугольник, 2-треугольник: ")
 if figure == '1':
-rectangle()
+ rectangle()
 elif figure == '2':
-triangle()</code></pre>
+ triangle()</code></pre>
             <p>Сколько здесь переменных? Какие из них являются глобальными, а какие – локальными?
                 Здесь пять переменных. Глобальной является только figure. Переменные a и b из функции
                 rectangle(), а также a и h из triangle() – локальные. При этом локальные переменные с
@@ -51,7 +51,7 @@ triangle()</code></pre>
                 видимости, мы попытаемся обратиться к локальной переменной, то возникнет ошибка:</p>
             <pre><code class="python">…
 elif figure == '2':
-triangle()
+ triangle()
 
 print(a)</code></pre>
             <p>Пример выполнения:</p>
@@ -59,57 +59,57 @@ print(a)</code></pre>
 Основание: 4
 Высота: 5
 Площадь: 10.00
-Traceback (most recent call last):
-File "test.py", line 17, in &lt;module&gt;
-print(a)
+ Traceback (most recent call last):
+ File "test.py", line 17, in &lt;module&gt;
+  print(a)
 NameError: name 'a' is not defined</code></pre>
             <p>Однако мы можем обращаться из функций к глобальным переменным:</p>
             <pre><code class="python">def rectangle():
-a = float(input("Ширина %s: " % figure))
-b = float(input("Высота %s: " % figure))
-print("Площадь: %.2f" % (a*b))
+ a = float(input("Ширина %s: " % figure))
+ b = float(input("Высота %s: " % figure))
+ print("Площадь: %.2f" % (a*b))
 
 def triangle():
-a = float(input("Основание %s: " % figure))
-h = float(input("Высота %s: " % figure))
-print("Площадь: %.2f" % (0.5 * a * h))
+ a = float(input("Основание %s: " % figure))
+ h = float(input("Высота %s: " % figure))
+ print("Площадь: %.2f" % (0.5 * a * h))
 
 figure = input("1-прямоугольник, 2-треугольник: ")
 if figure == '1':
-rectangle()
+ rectangle()
 elif figure == '2':
-triangle()</code></pre>
+ triangle()</code></pre>
             <p>Пример выполнения:</p>
             <pre><code class="python">1-прямоугольник, 2-треугольник: 1
 Ширина 1: 6.35
 Высота 1: 2.75
 Площадь: 17.46</code></pre>
-            <p>В данном случае из тел функций происходит обращение к имени figure, которое, из4за того,
+            <p>В данном случае из тел функций происходит обращение к имени figure, которое, из-за того,
                 что было объявлено в глобальной области видимости, видимо во всей программе.</p>
             <p>Наши функции не совсем идеальны. Они должны вычислять площади фигур, но выводить
                 результат на экран им не следовало бы. Вполне вероятна ситуация, когда результат нужен для
                 внутренних нужд программы, для каких-то дальнейших вычислений, а выводить ли его на
                 экран – вопрос второстепенный.</p>
-            <p>Если функции не будут выводить, а только вычислять результат, то его надо где4то сохранить
+            <p>Если функции не будут выводить, а только вычислять результат, то его надо где-то сохранить
                 для дальнейшего использования. Для этого подошли бы глобальные переменные. В них
                 можно записать результат. Напишем программу вот так:</p>
             <pre><code class="python">result = 0
     
 def rectangle():
-a = float(input("Ширина: "))
-b = float(input("Высота: "))
-result = a*b
+ a = float(input("Ширина: "))
+ b = float(input("Высота: "))
+ result = a*b
 
 def triangle():
-a = float(input("Основание: "))
-h = float(input("Высота: "))
-result = 0.5 * a * h
+ a = float(input("Основание: "))
+ h = float(input("Высота: "))
+ result = 0.5 * a * h
 
 figure = input("1-прямоугольник, 2-треугольник: ")
 if figure == '1':
-rectangle()
+ rectangle()
 elif figure == '2':
-triangle()
+ triangle()
 
 print("Площадь: %.2f" % result)</code></pre>
               <p>Итак, мы ввели в программу глобальную переменную result и инициировали ее нулем. В
@@ -137,25 +137,25 @@ print("Площадь: %.2f" % result)</code></pre>
                   существует команда global:</p>
               <pre><code class="python">result = 0
     
-    def rectangle():
-        a = float(input("Ширина: "))
-        b = float(input("Высота: "))
-        global result
-        result = a*b
-    
-    def triangle():
-        a = float(input("Основание: "))
-        h = float(input("Высота: "))
-        global result
-        result = 0.5 * a * h
-    
-    figure = input("1-прямоугольник, 2-треугольник: ")
-    if figure == '1':
-       rectangle()
-    elif figure == '2':
-       triangle()
-       
-    print("Площадь: %.2f" % result)</code></pre>
+def rectangle():
+ a = float(input("Ширина: "))
+ b = float(input("Высота: "))
+ global result
+ result = a*b
+
+def triangle():
+ a = float(input("Основание: "))
+ h = float(input("Высота: "))
+ global result
+ result = 0.5 * a * h
+
+figure = input("1-прямоугольник, 2-треугольник: ")
+if figure == '1':
+ rectangle()
+elif figure == '2':
+ triangle()
+   
+print("Площадь: %.2f" % result)</code></pre>
                 <p>В таком варианте программа будет работать правильно.</p>
                 <p>Однако менять значения глобальных переменных в теле функции – плохая практика. В
                     больших программах программисту трудно отследить, где, какая функция и почему изменила

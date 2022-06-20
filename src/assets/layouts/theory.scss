@@ -35,11 +35,14 @@
     margin-bottom: 20px;
 }
 .text-manual__section-block {
+    a {
+      color: var(--highlight-color);
+    }
     p {
         letter-spacing: 0.1px;
         font-size: 16px;
-        line-height: 1.3;
-        :not(:last-child) {
+        line-height: 1.4;
+        &:not(:last-child) {
           margin-bottom: 15px;
         }
     }
@@ -62,7 +65,7 @@
 }
 
 .text-manual__diagram {
-
+  padding: 15px 0px;
 }
 .diagram-list {
     margin: 0 auto;
@@ -153,6 +156,7 @@
     display: block;
     background-color: var(--primary-sdw-color);
     border-radius: 5px;
+    overflow: auto;
 }
 
 .text-manual__show-list {

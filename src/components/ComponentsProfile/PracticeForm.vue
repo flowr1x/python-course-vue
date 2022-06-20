@@ -6,14 +6,14 @@
         <div class="form-profile__item">
           <my-input-form
             class="form-profile__input"
-            placeholder="Номер практической работы"
+            placeholder="Назавние индивидуального задания"
             v-model="practice.title"
             :class="{ 'form__input_invalid':(v$.practice.title.$dirty && v$.practice.title.required.$invalid) }"/>
         </div>
         <div class="form-profile__item">
           <my-input-form
             class="form-profile__input"
-            placeholder="Тема практической работы"
+            placeholder="Тема индивидуального задания"
             v-model="practice.text"
             :class="{ 'form__input_invalid': (v$.practice.text.$dirty && v$.practice.text.required.$invalid) }"/>
         </div>
