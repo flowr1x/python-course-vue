@@ -233,11 +233,19 @@
 // Buttons to change the page of lectures, videos or practical
 .btns-change-page {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 10px;
 
   &__block {
     flex: 0 1 50%;
+  }
+  &__block_all {
+    flex: 0 1 100%;
+
+    a {
+      text-align: center;
+      max-width: 500px;
+    }
   }
 
   &__btn {
@@ -260,8 +268,19 @@
     }
 
     &_hide {
-      display: none;      
+      opacity: 0.4;
+      &:hover {
+        background: none;
+      }
     }
+  }
+}
+.btns-change-page_single {
+  display: flex;
+  justify-content: center;
+  &__block_all {
+    flex: 0 1 100%;
+    
   }
 }
 

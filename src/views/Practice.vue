@@ -35,14 +35,21 @@
             <MyViewerPdf :path="nowPractice" :key="render"/>
             <div class="manual__btns-change-page btns-change-page">
                 <div class="btns-change-page__block">
-                  <button button class="btns-change-page__btn"
+                  <button button class="btns-change-page__btn" 
+                    :disabled="!this.prevPractice"
                     :class="{'btns-change-page__btn_hide':!this.prevPractice}"
                     @click="getPrevVideo()">Предыдущая</button>
                 </div>
                 <div class="btns-change-page__block">
-                  <button class="btns-change-page__btn"
+                  <button class="btns-change-page__btn" 
+                    :disabled="!this.nextPractice"
                     :class="{'btns-change-page__btn_hide':!this.nextPractice}"
                     @click="getNextVideo()">Следующая</button>
+                </div>
+            </div>
+            <div class="manual__btns-change-page btns-change-page_single">
+                <div class="btns-change-page_single__block_all">
+                  <a :href="nowPractice" download class="btns-change-page__btn">Скачать текущую пратическую работу</a>
                 </div>
             </div>
           </div>
@@ -101,6 +108,7 @@ export default {
       this.nowPractice = link;
       this.render += 1;
       this.setCurrentPath();
+      console.log(this.nowPractice);
     }
   },
 }

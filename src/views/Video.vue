@@ -37,11 +37,13 @@
             <div class="manual__btns-change-page btns-change-page">
               <div class="btns-change-page__block">
                 <button button class="btns-change-page__btn"
+                  :disabled="!this.prevVideo"
                   :class="{'btns-change-page__btn_hide':!this.prevVideo}"
                   @click="getPrevVideo()">Предыдущая</button>
               </div>
               <div class="btns-change-page__block">
                 <button class="btns-change-page__btn"
+                  :disabled="!this.nextVideo"
                   :class="{'btns-change-page__btn_hide':!this.nextVideo}"
                   @click="getNextVideo()">Следующая</button>
               </div>

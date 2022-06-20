@@ -27,11 +27,13 @@
               <div class="manual__btns-change-page btns-change-page">
                 <div class="btns-change-page__block">
                   <button button class="btns-change-page__btn" 
+                    :disabled="!this.prevPath"
                     :class="{'btns-change-page__btn_hide':!this.prevPath}" 
                     @click="this.$router.push(prevPath)">Предыдущая</button>
                 </div>
                 <div class="btns-change-page__block">
                   <button class="btns-change-page__btn"
+                    :disabled="!this.nextPath"
                     :class="{'btns-change-page__btn_hide':!this.nextPath}" 
                     @click="this.$router.push(nextPath)">Следующая</button>
                 </div>
